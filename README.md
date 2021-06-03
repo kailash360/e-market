@@ -10,4 +10,8 @@ Webkriti Project
 > npm install
 #### 5. To run the project,run the command
 > nodemon index.js
+#### 6. Now go to your default browser, and run the following command in search-bar
+> localhost
+
+#### N.B: Steps 1-4 are to run for irst-time installation only. Only steps 5 and 6 will be needed while working on the project. 
 
