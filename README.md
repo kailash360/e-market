@@ -13,5 +13,5 @@ Webkriti Project
 #### 6. Now go to your default browser, and run the following command in search-bar
 > localhost
 
-#### N.B: Steps 1-4 are to run for irst-time installation only. Only steps 5 and 6 will be needed while working on the project. 
+#### N.B: Steps 1-4 are needed for first-time installation only. Only steps 5 and 6 will be needed while working on the project. 
 
