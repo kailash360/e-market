@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/kailash360/e-market/issues"
   },
-  "homepage": "https://github.com/kailash360/e-market#readme"
+  "homepage": "https://github.com/kailash360/e-market#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
