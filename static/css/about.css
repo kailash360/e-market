@@ -3,6 +3,7 @@
     margin: 0px;
     padding: 0px;
     font-family: "Nunito Sans";
+    overflow-x: hidden;
 }
 
 .heading {
@@ -11,4 +12,37 @@
     font-size: 3em;
     font-weight: bolder;
     text-align: center;
+}
+
+.slogan-section {
+    width: 100vw;
+    height: fit-content;
+    margin-top: 2em;
+}
+
+.slogan-section img {
+    height: 500px;
+    width: 100vw;
+    opacity: 0.5;
+    object-fit: cover;
+}
+
+.slogan {
+    font-size: 4em;
+    font-weight: bolder;
+    text-align: left;
+    padding-top: 2em;
+    padding-left: 0.5em;
+    position: absolute;
+    top: 2em;
+}
+
+.subscript {
+    font-size: 2em;
+    font-weight: bolder;
+    text-align: left;
+    padding-left: 5em;
+    padding-top: 2em;
+    position: absolute;
+    top: 9em;
 }

@@ -17,6 +17,16 @@ app.set('view engine', 'html')
 app.set('views', path.join(__dirname, 'views'))
 
 //Serving profile
+app.get("/home", (req, res) => {
+    res.end(fs.readFileSync("./views/home.html"))
+})
+
+//Serving profile
+app.get("/", (req, res) => {
+    res.end(fs.readFileSync("./views/home.html"))
+})
+
+//Serving profile
 app.get("/profile", (req, res) => {
     res.end(fs.readFileSync("./views/profile.html"))
 })
@@ -24,6 +34,11 @@ app.get("/profile", (req, res) => {
 //Serving cart
 app.get("/cart", (req, res) => {
     res.end(fs.readFileSync("./views/cart.html"))
+})
+
+//Serving about
+app.get("/about", (req, res) => {
+    res.end(fs.readFileSync("./views/about.html"))
 })
 
 app.listen(port, hostname, () => {
