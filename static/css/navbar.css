@@ -1,0 +1,54 @@
+.navbar {
+    width: inherit;
+    height: fit-content;
+    background-color: black;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 0.8em;
+}
+
+.menu-list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+.menu-list li {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bolder;
+    margin: auto 1em;
+}
+
+.menu-list li a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu-list li a:hover {
+    color: rgb(179, 179, 179);
+}
+
+.nav-end {
+    display: flex;
+    flex-direction: row-reverse;
+    list-style: none;
+}
+
+.nav-end li {
+    font-size: 1.8em;
+    margin: auto 0.5em;
+}
+
+.nav-end li a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-end li a:hover {
+    color: rgb(179, 179, 179);
+}
+
+.active {
+    color: rgb(9, 230, 218);
+}
