@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap');
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Nunito Sans";
+}
+
+
+/* For card container  */
+
+.heading {
+    font-size: 5em;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.card-container {
+    width: fit-content;
+    height: fit-content;
+    /* border: 2px solid red; */
+    margin: 0px auto;
+    padding: 3em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.card-item {
+    height: 20em;
+    width: 40em;
+    /* border: 2px solid black; */
+    margin: 3em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: 0px 2px 5px 4px rgb(0 0 0 / 20%);
+    transition-duration: 0.5s;
+}
+
+.card-item:hover {
+    transform: scale(1.03);
+}
+
+.item-image {
+    /* border: 2px solid blue; */
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.item-image img {
+    margin: auto auto;
+}
+
+.item-info {
+    padding: 1em;
+    background: linear-gradient(to bottom right, #11bcc9, #1bdac0);
+    color: white;
+    /* border: 2px solid green; */
+    display: grid;
+    grid-template-rows: 4.5fr 0.5fr;
+}
+
+.title {
+    font-size: 2em;
+    font-weight: 900;
+}
+
+.color {
+    font-size: 1.8em;
+    font-weight: 500;
+}
+
+.price {
+    margin: 0.2em 0em 0em 0em;
+    font-size: 1.9em;
+    font-weight: bold;
+}
+
+.availability {
+    font-size: 1em;
+}
+
+.buy-now {
+    margin: 0px auto;
+    font-size: 1.5em;
+    font-weight: bolder;
+    border: none;
+    border-radius: 20px;
+    padding: 0.1em 1em;
+    background-color: white;
+    box-shadow: 1px 3px 4px 0px rgb(0 0 0 / 20%);
+}
+
+.buy-now:active {
+    background-color: rgb(0, 117, 111);
+    color: white;
+}

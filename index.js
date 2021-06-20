@@ -16,13 +16,16 @@ app.use(express.urlencoded())
 app.set('view engine', 'html')
 app.set('views', path.join(__dirname, 'views'))
 
+//Serving profile
+app.get("/profile", (req, res) => {
+    res.end(fs.readFileSync("./views/profile.html"))
+})
 
-const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('Hello World');
-});
+//Serving cart
+app.get("/cart", (req, res) => {
+    res.end(fs.readFileSync("./views/cart.html"))
+})
 
-server.listen(port, hostname, () => {
+app.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
 });
