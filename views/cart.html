@@ -13,7 +13,10 @@
 <body>
     <!-- navbar  -->
     <nav class="navbar">
-        <ul class="menu-list">
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="menu-list" id="menu">
             <li><a href="#">Home</a></li>
             <li><a href="#">Products</a></li>
             <li><a href="#">About Us</a></li>
@@ -26,14 +29,24 @@
                 <a href="/cart"><i class="fa fa-cart-plus active"></i></a>
             </li>
         </ul>
+        <ul class="menu-list-responsive">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">About Us</a></li>
+        </ul>
     </nav>
 
     <!-- Card container  -->
-    <div class="heading">My Cart</div>
+    <div class="heading">
+        My Cart
+        <hr style="width: 70%;margin:auto">
+    </div>
+
     <div class="card-container">
     </div>
 </body>
 <script src="../scripts/cart.js"></script>
+<script src="../scripts/navbar.js"></script>
 <script src="https://kit.fontawesome.com/2c32a0aecc.js" crossorigin="anonymous"></script>
 
 </html>

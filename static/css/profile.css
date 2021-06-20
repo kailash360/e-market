@@ -108,8 +108,7 @@ i {
 
 .user-details {
     width: 85vw;
-    height: 1000px;
-    /* border: 8px solid red; */
+    height: fit-content;
     margin: 0px auto;
     padding: 1em 1em;
     display: grid;
@@ -195,4 +194,36 @@ i {
     position: relative;
     display: flex;
     flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 450px) {
+     :root {
+        --left-spacing: 0px;
+        --general-font: 1.2em;
+    }
+    .user-details-heading {
+        font-size: 3em;
+    }
+    .user-details {
+        display: flex;
+        flex-direction: column;
+        padding: 1em 0px;
+    }
+    .heading {
+        font-size: 1.5em;
+        padding-left: 0px;
+    }
+    .financial-info {
+        width: 100w;
+        margin: 1em 0px;
+    }
+    .financial-item-list {
+        width: fit-content;
+    }
+    .fin-item p {
+        font-size: 1.4em;
+    }
+    .financial-heading {
+        text-align: center;
+    }
 }
