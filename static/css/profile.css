@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap');
+* {
+    padding: 0px;
+    margin: 0px;
+    overflow-x: hidden;
+    font-family: 'Nunito Sans'
+}
+
+:root {
+    --left-spacing: 1em;
+    --general-font: 1.5em
+}
+
+i {
+    vertical-align: middle;
+}
+
+.fa-phone {
+    transform: rotate(90deg);
+}
+
+.fa-pencil-square-o:hover {
+    color: rgb(0, 128, 122);
+}
+
+[contenteditable] {
+    outline: 0px solid transparent;
+}
+
+
+/* For image section  */
+
+.image-container {
+    width: 100vw;
+    height: fit-content;
+    background-color: black;
+    padding: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.image-container img {
+    height: 10em;
+    width: 10em;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 15px;
+}
+
+.name-section {
+    width: fit-content;
+    height: fit-content;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    padding: 0.1em 2em;
+}
+
+.name-section h2 {
+    text-align: center;
+    color: white;
+    font-size: 250%;
+}
+
+.edit-name {
+    background-color: white;
+    vertical-align: middle;
+    border-radius: 50%;
+    font-size: 120%;
+    height: 1.8em;
+    width: 1.8em;
+    overflow: hidden;
+    border: none;
+}
+
+.edit-name:hover {
+    color: rgb(0, 128, 122);
+}
+
+.edit-name:active {
+    transform: scale(1.01);
+}
+
+
+/* For user details  */
+
+.heading {
+    font-size: 2em;
+    font-weight: bolder;
+    padding-left: 0.8em;
+    margin-bottom: 0.3em;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.heading section {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.user-details-heading,
+.financial-heading {
+    font-size: 420%;
+    font-weight: bold;
+    margin-left: 0.2em;
+}
+
+.user-details {
+    width: 85vw;
+    height: 1000px;
+    /* border: 8px solid red; */
+    margin: 0px auto;
+    padding: 1em 1em;
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+}
+
+.user-contact {
+    height: fit-content;
+    width: inherit;
+    /* border: 5px solid goldenrod; */
+}
+
+.user-email,
+.user-phone,
+.user-address-section {
+    margin-top: 1em;
+    padding: 0.1em 1em;
+}
+
+.user-email p,
+.user-phone p {
+    font-size: var(--general-font);
+    padding-left: var(--left-spacing);
+}
+
+.user-address-section div {
+    margin-top: 1em;
+}
+
+.user-address-section div p {
+    font-size: var(--general-font);
+    padding-left: var(--left-spacing);
+}
+
+
+/* For save changes button  */
+
+.save-change-btn {
+    margin-top: 1em;
+    margin-left: 1em;
+    font-size: 120%;
+    background-color: black;
+    color: white;
+    padding: 0.3em 0.5em;
+    font-weight: bolder;
+    border-radius: 0.2em;
+}
+
+.hide-btn {
+    display: none;
+}
+
+.save-change-btn:active {
+    color: rgb(0, 201, 201);
+}
+
+
+/* For financial info  */
+
+.financial-heading {
+    margin-top: 2.9em;
+    font-size: 2.2em;
+    text-align: center;
+}
+
+.financial-item-list {
+    width: 65%;
+    margin: 0px auto;
+}
+
+.fin-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0.5em 0px;
+}
+
+.fin-item p {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.fin-item-value {
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+}

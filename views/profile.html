@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/profile.css">
+    <title>User Profile</title>
+</head>
+
+<body>
+
+    <!-- For user image  -->
+    <div class="image-container">
+        <img src="../static/media/user-image.png" alt="">
+        <div class="name-section">
+            <h2 id="user-name">Andy Jones</h2>
+        </div>
+        <button class="edit-name" id="edit-name-btn" name="edit-name" type="button"><i class="fa fa-pencil"></i></button>
+    </div>
+
+    <!-- For user details  -->
+    <div class="user-details">
+
+        <!-- For basic information  -->
+        <div>
+            <div class="user-details-heading">
+                My Details
+            </div>
+
+            <!-- Contact information of user  -->
+            <div class="user-contact">
+                <div class="user-email">
+                    <div class="heading">
+                        <span>
+                            <i class="fa fa-envelope-o"></i> Email
+                        </span>
+                        <section>
+                            <i class="fa fa-pencil-square-o" id="edit-email-btn"></i>
+                        </section>
+                    </div>
+                    <hr>
+                    <p id="user-email">randomperson@gmail.com</p>
+                </div>
+
+                <div class="user-phone ">
+                    <div class="heading ">
+                        <span>
+                            <i class="fa fa-phone "></i> Contact No. 
+                        </span>
+                        <section>
+                            <i class="fa fa-pencil-square-o" id="edit-phone-btn"></i>
+                        </section>
+                    </div>
+                    <hr>
+                    <p id="user-phone">+91 987654321</p>
+                </div>
+            </div>
+
+
+            <!-- Address of user  -->
+            <div class="user-address-section">
+                <div>
+                    <div class="heading ">
+                        <span>
+                            <i class="fa fa-home "></i> Address 1
+                        </span>
+                        <section>
+                            <i class="fa fa-pencil-square-o" id="edit-address-btn"></i>
+                        </section>
+                    </div>
+                    <hr>
+                    <p class="user-address">
+                        4124 Plainfield Avenue<br> Utica <br> NY <br> New York <br> ZIP-13502
+                    </p>
+                </div>
+
+                <div>
+                    <div class="heading ">
+                        <span><i class="fa fa-home "></i> Address 2</span></div>
+                    <hr>
+                    <p class="user-address">
+                        3863 Weekley Street<br> San Antonio <br> TX <br> Texas <br> ZIP-78258
+                    </p>
+                </div>
+            </div>
+
+            <button class="save-change-btn hide-btn " id="save-change-btn " type="button " name="save-change-button ">Save Changes</button>
+        </div>
+
+        <div>
+            <!-- For financial info  -->
+            <div class="financial-info ">
+                <div class="financial-heading heading ">
+                    <span><i class="fas fa-coins "></i> &nbspMy Finances</span>
+                </div>
+                <hr style="width:70%; margin: auto; " />
+                <ul class="financial-item-list ">
+                    <li class="fin-item ">
+                        <p>Total Supercoins</p>
+                        <p class="fin-item-value ">68</p>
+                    </li>
+                    <li class="fin-item ">
+                        <p>Total Savings</p>
+                        <p class="fin-item-value ">Rs.1200</p>
+                    </li>
+                    <li class="fin-item ">
+                        <p>Additional Coupons</p>
+                        <p class="fin-item-value ">2</p>
+                    </li>
+                    <li class="fin-item ">
+                        <p>Total Reviews</p>
+                        <p class="fin-item-value ">17</p>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+<script src="https://kit.fontawesome.com/2c32a0aecc.js " crossorigin="anonymous "></script>
+<script src="../scripts/profile.js "></script>
+
+</html>
