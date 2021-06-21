@@ -21,28 +21,36 @@
 }
 
 .slogan-section img {
-    height: 500px;
+    height: 80vh;
     width: 100vw;
-    opacity: 0.5;
     object-fit: cover;
 }
 
 .slogan {
     font-size: 4em;
     font-weight: bolder;
-    text-align: left;
+    text-align: right;
+    color: white;
     padding-top: 2em;
     padding-left: 0.5em;
     position: absolute;
     top: 2em;
+    right: 5%;
 }
 
 .subscript {
+    color: white;
     font-size: 2em;
     font-weight: bolder;
-    text-align: left;
+    text-align: right;
     padding-left: 5em;
     padding-top: 2em;
     position: absolute;
     top: 9em;
+    right: 5%;
+}
+
+.about-section {
+    padding: 1em 2em;
+    font-size: 1.5em;
 }
