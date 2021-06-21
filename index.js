@@ -61,6 +61,4 @@ app.get("/seller-about-us", (req, res) => {
 })
 
 
-app.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
-});
+app.listen(process.env.PORT || port)
