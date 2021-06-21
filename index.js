@@ -55,6 +55,11 @@ app.get("/seller-products", (req, res) => {
     res.end(fs.readFileSync("./views/seller-products.html"))
 })
 
+//Serving about to seller
+app.get("/seller-about-us", (req, res) => {
+    res.end(fs.readFileSync("./views/seller-about-us.html"))
+})
+
 
 app.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
