@@ -16,6 +16,18 @@ app.use(express.urlencoded())
 app.set('view engine', 'html')
 app.set('views', path.join(__dirname, 'views'))
 
+
+// For customer 
+//Serving home
+app.get("/home", (req, res) => {
+    res.end(fs.readFileSync("./views/home.html"))
+})
+
+//Serving profile
+app.get("/", (req, res) => {
+    res.end(fs.readFileSync("./views/home.html"))
+})
+
 //Serving profile
 app.get("/profile", (req, res) => {
     res.end(fs.readFileSync("./views/profile.html"))
@@ -26,6 +38,27 @@ app.get("/cart", (req, res) => {
     res.end(fs.readFileSync("./views/cart.html"))
 })
 
-app.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
-});
+//Serving about
+app.get("/about", (req, res) => {
+    res.end(fs.readFileSync("./views/about.html"))
+})
+
+
+// For seller 
+//Serving profile
+app.get("/seller-profile", (req, res) => {
+    res.end(fs.readFileSync("./views/seller-profile.html"))
+})
+
+//Serving products to seller
+app.get("/seller-products", (req, res) => {
+    res.end(fs.readFileSync("./views/seller-products.html"))
+})
+
+//Serving about to seller
+app.get("/seller-about-us", (req, res) => {
+    res.end(fs.readFileSync("./views/seller-about-us.html"))
+})
+
+
+app.listen(process.env.PORT || port)

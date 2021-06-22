@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../static/css/navbar.css">
+    <link rel="stylesheet" href="../static/css/seller.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="menu-list" id="menu">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/seller-products" class="active">My Products</a></li>
+            <li><a href="/seller-about-us">About Us</a></li>
+        </ul>
+        <ul class="nav-end">
+            <li>
+                <a href="/seller-profile"><i class="fa fa-user"></i></a>
+            </li>
+        </ul>
+        <ul class="menu-list-responsive">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/seller-products" class="active">My Products</a></li>
+            <li><a href="/seller-about-us">About Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- input section  -->
+    <div class="input-section">
+        <div class="heading">Add a new product</div>
+        <hr class="hr1">
+        <form action="submit" class="input-form">
+            <input type="text" class="product-name" placeholder="Name of the product">
+            <input type="number" class="product-price" placeholder="Price">
+            <input type="number" class="product-quantity" placeholder="Quantity">
+            <input type="text" class="additional-data" placeholder="About the product">
+            <button class="add-product-btn" type="button" id="add-product-btn">Add Product</button>
+        </form>
+    </div>
+
+    <!-- product-list section  -->
+    <div class="product-section">
+        <div class="heading">My Products</div>
+        <hr class="hr1">
+        <div class="product-heading-container">
+            <ul class="product-name-list">
+                <li class="product-item">
+                    <p class="item-name">Name</p>
+                    <p class="item-price">Price</p>
+                    <p class="item-quantity">Quantity</p>
+                    <p class="item-additional-info">Additional Information</p>
+                </li>
+            </ul>
+        </div>
+        <hr class="hr2">
+        <!-- Products are listed here -->
+        <div class="product-list-container">
+            <ul class="product-list">
+            </ul>
+            <div class="empty-list">
+                <i class="far fa-frown" style="font-size: 3em;"></i>
+                <br> Oops! It looks like you haven 't added anything to your products..
+                <br> Enlist a product from 'Add a new product' section
+                <br> Happy Selling
+            </div>
+
+        </div>
+    </div>
+</body>
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/seller.js"></script>
+<script src="https://kit.fontawesome.com/2c32a0aecc.js" crossorigin="anonymous"></script>
+
+</html>

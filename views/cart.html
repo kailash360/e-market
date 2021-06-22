@@ -5,18 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/cart.css">
     <link rel="stylesheet" href="../static/css/navbar.css">
+    <link rel="stylesheet" href="../static/css/cart.css">
     <title>My Cart</title>
 </head>
 
 <body>
     <!-- navbar  -->
     <nav class="navbar">
-        <ul class="menu-list">
-            <li><a href="#">Home</a></li>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="menu-list" id="menu">
+            <li><a href="/home">Home</a></li>
             <li><a href="#">Products</a></li>
-            <li><a href="#">About Us</a></li>
+            <li><a href="/about">About Us</a></li>
         </ul>
         <ul class="nav-end">
             <li>
@@ -26,14 +29,24 @@
                 <a href="/cart"><i class="fa fa-cart-plus active"></i></a>
             </li>
         </ul>
+        <ul class="menu-list-responsive">
+            <li><a href="/home">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="/about">About Us</a></li>
+        </ul>
     </nav>
 
     <!-- Card container  -->
-    <div class="heading">My Cart</div>
+    <div class="heading">
+        My Cart
+        <hr style="width: 70%;margin:auto">
+    </div>
+
     <div class="card-container">
     </div>
 </body>
 <script src="../scripts/cart.js"></script>
+<script src="../scripts/navbar.js"></script>
 <script src="https://kit.fontawesome.com/2c32a0aecc.js" crossorigin="anonymous"></script>
 
 </html>

@@ -2,6 +2,13 @@
 
 Webkriti Project 
 
+## Host Link
+> https://e-market-site.herokuapp.com/
+
+> https://e-market-site.herokuapp.com/profile
+
+> https://e-market-site.herokuapp.com/seller-profile
+
 ## To install the project into your device
 #### 1. Clone the project into your local device
 #### 2. Open VS-Code terminal inside that folder

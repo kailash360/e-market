@@ -1,23 +1,24 @@
 {
-  "name": "e-market",
-  "version": "1.0.0",
-  "description": "An e-commerce platform for Webkriti,made by Web-Warriors",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kailash360/e-market.git"
-  },
-  "author": "Kailash,Gurpreet,Gaurav",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kailash360/e-market/issues"
-  },
-  "homepage": "https://github.com/kailash360/e-market#readme",
-  "dependencies": {
-    "express": "^4.17.1",
-    "nodemon": "^2.0.7"
-  }
+    "name": "e-market",
+    "version": "1.0.0",
+    "description": "An e-commerce platform for Webkriti,made by Web-Warriors",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kailash360/e-market.git"
+    },
+    "author": "Kailash,Gurpreet,Gaurav",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/kailash360/e-market/issues"
+    },
+    "homepage": "https://github.com/kailash360/e-market#readme",
+    "dependencies": {
+        "express": "^4.17.1",
+        "nodemon": "^2.0.7"
+    }
 }
