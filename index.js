@@ -23,6 +23,11 @@ app.get("/home", (req, res) => {
     res.end(fs.readFileSync("./views/home.html"))
 })
 
+//Serving login
+app.get("/customer-login", (req, res) => {
+    res.end(fs.readFileSync("./views/customer-login.html"))
+})
+
 //Serving profile
 app.get("/", (req, res) => {
     res.end(fs.readFileSync("./views/home.html"))
@@ -45,6 +50,11 @@ app.get("/about", (req, res) => {
 
 
 // For seller 
+//Serving login to seller
+app.get("/seller-login", (req, res) => {
+    res.end(fs.readFileSync("./views/seller-login.html"))
+})
+
 //Serving profile
 app.get("/seller-profile", (req, res) => {
     res.end(fs.readFileSync("./views/seller-profile.html"))

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,36 +8,37 @@
     <title>Login/Sign-Up</title>
     <link rel="stylesheet" href="../static/css/login.css">
 </head>
+
 <body>
     <div class="form-modal">
-    
+
         <div class="form-toggle">
             <button id="login-toggle" onclick="toggleLogin()">log in</button>
             <button id="signup-toggle" onclick="toggleSignup()">sign up</button>
         </div>
-    
+
         <div id="login-form">
-            <form>
-                <input type="text" placeholder="Enter email or username"/>
-                <input type="password" placeholder="Enter password"/>
-                <button type="button" class="btn login">login</button>
+            <form action="/profile">
+                <input type="text" placeholder="Enter email or username" />
+                <input type="password" placeholder="Enter password" />
+                <button type="submit" class="btn login">login</button>
                 <!-- <p><a href="#" onclick="toggleSignup()">Register Account</a> </p> -->
-              
             </form>
         </div>
-    
+
         <div id="signup-form">
             <form>
-                <input type="email" placeholder="Enter your email"/>
-                <input type="text" placeholder="Choose username"/>
-                <input type="password" placeholder="Create password"/>
+                <input type="email" placeholder="Enter your email" />
+                <input type="text" placeholder="Choose username" />
+                <input type="password" placeholder="Create password" />
                 <button type="button" class="btn signup"><i class="fa fa-spinner fa-pulse"></i> create account
-              </button> 
-                
+              </button>
+
             </form>
         </div>
         <p class="Identifier"><a class="loginAs" href="/seller-login">Log in as a Seller</a></p>
     </div>
-<script src="../scripts/login.js"></script>
+    <script src="../scripts/login.js"></script>
 </body>
+
 </html>
