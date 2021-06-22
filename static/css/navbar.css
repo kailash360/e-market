@@ -1,8 +1,9 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 .navbar {
     width: inherit;
     height: fit-content;
@@ -82,7 +83,7 @@
 
 @media screen and (max-width: 450px) {
     .navbar {
-        width: 120vw;
+        width: 105vw;
         grid-template-columns: 1fr 1fr;
     }
     .menu-list {
@@ -91,8 +92,5 @@
     .hamburger {
         display: block;
         width: 60%;
-    }
-    .nav-end {
-        margin-right: 36%;
     }
 }

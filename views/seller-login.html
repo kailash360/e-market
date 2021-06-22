@@ -27,11 +27,11 @@
         </div>
 
         <div id="signup-form">
-            <form>
-                <input type="email" placeholder="Enter your email" />
-                <input type="text" placeholder="Choose username" />
-                <input type="password" placeholder="Create password" />
-                <button type="button" class="btn signup"><i class="fa fa-spinner fa-pulse"></i> create account
+            <form action="/seller-sign-up" method="POST">
+                <input type="email" name="email" placeholder="Enter your email" />
+                <input type="text" name="username" placeholder="Choose username" />
+                <input type="password" name="password" placeholder="Create password" />
+                <button type="submit" class="btn signup"><i class="fa fa-spinner fa-pulse"></i> create account
               </button>
 
             </form>

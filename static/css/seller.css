@@ -112,8 +112,6 @@ hr {
 
 /* Product section of the container  */
 
-.product-heading-container {}
-
 .product-name-list {
     width: fit-content;
     margin: 0px auto;
@@ -194,7 +192,7 @@ hr {
 }
 
 .quantity {
-    width: 13vw;
+    width: 11vw;
 }
 
 .additional-info {
@@ -266,9 +264,6 @@ hr {
         width: 100%;
         padding-left: 0px;
     }
-    .product-item {
-        /* padding-left: 0.1em; */
-    }
     .product-item p {
         font-size: 1em;
         margin-right: 0.3em;
@@ -286,7 +281,6 @@ hr {
     .item-additional-info {
         width: 30vw;
     }
-    .product-list-container {}
     .hr2 {
         width: 90%;
     }
