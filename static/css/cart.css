@@ -121,4 +121,7 @@
     .availability {
         font-size: 1em;
     }
+    .nav-end {
+        margin-right: -5%;
+    }
 }

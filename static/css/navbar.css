@@ -58,6 +58,7 @@
 .nav-end li {
     font-size: 1.8em;
     margin: auto 0.5em;
+    color: white;
 }
 
 .nav-end li a {
@@ -75,12 +76,17 @@
 
 @media screen and (max-width: 450px) {
     .navbar {
-        width: 130vw;
+        width: 120vw;
+        grid-template-columns: 1fr 1fr;
     }
     .menu-list {
         display: none;
     }
     .hamburger {
         display: block;
+        width: 60%;
+    }
+    .nav-end {
+        margin-right: 36%;
     }
 }
