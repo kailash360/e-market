@@ -1,4 +1,5 @@
 const express = require("express")
+const { Client } = require('pg');
 const fs = require('fs')
 const path = require("path")
 const bodyparser = require("body-parser")
@@ -17,6 +18,22 @@ app.set('view engine', 'html')
 app.set('views', path.join(__dirname, 'views'))
 
 
+//PostgreSQL
+const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false
+    },
+
+    user: 'gzdhpxgojwvlyv',
+    host: 'ec2-52-0-114-209.compute-1.amazonaws.com',
+    database: 'd7fmtdqnohercb',
+    password: '8272c821e2c98357afe7cb18d6279f28626a9875d442a3a47e27222bfe5494e8',
+    port: 5432,
+});
+
+client.connect();
+
 // For customer 
 //Serving home
 app.get("/home", (req, res) => {
@@ -26,6 +43,21 @@ app.get("/home", (req, res) => {
 //Serving login
 app.get("/customer-login", (req, res) => {
     res.end(fs.readFileSync("./views/customer-login.html"))
+})
+
+//Signing up user
+app.post("/customer-sign-up", (req, res) => {
+
+    let sign_up_query = `insert into customers(email,username,password) values ('${req.body.email}','${req.body.username}','${req.body.password}')`
+    client
+        .query(sign_up_query)
+        .then(response => {
+            console.log(`${req.body} registered in the database successfully!`);
+            res.end(fs.readFileSync("./views/signed-up.html"))
+        })
+        .catch(err => {
+            console.error(err);
+        });
 })
 
 //Serving profile
