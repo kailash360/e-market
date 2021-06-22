@@ -11,34 +11,40 @@
     --general-font: 1.5em
 }
 
-i {
+i{
     vertical-align: middle;
 }
 
+.fa-store, .fa-phone, .fa-envelope-o, .fa-home, .fa-coins {
+    color: #000000;
+}
 .fa-phone {
     transform: rotate(90deg);
 }
 
 .fa-pencil-square-o:hover {
-    color: rgb(0, 128, 122);
+    color: #FA24FA;
+}
+.fa-pencil-square-o{
+    color: #000000;
 }
 
 [contenteditable] {
     outline: 0px solid transparent;
 }
 
-
 /* For image section  */
 
 .image-container {
     width: 100vw;
     height: fit-content;
-    background-color: black;
+    background: linear-gradient(to bottom right, #6609B8,#FA24FA);
     padding: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-bottom: 10px;
+    box-shadow: 0 0 15px black;
 }
 
 .image-container img {
@@ -48,6 +54,7 @@ i {
     border-radius: 50%;
     margin-top: 15px;
     background-color: white;
+    box-shadow: 0px 0px 15px 0px black;
 }
 
 .name-section {
@@ -76,13 +83,12 @@ i {
 }
 
 .edit-name:hover {
-    color: rgb(0, 128, 122);
+    color: #FA24FA;
 }
 
 .edit-name:active {
     transform: scale(1.01);
 }
-
 
 /* For user details  */
 
@@ -119,14 +125,37 @@ i {
 .user-contact {
     height: fit-content;
     width: inherit;
-    /* border: 5px solid goldenrod; */
 }
+
 
 .user-email,
 .user-phone,
 .user-address-section {
-    margin-top: 1em;
-    padding: 0.1em 1em;
+    margin: 1rem;
+    padding: 1rem 1rem;
+    border-radius: 0.5rem;
+    color: black;
+    border: 4px solid rgba(0, 0, 0, 0.26);
+    transition: 0.5s;
+}
+
+.user-contact{
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.user-email:hover,
+.user-phone:hover,
+.user-address-section:hover {
+    border: 4px solid #FA24FA;
+    box-shadow: 0 0 0.7rem 0px rgba(0, 0, 0, 0.377);
+    transform: scale(1.02);
+}
+
+.user-email span,
+.user-phone span,
+.user-address-section span {
+    color: black; 
 }
 
 .user-email p,
@@ -136,7 +165,7 @@ i {
 }
 
 .user-address-section div {
-    margin-top: 1em;
+    margin-top: 1rem;
 }
 
 .user-address-section div p {
@@ -150,12 +179,19 @@ i {
 .save-change-btn {
     margin-top: 1em;
     margin-left: 1em;
-    font-size: 120%;
-    background-color: black;
+    font-size: 110%;
+    background:  linear-gradient(to right bottom,#6609B8,#FA24FA );
     color: white;
-    padding: 0.3em 0.5em;
+    padding: 1rem 1rem;
     font-weight: bolder;
-    border-radius: 0.2em;
+    border-radius: 2rem;
+    transition: 1s;
+    border: none;
+}
+
+.save-change-btn:hover{
+    background:black;
+    cursor: pointer;
 }
 
 .hide-btn {
@@ -163,14 +199,25 @@ i {
 }
 
 .save-change-btn:active {
-    color: rgb(0, 201, 201);
+    color: black;
 }
 
 
 /* For financial info  */
-
+.financial-info{
+    background: white;
+    border-radius: 0.5rem;
+    margin: 6rem;
+    border: 4px solid rgba(0, 0, 0, 0.26);
+    transition: 0.5s;
+}
+.financial-info:hover{
+    border: 4px solid #FA24FA;
+    box-shadow: 0 0 0.7rem 0px rgba(0, 0, 0, 0.377);
+    transform: scale(1.02);
+}
 .financial-heading {
-    margin-top: 2.9em;
+    /* margin-top: 2.9em; */
     font-size: 2.2em;
     text-align: center;
 }
@@ -227,4 +274,8 @@ i {
     .financial-heading {
         text-align: center;
     }
+}
+
+hr{
+    color: black;
 }
