@@ -23,7 +23,8 @@ fetch(url).then((response) => {
                     </div>
                     <button class="buy-now" id="buy-now" type="button">BUY NOW</button>
                 </div>
-            </div> */
+            </div> 
+    */
 
 
     cart_items.forEach(element => {
