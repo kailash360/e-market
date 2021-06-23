@@ -1,0 +1,39 @@
+.footer {
+    width: 100vw;
+    height: fit-content;
+    padding: 0.8em;
+    background-color: black;
+    position: absolute;
+    bottom: 0px;
+}
+
+.footer-item {
+    margin: 0px auto;
+    color: white;
+    text-align: center;
+}
+
+.footer-item a {
+    font-size: 1em;
+    color: white;
+    margin-right: 0.3em;
+    text-decoration: none;
+}
+
+.footer-item a:hover {
+    text-decoration: underline;
+}
+
+.footer-item span a i {
+    font-size: 1.5em;
+    color: white;
+    background-color: transparent;
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 450px) {
+    .footer-item {
+        display: flex;
+        flex-direction: column;
+    }
+}
