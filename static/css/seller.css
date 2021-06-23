@@ -316,6 +316,6 @@ hr {
     }
     .footer {
         position: absolute;
-        bottom: 0px;
+        top: 100%
     }
 }
