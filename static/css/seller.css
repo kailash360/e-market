@@ -314,4 +314,8 @@ hr {
         padding-right: 0.8em;
         margin-left: auto;
     }
+    .footer {
+        position: absolute;
+        bottom: 0px;
+    }
 }
