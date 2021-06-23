@@ -34,7 +34,7 @@ i {
     animation-delay: 0.5s;
 }
 
-@-webkit-keyframes scale-up-center {
+@keyframes scale-up-center {
     0% {
         transform: scale(0.5);
     }
@@ -43,11 +43,11 @@ i {
     }
 }
 
-@keyframes scale-up-center {
-    0% {
-        transform: scale(0.5);
+@media screen and (max-width:450px) {
+    .message {
+        font-size: 8vw;
     }
-    100% {
-        transform: scale(1.1);
+    .link {
+        font-size: 6vw;
     }
 }
