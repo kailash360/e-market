@@ -106,6 +106,20 @@ app.post("/seller-sign-up", (req, res) => {
         });
 })
 
+//Logging in seller
+app.post("/seller-logging", async(req, res) => {
+    let search_query = `select * from sellers where (email='${req.body.username}' OR username='${req.body.username}') AND password='${req.body.password}'`
+    client
+        .query(search_query)
+        .then(response => {
+            if (response.rows.length == 0) {
+                res.end(fs.readFileSync("./views/invalid-login.html"))
+            } else {
+                res.end(fs.readFileSync("./views/seller-profile.html"))
+            }
+        })
+})
+
 //Serving login to seller
 app.get("/seller-login", (req, res) => {
     res.end(fs.readFileSync("./views/seller-login.html"))

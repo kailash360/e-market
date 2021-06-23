@@ -18,9 +18,9 @@
         </div>
 
         <div id="login-form">
-            <form action="/seller-profile">
-                <input type="text" placeholder="Enter email or username" />
-                <input type="password" placeholder="Enter password" />
+            <form action="/seller-logging" method="POST">
+                <input type="text" name="username" placeholder="Enter email or username" />
+                <input type="password" name="password" placeholder="Enter password" />
                 <button class="btn login" type="submit">login</button>
                 <!-- <p><a href="#" onclick="toggleSignup()">Register Account</a> </p> -->
             </form>
