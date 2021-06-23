@@ -39,10 +39,22 @@
         <div class="heading">Add a new product</div>
         <hr class="hr1">
         <form action="submit" class="input-form">
-            <input type="text" class="product-name" placeholder="Name of the product">
-            <input type="number" class="product-price" placeholder="Price">
-            <input type="number" class="product-quantity" placeholder="Quantity">
-            <input type="text" class="additional-data" placeholder="About the product">
+            <span>
+                <label for="name" class="label">Name</label>
+                <input type="text" name="name" id="name" class="product-name" placeholder="">
+            </span>
+            <span>
+                <label for="name" class="label">Price</label>
+                <input type="number" name="price" id="price" class="product-price" placeholder="">
+            </span>
+            <span>
+                <label for="name" class="label">Quantity</label>
+                <input type="number" name="quantity" id="quantity" class="product-quantity" placeholder="">
+            </span>
+            <span>
+                <label for="name" class="label">Features</label>
+                <input type="text" name="extra" id="extra" class="additional-data" placeholder="">
+            </span>
             <button class="add-product-btn" type="button" id="add-product-btn">Add Product</button>
         </form>
     </div>

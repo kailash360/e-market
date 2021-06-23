@@ -7,7 +7,7 @@ let empty_list = document.querySelector(".empty-list")
 add_product.addEventListener("click", () => {
 
     empty_list.style.display = "none"
-    product_list.style.minHeight = "30vh"
+    product_list.style.marginBottom = "30vh"
 
     //fetching input values from page
     let item_name = document.querySelector(".product-name").value
