@@ -3,6 +3,7 @@ const { Client } = require('pg');
 const fs = require('fs')
 const path = require("path")
 const bodyparser = require("body-parser")
+const bcrypt = require("bcrypt")
 const app = express()
 require('dotenv').config()
 const hostname = '127.0.0.1';
@@ -39,22 +40,37 @@ app.get("/customer-login", (req, res) => {
 
 //Logging in user
 app.post("/customer-logging", async(req, res) => {
-    let search_query = `select * from customers where (email='${req.body.username}' OR username='${req.body.username}') AND password='${req.body.password}'`
+    let search_query = `select * from customers where (email='${req.body.username}' OR username='${req.body.username}')`
     client
         .query(search_query)
         .then(response => {
-            if (response.rows.length == 0) {
-                res.end(fs.readFileSync("./views/invalid-login.html"))
-            } else {
-                res.end(fs.readFileSync("./views/profile.html"))
-            }
+            //Matching passwords
+            bcrypt.compare(req.body.password, response.rows[0].password, function(err, result) {
+                console.log(result)
+                if (result != true) {
+                    res.end(fs.readFileSync("./views/invalid-login.html"))
+                } else {
+                    res.end(fs.readFileSync("./views/profile.html"))
+                }
+            })
         })
 })
 
 //Signing up user
-app.post("/customer-sign-up", (req, res) => {
+app.post("/customer-sign-up", async(req, res) => {
 
-    let sign_up_query = `insert into customers(email,username,password) values ('${req.body.email}','${req.body.username}','${req.body.password}')`
+    //Checking if user already exits
+    const result = await client
+        .query(`Select * from customers where username='${req.body.username}'`)
+        .then(response => {
+            if (response.rows.length > 0) {
+                res.send({ message: "Username already exists" })
+            }
+        })
+
+    //If user does not exist, then insert into database
+    let hashed_pwd = await bcrypt.hash(req.body.password, 10)
+    let sign_up_query = `insert into customers(email,username,password) values ('${req.body.email}','${req.body.username}','${hashed_pwd}')`
     client
         .query(sign_up_query)
         .then(response => {
@@ -89,12 +105,24 @@ app.get("/about", (req, res) => {
 
 // For seller 
 //Signing up the seller
-app.post("/seller-sign-up", (req, res) => {
-    let sign_up_query = `insert into sellers(email,username,password) values ('${req.body.email}','${req.body.username}','${req.body.password}')`
+app.post("/seller-sign-up", async(req, res) => {
+
+    //Checking if user already exits
+    const result = await client
+        .query(`Select * from sellers where username='${req.body.username}'`)
+        .then(response => {
+            if (response.rows.length > 0) {
+                res.send({ message: "Username already exists" })
+            }
+        })
+
+    //If user does not exist, then insert into database
+    let hashed_pwd = await bcrypt.hash(req.body.password, 10)
+    let sign_up_query = `insert into sellers(email,username,password) values ('${req.body.email}','${req.body.username}','${hashed_pwd}')`
     client
         .query(sign_up_query)
         .then(response => {
-            console.log(`${req.body} registered in the database successfully!`);
+            // console.log(`${req.body} registered in the database successfully!`);
             res.end(fs.readFileSync("./views/seller-signed-up.html"))
         })
         .catch(err => {
@@ -104,15 +132,18 @@ app.post("/seller-sign-up", (req, res) => {
 
 //Logging in seller
 app.post("/seller-logging", async(req, res) => {
-    let search_query = `select * from sellers where (email='${req.body.username}' OR username='${req.body.username}') AND password='${req.body.password}'`
+    let search_query = `select * from sellers where (email='${req.body.username}' OR username='${req.body.username}')`
     client
         .query(search_query)
         .then(response => {
-            if (response.rows.length == 0) {
-                res.end(fs.readFileSync("./views/invalid-login.html"))
-            } else {
-                res.end(fs.readFileSync("./views/seller-profile.html"))
-            }
+            //Matching passwords
+            bcrypt.compare(req.body.password, response.rows[0].password, function(err, result) {
+                if (result != true) {
+                    res.end(fs.readFileSync("./views/invalid-login.html"))
+                } else {
+                    res.end(fs.readFileSync("./views/seller-profile.html"))
+                }
+            })
         })
 })
 
