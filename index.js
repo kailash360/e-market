@@ -4,6 +4,7 @@ const fs = require('fs')
 const path = require("path")
 const bodyparser = require("body-parser")
 const app = express()
+require('dotenv').config()
 const hostname = '127.0.0.1';
 const port = 80;
 
@@ -13,11 +14,6 @@ const client = new Client({
     ssl: {
         rejectUnauthorized: false
     },
-    user: 'gzdhpxgojwvlyv',
-    host: 'ec2-52-0-114-209.compute-1.amazonaws.com',
-    database: 'd7fmtdqnohercb',
-    password: '8272c821e2c98357afe7cb18d6279f28626a9875d442a3a47e27222bfe5494e8',
-    port: 5432,
 });
 client.connect();
 
