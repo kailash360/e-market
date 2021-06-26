@@ -23,7 +23,7 @@ add_product.addEventListener("click", async() => {
     }
 
     //Checking if price and quantity are names only
-    if (item_price.matches(letters) || item_quantity.matches(letters)) {
+    if (letters.test(item_price) || letters.test(item_quantity)) {
         alert("Price and Quantity should be numbers only")
         return
     }
@@ -54,9 +54,6 @@ add_product.addEventListener("click", async() => {
 //Function to show the products
 async function show_products() {
 
-    empty_list.style.display = "none"
-    product_list.style.marginBottom = "30vh"
-
     //Fetching product data
     await fetch("/show-products", {
         method: "POST",
@@ -68,7 +65,15 @@ async function show_products() {
         return response.json()
     }).then(response => {
         data = JSON.parse(JSON.stringify(response))
-        product_list.innerText = ""
+
+        //Changes before data will be displayed
+        if (data.length > 0) {
+            empty_list.style.display = "none"
+            product_list.style.marginBottom = "30vh"
+            product_list.innerText = ""
+        }
+
+        //Displaying data
         for (element of data) {
             item_name = element.product_name
             item_price = element.product_price
