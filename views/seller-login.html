@@ -18,20 +18,20 @@
         </div>
 
         <div id="login-form">
-            <form action="/seller-logging" method="POST">
-                <input type="text" name="username" placeholder="Enter email or username" />
-                <input type="password" name="password" placeholder="Enter password" />
-                <button class="btn login" type="submit">login</button>
-                <!-- <p><a href="#" onclick="toggleSignup()">Register Account</a> </p> -->
+            <form>
+                <input type="text" name="username" id="username" placeholder="Enter email or username" />
+                <input type="password" name="password" id="password" placeholder="Enter password" />
+                <button class="btn login" onclick="seller_login()" type="button">login</button>
             </form>
         </div>
 
         <div id="signup-form">
-            <form action="/seller-sign-up" method="POST">
-                <input type="email" name="email" placeholder="Enter your email" />
-                <input type="text" name="username" placeholder="Choose username" />
-                <input type="password" name="password" placeholder="Create password" />
-                <button type="submit" class="btn signup"><i class="fa fa-spinner fa-pulse"></i> create account
+            <form>
+                <input type="email" name="email" id="sign-up-email" placeholder="Enter your email" />
+                <input type="text" name="username" id="sign-up-username" placeholder="Choose username" />
+                <input type="password" name="password" id="sign-up-password" placeholder="Create password" />
+                <input type="password" name="confirm-password" id="sign-up-confirm-password" placeholder="Confirm password" />
+                <button type="button" onclick="seller_signup()" class="btn signup"> create account
               </button>
 
             </form>
