@@ -5,9 +5,10 @@ const path = require("path")
 const bodyParser = require("body-parser")
 const jwt = require("jsonwebtoken")
 const bcrypt = require("bcrypt")
+const seller_auth = require("./middleware");
+const { response } = require("express");
 const app = express()
 require('dotenv').config()
-const hostname = '127.0.0.1';
 const port = 80;
 
 //PostgreSQL
@@ -34,57 +35,9 @@ app.use(function(req, res, next) {
     next();
 });
 
-
 //Setting source of html files 
 app.set('view engine', 'html')
 app.set('views', path.join(__dirname, 'views'))
-
-//Function to authenticate token
-// function authenticationMiddleware(request, response, nextHandler) {
-//     const accessToken = getAccessTokenFromHeader(request);
-
-//     try {
-//         const tokenPayload = jwt.verify(accessToken, JWT_KEY);
-//         if (tokenPayload.type !== 'access') {
-//             throw new Error('wrong token type');
-//         }
-//         // new
-//         response.locals.user = tokenPayload;
-//         nextHandler();
-//     } catch (error) {
-//         response.status(401).send(error.message);
-//     }
-// }
-
-
-// let checkToken = (req, res, next) => {
-//     let token = String(req.headers['x-access-token'] || req.headers['authorization']); // Express headers are auto converted to lowercase
-//     if (token.startsWith('Bearer ')) {
-//         // Remove Bearer from string
-//         token = token.slice(7, token.length);
-//     }
-
-//     if (token) {
-//         jwt.verify(token, process.env.JWT_KEY, (err, decoded) => {
-//             if (err) {
-//                 return res.json({
-//                     success: false,
-//                     message: 'Token is not valid'
-//                 });
-//             } else {
-//                 req.decoded = decoded;
-//                 next();
-//             }
-//         });
-//     } else {
-//         return res.json({
-//             success: false,
-//             message: 'Auth token is not supplied'
-//         });
-//     }
-// };
-
-
 
 //Serving landing page
 app.get("/", (req, res) => {
@@ -157,7 +110,7 @@ app.post("/customer-sign-up", async(req, res) => {
         client
             .query(sign_up_query)
             .then(response => {
-                console.log(`${req.body} registered in the database successfully!`);
+                console.log(`Customer registered in the database successfully!`);
                 res.statusCode = 200
                 res.end()
             })
@@ -211,7 +164,7 @@ app.post("/seller-signup", async(req, res) => {
         client
             .query(sign_up_query)
             .then(response => {
-                console.log(`${req.body} registered in the database successfully!`);
+                console.log(`Seller registered in the database successfully!`);
                 res.statusCode = 200
                 res.end()
             })
@@ -238,7 +191,7 @@ app.post("/verify-seller", async(req, res) => {
                         res.statusCode = 403
                         res.end()
                     } else {
-                        jwt.sign({ 'username': req.body.username }, process.env.JWT_KEY, function(err, tokenId) {
+                        jwt.sign({ 'username': req.body.username }, process.env.JWT_KEY, { expiresIn: '1h' }, function(err, tokenId) {
                             if (err) {
                                 return
                             }
@@ -263,6 +216,45 @@ app.get("/seller-signed-up", (req, res) => {
 //Serving profile
 app.get("/seller-profile", (req, res) => {
     res.end(fs.readFileSync("./views/seller-profile.html"))
+})
+
+//Adding products of seller
+app.post("/add-product", seller_auth, async(req, res) => {
+    client
+        .query(`insert into seller_products(username,product_name,product_price,product_quantity,product_info) values ('${req.locals.seller_username}','${req.body.item_name}','${req.body.item_price}','${req.body.item_quantity}','${req.body.item_data}')`)
+        .then(response => {
+            res.statusCode = 201
+            res.end()
+        })
+})
+
+//Displaying the products to seller
+app.post("/show-products", seller_auth, async(req, res) => {
+    client
+        .query(`select * from seller_products where username='${req.locals.seller_username}'`)
+        .then(response => {
+            res.send(response.rows)
+        })
+})
+
+//Updating information of an item
+app.post("/save-item", seller_auth, async(req, res) => {
+    client
+        .query(`update seller_products set product_price='${parseInt(req.body.price)}',product_quantity='${parseInt(req.body.quantity)}',product_info='${req.body.data}' where (username='${req.locals.seller_username}' AND product_name='${req.body.name}');commit;`)
+        .then(response => {
+            res.ok = true
+            res.end()
+        })
+})
+
+//Deleting information of an item
+app.post("/delete-item", seller_auth, async(req, res) => {
+    client
+        .query(`delete from seller_products where product_price='${parseInt(req.body.price)}'and product_quantity='${parseInt(req.body.quantity)}' and product_info='${req.body.data}' and username='${req.locals.seller_username}' AND product_name='${req.body.name}';commit;`)
+        .then(response => {
+            res.ok = true
+            res.end()
+        })
 })
 
 //Serving products to seller
