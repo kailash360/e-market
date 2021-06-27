@@ -75,9 +75,12 @@ app.post("/verify-customer", async(req, res) => {
                     } else {
                         jwt.sign({ 'username': req.body.username }, process.env.JWT_KEY, function(err, tokenId) {
                             if (err) {
+                                res.statusCode = 400
+                                res.end()
                                 return
                             }
                             res.json(JSON.stringify(`{"token":"${tokenId}"}`));
+                            res.end()
                         })
                     }
                 })
@@ -134,6 +137,7 @@ app.post("/customer-data", customer_auth, async(req, res) => {
         .query(`select * from customers where username='${req.locals.customer_username}'`)
         .then(response => {
             res.send(response.rows)
+            res.end()
         }).cath(err => {
             console.log(err)
             res.statusCode = 404
@@ -202,6 +206,7 @@ app.post("/seller-signup", async(req, res) => {
             })
             .catch(err => {
                 console.error(err);
+                res.end()
             });
     }
 })
@@ -225,9 +230,12 @@ app.post("/verify-seller", async(req, res) => {
                     } else {
                         jwt.sign({ 'username': req.body.username }, process.env.JWT_KEY, { expiresIn: '1h' }, function(err, tokenId) {
                             if (err) {
+                                res.statusCode = 400
+                                res.end()
                                 return
                             }
                             res.json(JSON.stringify(`{"token":"${tokenId}"}`));
+                            res.end()
                         })
                     }
                 })
@@ -241,6 +249,7 @@ app.post("/seller-data", seller_auth, async(req, res) => {
         .query(`select * from sellers where username='${req.locals.seller_username}'`)
         .then(response => {
             res.send(response.rows)
+            res.end()
         })
 })
 
@@ -293,6 +302,7 @@ app.post("/show-products", seller_auth, async(req, res) => {
         .query(`select * from seller_products where username='${req.locals.seller_username}'`)
         .then(response => {
             res.send(response.rows)
+            res.end()
         }).catch(err => {
             console.log(err)
             res.statusCode = 404
