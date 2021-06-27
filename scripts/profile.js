@@ -97,6 +97,11 @@ async function save_changes() {
     let user_address_1 = document.getElementById("user-address-1")
     let user_address_2 = document.getElementById("user-address-2")
 
+    if (user_fullname.innerText == "" || user_email == "" || user_phone == "" || user_address_1 == "") {
+        alert("Fields cannot be empty")
+        return
+    }
+
     if (!((/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/).test(user_email.innerText))) {
         alert("Invalid Email Address")
         return
