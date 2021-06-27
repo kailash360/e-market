@@ -18,13 +18,17 @@ function toggleLogin() {
 
 
 async function customer_signup() {
+    let fullname = document.getElementById("sign-up-fullname").value
     let email = document.getElementById("sign-up-email").value
     let username = document.getElementById("sign-up-username").value
+    let phone = document.getElementById("sign-up-phone").value
+    let add1 = document.getElementById("sign-up-add1").value
+    let add2 = document.getElementById("sign-up-add2").value
     let password = document.getElementById("sign-up-password").value
     let confirm_password = document.getElementById("sign-up-confirm-password").value
 
     //Making necessary checks
-    if (email == "" || username == "" || password == "" || confirm_password == "") {
+    if (fullname == "" || phone == "" || email == "" || username == "" || add1 == "" || add2 == "" || password == "" || confirm_password == "") {
         alert("Fields cannot be empty")
         return
     }
@@ -39,7 +43,7 @@ async function customer_signup() {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(({ email, username, password }))
+        body: JSON.stringify(({ fullname, email, username, phone, add1, add2, password }))
     }
 
     //Signing up the user
@@ -91,13 +95,17 @@ async function customer_login(e) {
 }
 
 async function seller_signup() {
+    let business_name = document.getElementById("sign-up-fullname").value
     let email = document.getElementById("sign-up-email").value
     let username = document.getElementById("sign-up-username").value
+    let phone = document.getElementById("sign-up-phone").value
+    let office_add = document.getElementById("sign-up-add1").value
+    let home_add = document.getElementById("sign-up-add2").value
     let password = document.getElementById("sign-up-password").value
     let confirm_password = document.getElementById("sign-up-confirm-password").value
 
     //Making necessary checks
-    if (email == "" || username == "" || password == "" || confirm_password == "") {
+    if (business_name == "" || phone == "" || email == "" || username == "" || office_add == "" || home_add == "" || password == "" || confirm_password == "") {
         alert("Fields cannot be empty")
         return
     }
@@ -112,7 +120,7 @@ async function seller_signup() {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(({ email, username, password }))
+        body: JSON.stringify(({ business_name, email, username, phone, office_add, home_add, password }))
     }
 
     //Signing up the user

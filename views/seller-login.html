@@ -27,8 +27,12 @@
 
         <div id="signup-form">
             <form>
+                <input type="text" name="fullname" id="sign-up-fullname" placeholder="Enter your business name" />
+                <input type="text" name="username" id="sign-up-username" placeholder="Choose your username" />
                 <input type="email" name="email" id="sign-up-email" placeholder="Enter your email" />
-                <input type="text" name="username" id="sign-up-username" placeholder="Choose username" />
+                <input type="tel" name="phone" id="sign-up-phone" placeholder="Enter your contact number" />
+                <textarea type="text" name="add1" id="sign-up-add1" rows="10" cols="15" placeholder="Enter your office address"></textarea>
+                <textarea type="text" name="add2" id="sign-up-add2" rows="10" cols="15" placeholder="Enter your home address"></textarea>
                 <input type="password" name="password" id="sign-up-password" placeholder="Create password" />
                 <input type="password" name="confirm-password" id="sign-up-confirm-password" placeholder="Confirm password" />
                 <button type="button" onclick="seller_signup()" class="btn signup"> create account
