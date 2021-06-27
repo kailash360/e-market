@@ -107,7 +107,7 @@ app.post("/customer-sign-up", async(req, res) => {
     //If user does not exist, then insert into database
     if (!registered) {
         let hashed_pwd = await bcrypt.hash(req.body.password, 10)
-        let sign_up_query = `insert into customers(email,username,password) values ('${req.body.email}','${req.body.username}','${hashed_pwd}')`
+        let sign_up_query = `insert into customers(user_fullname,username,email,contact_no,address_1,address_2,password) values ('${req.body.fullname}','${req.body.username}','${req.body.email}','${req.body.phone}','${req.body.add_1}','${req.body.add_2}','${hashed_pwd}')`
         client
             .query(sign_up_query)
             .then(response => {
@@ -182,7 +182,7 @@ app.post("/seller-signup", async(req, res) => {
     //If user does not exist, then insert into database
     if (!registered) {
         let hashed_pwd = await bcrypt.hash(req.body.password, 10)
-        let sign_up_query = `insert into sellers(email,username,password) values ('${req.body.email}','${req.body.username}','${hashed_pwd}')`
+        let sign_up_query = `insert into sellers(business_name,username,email,contact_no,office_address,home_address,password) values ('${req.body.business_name}','${req.body.username}','${req.body.email}','${req.body.phone}','${req.body.office_add}','${req.body.home_add}','${hashed_pwd}')`
         client
             .query(sign_up_query)
             .then(response => {
@@ -225,6 +225,29 @@ app.post("/verify-seller", async(req, res) => {
         })
 })
 
+//Serving seller data
+app.post("/seller-data", seller_auth, async(req, res) => {
+    client
+        .query(`select * from sellers where username='${req.locals.seller_username}'`)
+        .then(response => {
+            res.send(response.rows)
+        })
+})
+
+//Updating seller data
+app.post("/update-seller-data", seller_auth, async(req, res) => {
+    client
+        .query(`update sellers set business_name='${req.body.userBusinessName}',email='${req.body.userEmail}',contact_no='${req.body.userPhone}',office_address='${req.body.office_add}',home_address='${req.body.home_add}' where username='${req.locals.seller_username}'`)
+        .then(response => {
+            res.end()
+        }).catch(err => {
+            res.statusCode = 401
+            res.message = err
+            res.end()
+        })
+})
+
+
 //Serving login to seller
 app.get("/seller-login", (req, res) => {
     res.end(fs.readFileSync("./views/seller-login.html"))
@@ -260,7 +283,7 @@ app.post("/show-products", seller_auth, async(req, res) => {
 })
 
 //Updating information of an item
-app.post("/save-item", seller_auth, async(req, res) => {
+app.post("/update-item", seller_auth, async(req, res) => {
     client
         .query(`update seller_products set product_price='${parseInt(req.body.price)}',product_quantity='${parseInt(req.body.quantity)}',product_info='${req.body.data}' where (username='${req.locals.seller_username}' AND product_name='${req.body.name}');commit;`)
         .then(response => {

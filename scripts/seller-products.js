@@ -33,7 +33,7 @@ add_product.addEventListener("click", async() => {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `${window.localStorage.getItem("token")}`
+            'Authorization': `Bearer ${window.localStorage.getItem("token")}`
         },
         body: JSON.stringify(({ item_name, item_price, item_quantity, item_data }))
     }).then(response => {
@@ -59,7 +59,7 @@ async function show_products() {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `${window.localStorage.getItem("token")}`
+            'Authorization': `Bearer ${window.localStorage.getItem("token")}`
         },
     }).then(response => {
         return response.json()
@@ -162,11 +162,11 @@ async function show_products() {
 async function update_item(name, price, quantity, data) {
 
     //Make request to save the updates
-    await fetch("/save-item", {
+    await fetch("/update-item", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `${window.localStorage.getItem("token")}`
+                'Authorization': `Bearer ${window.localStorage.getItem("token")}`
             },
             body: JSON.stringify(({ name, price, quantity, data }))
         })
@@ -186,7 +186,7 @@ async function delete_item(name, price, quantity, data) {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `${window.localStorage.getItem("token")}`
+                'Authorization': `Bearer ${window.localStorage.getItem("token")}`
             },
             body: JSON.stringify(({ name, price, quantity, data }))
         })
