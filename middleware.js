@@ -15,7 +15,7 @@ client.connect();
 const seller_auth = async(req, res, next) => {
     try {
         const token = req.headers.authorization.split(" ")[1];
-        const decodedToken = jwt.verify(token, process.env.JWT_KEY);
+        const decodedToken = jwt.verify(token, "" + process.env.JWT_KEY);
         const username = decodedToken.username;
         req.locals = { 'seller_username': username }
         await client
@@ -41,7 +41,7 @@ const seller_auth = async(req, res, next) => {
 const customer_auth = async(req, res, next) => {
     try {
         const token = req.headers.authorization.split(" ")[1];
-        const decodedToken = jwt.verify(token, process.env.JWT_KEY);
+        const decodedToken = jwt.verify(token, "" + process.env.JWT_KEY);
         const username = decodedToken.username;
         req.locals = { 'customer_username': username }
         await client
