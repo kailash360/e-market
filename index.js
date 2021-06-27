@@ -5,7 +5,8 @@ const path = require("path")
 const bodyParser = require("body-parser")
 const jwt = require("jsonwebtoken")
 const bcrypt = require("bcrypt")
-const seller_auth = require("./middleware");
+const seller_auth = require("./middleware").seller_auth;
+const customer_auth = require("./middleware").customer_auth;
 const { response } = require("express");
 const app = express()
 require('dotenv').config()
@@ -123,6 +124,27 @@ app.post("/customer-sign-up", async(req, res) => {
 //Serving signed-up
 app.get("/signed-up", (req, res) => {
     res.end(fs.readFileSync("./views/signed-up.html"))
+})
+
+//Serving customer data
+app.post("/customer-data", customer_auth, async(req, res) => {
+    client
+        .query(`select * from customers where username='${req.locals.customer_username}'`)
+        .then(response => {
+            res.send(response.rows)
+        })
+})
+
+app.post("/update-customer-data", customer_auth, async(req, res) => {
+    client
+        .query(`update customers set user_fullname='${req.body.userFullName}',email='${req.body.userEmail}',contact_no='${req.body.userPhone}',address_1='${req.body.userAdd1}',address_2='${req.body.userAdd2}' where username='${req.locals.customer_username}'`)
+        .then(response => {
+            res.end()
+        }).catch(err => {
+            console.log(err)
+            res.statusCode = 401
+            res.end()
+        })
 })
 
 //Serving profile
