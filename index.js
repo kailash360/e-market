@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require("express")
 const { Client } = require('pg');
 const fs = require('fs')
@@ -9,7 +10,6 @@ const seller_auth = require("./middleware").seller_auth;
 const customer_auth = require("./middleware").customer_auth;
 const { response } = require("express");
 const app = express()
-require('dotenv').config()
 const port = 80;
 
 //PostgreSQL
