@@ -85,6 +85,7 @@ async function customer_login(e) {
             if (response.status == 200) {
                 return response.json()
             } else {
+                console.log(response)
                 window.location = "/invalid-login"
             }
         }).then(response => {

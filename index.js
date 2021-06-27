@@ -107,7 +107,7 @@ app.post("/customer-sign-up", async(req, res) => {
     //If user does not exist, then insert into database
     if (!registered) {
         let hashed_pwd = await bcrypt.hash(req.body.password, 10)
-        let sign_up_query = `insert into customers(user_fullname,username,email,contact_no,address_1,address_2,password) values ('${req.body.fullname}','${req.body.username}','${req.body.email}','${req.body.phone}','${req.body.add_1}','${req.body.add_2}','${hashed_pwd}')`
+        let sign_up_query = `insert into customers(user_fullname,username,email,contact_no,address_1,address_2,password) values ('${req.body.fullname}','${req.body.username}','${req.body.email}','${req.body.phone}','${req.body.add1}','${req.body.add2}','${hashed_pwd}')`
         client
             .query(sign_up_query)
             .then(response => {
@@ -115,9 +115,11 @@ app.post("/customer-sign-up", async(req, res) => {
                 res.statusCode = 200
                 res.end()
             })
-            .catch(err => {
-                console.error(err);
-            });
+            .cath(err => {
+                console.log(err)
+                res.statusCode = 404
+                res.end()
+            })
     }
 })
 
@@ -132,6 +134,10 @@ app.post("/customer-data", customer_auth, async(req, res) => {
         .query(`select * from customers where username='${req.locals.customer_username}'`)
         .then(response => {
             res.send(response.rows)
+        }).cath(err => {
+            console.log(err)
+            res.statusCode = 404
+            res.end()
         })
 })
 
@@ -177,6 +183,10 @@ app.post("/seller-signup", async(req, res) => {
                 res.statusCode = 402
                 res.end()
             }
+        }).cath(err => {
+            console.log(err)
+            res.statusCode = 404
+            res.end()
         })
 
     //If user does not exist, then insert into database
@@ -270,6 +280,10 @@ app.post("/add-product", seller_auth, async(req, res) => {
         .then(response => {
             res.statusCode = 201
             res.end()
+        }).catch(err => {
+            console.log(err)
+            res.statusCode = 404
+            res.end()
         })
 })
 
@@ -279,6 +293,10 @@ app.post("/show-products", seller_auth, async(req, res) => {
         .query(`select * from seller_products where username='${req.locals.seller_username}'`)
         .then(response => {
             res.send(response.rows)
+        }).catch(err => {
+            console.log(err)
+            res.statusCode = 404
+            res.end()
         })
 })
 
@@ -289,6 +307,10 @@ app.post("/update-item", seller_auth, async(req, res) => {
         .then(response => {
             res.ok = true
             res.end()
+        }).catch(err => {
+            console.log(err)
+            res.statusCode = 404
+            res.end()
         })
 })
 
@@ -298,6 +320,10 @@ app.post("/delete-item", seller_auth, async(req, res) => {
         .query(`delete from seller_products where product_price='${parseInt(req.body.price)}'and product_quantity='${parseInt(req.body.quantity)}' and product_info='${req.body.data}' and username='${req.locals.seller_username}' AND product_name='${req.body.name}';commit;`)
         .then(response => {
             res.ok = true
+            res.end()
+        }).catch(err => {
+            console.log(err)
+            res.statusCode = 404
             res.end()
         })
 })
