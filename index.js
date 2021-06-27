@@ -75,6 +75,7 @@ app.post("/verify-customer", async(req, res) => {
                     } else {
                         jwt.sign({ 'username': req.body.username }, process.env.JWT_KEY, function(err, tokenId) {
                             if (err) {
+                                console.log(err)
                                 res.statusCode = 400
                                 res.end()
                                 return
@@ -118,7 +119,7 @@ app.post("/customer-sign-up", async(req, res) => {
                 res.statusCode = 200
                 res.end()
             })
-            .cath(err => {
+            .catch(err => {
                 console.log(err)
                 res.statusCode = 404
                 res.end()
@@ -138,7 +139,7 @@ app.post("/customer-data", customer_auth, async(req, res) => {
         .then(response => {
             res.send(response.rows)
             res.end()
-        }).cath(err => {
+        }).catch(err => {
             console.log(err)
             res.statusCode = 404
             res.end()
@@ -187,7 +188,7 @@ app.post("/seller-signup", async(req, res) => {
                 res.statusCode = 402
                 res.end()
             }
-        }).cath(err => {
+        }).catch(err => {
             console.log(err)
             res.statusCode = 404
             res.end()
@@ -228,8 +229,9 @@ app.post("/verify-seller", async(req, res) => {
                         res.statusCode = 403
                         res.end()
                     } else {
-                        jwt.sign({ 'username': req.body.username }, process.env.JWT_KEY, { expiresIn: '1h' }, function(err, tokenId) {
+                        jwt.sign({ 'username': req.body.username }, process.env.JWT_KEY, { expiresIn: '2h' }, function(err, tokenId) {
                             if (err) {
+                                console.log(err)
                                 res.statusCode = 400
                                 res.end()
                                 return
@@ -260,6 +262,7 @@ app.post("/update-seller-data", seller_auth, async(req, res) => {
         .then(response => {
             res.end()
         }).catch(err => {
+            console.log(err)
             res.statusCode = 401
             res.message = err
             res.end()

@@ -28,9 +28,12 @@ const seller_auth = async(req, res, next) => {
                 }
             })
     } catch {
-        res.status(401).json({
-            error: new Error('Invalid request!')
-        });
+        err => {
+            console.log(err)
+            res.status(401).json({
+                error: new Error('Invalid request!')
+            });
+        }
     }
 
 };
@@ -51,9 +54,12 @@ const customer_auth = async(req, res, next) => {
                 }
             })
     } catch {
-        res.status(401).json({
-            error: new Error('Invalid request!')
-        });
+        err => {
+            console.log(err)
+            res.status(401).json({
+                error: new Error('Invalid request!')
+            });
+        }
     }
 
 };
