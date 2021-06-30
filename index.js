@@ -173,6 +173,30 @@ app.get("/about", (req, res) => {
     res.end(fs.readFileSync("./views/about.html"))
 })
 
+//Serving products page
+app.get("/products-page", (req, res) => {
+    console.log(req.body)
+    res.end(fs.readFileSync("./views/product.html"))
+})
+
+//To display all the products to the user
+app.post("/products", customer_auth, (req, res) => {
+    let product_query = "select * from seller_products"
+    if (!(req.body.type = "all")) {
+        product_query += `where product_type='${req.body.type}'`
+    }
+    client.query(product_query)
+        .then(response => {
+            if (response.rows.length > 0) {
+                res.statusCode = 200
+                res.send(response.rows)
+                res.end()
+            } else {
+                res.statusCode = 404
+                res.end()
+            }
+        })
+})
 
 // For seller 
 //Signing up the seller
