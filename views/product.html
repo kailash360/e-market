@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="../static/css/navbar.css">
+    <link rel="stylesheet" href="../static/css/products.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar">
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="menu-list" id="menu">
+            <li><a href="/home">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="/about">About Us</a></li>
+        </ul>
+        <ul class="nav-end">
+            <li>
+                <a href="/profile"><i class="fa fa-user"></i></a>
+            </li>
+            <li>
+                <a href="/cart"><i class="fa fa-cart-plus active"></i></a>
+            </li>
+        </ul>
+        <ul class="menu-list-responsive">
+            <li><a href="/home">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="/about">About Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- product search section  -->
+    <div class="search-container">
+        <p>Search your product</p>
+        <input type="text">
+        <button type="button">Search</i></button>
+    </div>
+
+    <div class="filter-container">
+        <span class="filter-product-type">
+            <label for="cars">Type of product</label>
+
+            <select name="cars" id="type">
+                <option value="all">All</option>
+                <option value="accessories">Accessories</option>
+                <option value="clothing and fashion">Clothing and Fashion</option>
+                <option value="desktops and laptops">Desktops and Laptops</option>
+                <option value="electrical appliances">Electrical Appliances</option>
+                <option value="grocery items">Grocery Items</option>
+                <option value="smartphones">Smartphones</option>
+            </select>
+        </span>
+
+        <span class="filter-product-price">
+            <label for="price-range">Price</label>
+            <input type="range" id="price-range" name="price-range" value="" min="0" max="10000" step="2000">
+            <output class="bubble"></output>
+        </span>
+    </div>
+
+    <div class="product-container">
+    </div>
+    </div>
+
+
+
+</body>
+<script src="../scripts/navbar.js"></script>
+<script src="../scripts/products.js"></script>
+<script src="https://kit.fontawesome.com/2c32a0aecc.js" crossorigin="anonymous"></script>
+
+</html>

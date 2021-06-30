@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap');
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Nunito Sans";
+}
+
+.search-container {
+    width: 40vw;
+    height: fit-content;
+    margin: 4rem auto;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.search-container p {
+    font-size: 1.3em;
+    padding: 0.1em;
+}
+
+.search-container input {
+    width: inherit;
+    height: fit-content;
+    font-size: 1.2em;
+    margin: 1px auto;
+    padding: 2px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.search-container button {
+    font-size: 1.2em;
+    margin: 0.5em auto;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+.filter-container {
+    width: fit-content;
+    height: fit-content;
+    margin: 0px auto;
+    font-size: 1.2em;
+}
+
+.filter-product-price {
+    margin-left: 1em;
+    margin-top: 0px;
+}
+
+.bubble {
+    background: transparent;
+    color: black;
+    margin-top: 15px;
+    padding: 4px 12px;
+    position: absolute;
+    border-radius: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    align-items: center;
+}
+
+.bubble::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    top: -1px;
+    left: 50%;
+    text-align: center;
+    align-items: center;
+}
+
+
+/* Displaying all the products here  */
+
+.product-container {
+    width: 65vw;
+    height: fit-content;
+    margin: 1em auto;
+}
+
+
+/* designs for each product  */
+
+.product {
+    width: inherit;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 2fr 3fr 1fr;
+    border: 2px solid black;
+    margin-bottom: 1em;
+}
+
+.product-image {
+    text-align: center;
+}
+
+.product-image img {
+    width: inherit;
+    height: inherit;
+    background-size: cover;
+}
+
+.product-info {
+    padding-left: 0.5em;
+    padding-top: 0.5em;
+}
+
+.product-name {
+    font-size: 1.8em;
+    font-weight: bolder;
+}
+
+.product-price {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.product-quantity {
+    width: fit-content;
+    background-color: rgb(128, 197, 1);
+    color: white;
+    padding: 2px 5px;
+}
+
+.nil-product-quantity {
+    display: none;
+    width: fit-content;
+    background-color: red;
+    color: white;
+    padding: 2px 5px;
+}
+
+.product-about {
+    margin-top: 0.5em;
+}
+
+.product-delivery {
+    font-size: 0.8em;
+    font-weight: 600;
+    color: brown;
+}
+
+.button-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-section button {
+    width: 9em;
+    padding: 0.5em 1.5em;
+    margin: auto auto;
+    font-weight: bold;
+}
+
+.add-to-wishlist {
+    text-align: right;
+    background: transparent;
+    border: none;
+    font-size: 1.2em;
+    margin-top: 10px;
+    padding: 0px;
+    padding-right: 1em;
+}
+
+.add-to-cart {
+    margin-top: 35px;
+    margin-bottom: 1px;
+    background-color: black;
+    color: white;
+}
+
+.buy-now {
+    margin-top: 10px;
+    background-color: black;
+    color: white;
+}
