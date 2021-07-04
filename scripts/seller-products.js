@@ -15,6 +15,8 @@ add_product.addEventListener("click", async() => {
     let item_price = document.querySelector(".product-price").value
     let item_quantity = document.querySelector(".product-quantity").value
     let item_data = document.querySelector(".additional-data").value
+    let item_category = document.querySelector(".category").value
+    console.log(item_category)
 
     //Checking for empty fields
     if (item_name == "" || item_price == "" || item_quantity == "") {
@@ -22,10 +24,16 @@ add_product.addEventListener("click", async() => {
         return
     }
 
-    //Checking if price and quantity are names only
+    //Checking if price and quantity are numbers only
     if (letters.test(item_price) || letters.test(item_quantity)) {
         alert("Price and Quantity should be numbers only")
         return
+    }
+
+    //Checking if category has bee selected
+    if (item_category == "") {
+        alert("Please select a category for the product")
+        return;
     }
 
     //Adding product to the database
@@ -35,7 +43,7 @@ add_product.addEventListener("click", async() => {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${window.localStorage.getItem("token")}`
         },
-        body: JSON.stringify(({ item_name, item_price, item_quantity, item_data }))
+        body: JSON.stringify(({ item_name, item_price, item_quantity, item_data, item_category }))
     }).then(response => {
         if (response.ok) {
             console.log("Product Added successfully")
@@ -48,6 +56,7 @@ add_product.addEventListener("click", async() => {
     document.querySelector(".product-price").value = ""
     document.querySelector(".product-quantity").value = ""
     document.querySelector(".additional-data").value = ""
+    document.querySelector(".category").value = ""
 })
 
 
