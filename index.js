@@ -181,9 +181,18 @@ app.get("/products-page", (req, res) => {
 
 //To display all the products to the user
 app.post("/products", customer_auth, (req, res) => {
-    let product_query = "select * from seller_products"
-    if (!(req.body.type = "all")) {
-        product_query += `where product_type='${req.body.type}'`
+    console.log(req.body)
+    let product_query = `select * from seller_products `
+    if (req.body.type != "all" && req.body.price == "10000") {
+        product_query = product_query.concat(`where product_category='${req.body.type}' `)
+    }
+    if (req.body.price != "10000" && req.body.type == "all") {
+        let price = parseInt(req.body.price)
+        product_query = product_query.concat(`where product_price<${price}`)
+    }
+    if (req.body.price != "10000" && req.body.type != "all") {
+        let price = parseInt(req.body.price)
+        product_query = product_query.concat(`where product_price<${price} and product_category='${req.body.type}'`)
     }
     client.query(product_query)
         .then(response => {

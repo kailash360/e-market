@@ -13,8 +13,6 @@ range.addEventListener("input", () => {
     } else {
         bubble.innerHTML = newVal * 100
     }
-    bubble.style.left = `calc(${newVal/10}% + (${47 - newVal * 0.015}em))`;
-
 
     setTimeout(() => {
         bubble.style.display = "none"
@@ -25,6 +23,7 @@ show_products()
 
 async function show_products() {
     let product_list = document.querySelector(".product-container")
+    product_list.innerHTML = ""
 
     let type = document.getElementById("type").value
     let price = document.getElementById("price-range").value
