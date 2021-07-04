@@ -27,6 +27,7 @@ async function show_products() {
 
     let type = document.getElementById("type").value
     let price = document.getElementById("price-range").value
+    let search = document.getElementById("search").value
 
     // HTML of a product 
     /* <div class="product">
@@ -61,7 +62,7 @@ async function show_products() {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${window.localStorage.getItem("token")}`
             },
-            body: JSON.stringify(({ type, price }))
+            body: JSON.stringify(({ type, price, search }))
         }).then(response => response.json())
         .then(response => {
             // response = JSON.stringify(response)
@@ -150,3 +151,13 @@ async function show_products() {
             })
         })
 }
+
+//Search button
+let search_btn = document.getElementById("search-btn")
+search_btn.addEventListener("click", () => {
+    if (document.getElementById("search").value == "") {
+        alert("Please write the product you want to search")
+    } else {
+        show_products()
+    }
+})
