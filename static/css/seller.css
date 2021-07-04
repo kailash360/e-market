@@ -71,7 +71,8 @@ hr {
     padding: 0px 1em;
 }
 
-.input-form input {
+.input-form input,
+.input-form textarea {
     margin-right: 0.7em;
     padding: 0.07em;
     font-size: 0.6em;
@@ -81,8 +82,13 @@ hr {
     text-align: center;
 }
 
+.input-form textarea {
+    text-align: left;
+    padding-left: 5px;
+}
+
 .category {
-    width: 98%;
+    width: fit-content;
     margin-right: 0.7em;
     padding: 0.07em;
     font-size: 0.6em;
@@ -106,9 +112,12 @@ hr {
 .product-quantity {
     width: 5em;
 }
+*/
 
-.additional-data {
-    width: 14em; */
+
+/* .additional-data {
+    text-align: left;
+} */
 
 .add-product-btn {
     font-size: 0.6em;
