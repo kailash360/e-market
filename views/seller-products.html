@@ -44,16 +44,29 @@
                 <input type="text" name="name" id="name" class="product-name" placeholder="">
             </span>
             <span>
-                <label for="name" class="label">Price</label>
+                <label for="price" class="label">Price</label>
                 <input type="number" name="price" id="price" class="product-price" placeholder="">
             </span>
             <span>
-                <label for="name" class="label">Quantity</label>
+                <label for="quantity" class="label">Quantity</label>
                 <input type="number" name="quantity" id="quantity" class="product-quantity" placeholder="">
             </span>
             <span>
-                <label for="name" class="label">Features</label>
+                <label for="extra" class="label">Features</label>
                 <input type="text" name="extra" id="extra" class="additional-data" placeholder="">
+            </span>
+            <span>
+                <label for=category" class="label">Category</label>
+                <select name="category" id="category" class="category">
+                    <option value="" selected disabled hidden>Select a category for the product</option>
+                    <option value="accessories">Accessories</option>
+                    <option value="clothing and fashion">Clothing and Fashion</option>
+                    <option value="desktops and laptops">Desktops and Laptops</option>
+                    <option value="electrical appliances">Electrical Appliances</option>
+                    <option value="grocery items">Grocery Items</option>
+                    <option value="smartphones">Smartphones</option>
+                    <option value="smartphones">Any other</option>
+                </select>
             </span>
             <button class="add-product-btn" type="button" id="add-product-btn">Add Product</button>
         </form>

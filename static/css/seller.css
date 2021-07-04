@@ -74,12 +74,23 @@ hr {
 .input-form input {
     margin-right: 0.7em;
     padding: 0.07em;
-    font-size: 0.7em;
+    font-size: 0.6em;
     outline: none;
-    border: none;
     border: 1px solid black;
     border-radius: 5px;
     text-align: center;
+}
+
+.category {
+    width: 98%;
+    margin-right: 0.7em;
+    padding: 0.07em;
+    font-size: 0.6em;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align-last: center;
+    align-items: center;
 }
 
 
