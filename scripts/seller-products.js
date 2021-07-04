@@ -30,7 +30,7 @@ add_product.addEventListener("click", async() => {
         return
     }
 
-    //Checking if category has bee selected
+    //Checking if category has been selected
     if (item_category == "") {
         alert("Please select a category for the product")
         return;
