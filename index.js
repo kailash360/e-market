@@ -175,25 +175,53 @@ app.get("/about", (req, res) => {
 
 //Serving products page
 app.get("/products-page", (req, res) => {
-    console.log(req.body)
     res.end(fs.readFileSync("./views/product.html"))
 })
 
 //To display all the products to the user
 app.post("/products", customer_auth, (req, res) => {
-    console.log(req.body)
     let product_query = `select * from seller_products `
-    if (req.body.type != "all" && req.body.price == "10000") {
+
+    //Only category
+    if (req.body.type != "all" && req.body.price == "10000" && req.body.search == "") {
         product_query = product_query.concat(`where product_category='${req.body.type}' `)
     }
-    if (req.body.price != "10000" && req.body.type == "all") {
+
+    //Only price
+    if (req.body.price != "10000" && req.body.type == "all" && req.body.search == "") {
         let price = parseInt(req.body.price)
         product_query = product_query.concat(`where product_price<${price}`)
     }
-    if (req.body.price != "10000" && req.body.type != "all") {
+
+    //Both price and category
+    if (req.body.price != "10000" && req.body.type != "all" && req.body.search == "") {
         let price = parseInt(req.body.price)
         product_query = product_query.concat(`where product_price<${price} and product_category='${req.body.type}'`)
     }
+
+    //Only name
+    if (req.body.type == "all" && req.body.price == "10000" && req.body.search != "") {
+        product_query = product_query.concat(`where product_name like'%${req.body.search}%' `)
+    }
+
+    //Only Price and name
+    if (req.body.price != "10000" && req.body.type == "all" && req.body.search != "") {
+        let price = parseInt(req.body.price)
+        product_query = product_query.concat(`where product_price<${price} and product_name like'%${req.body.search}%' `)
+    }
+
+    //Only category and name
+    if (req.body.price == "10000" && req.body.type != "all" && req.body.search != "") {
+        let price = parseInt(req.body.price)
+        product_query = product_query.concat(`where product_category='${req.body.type}' and product_name like'%${req.body.search}%' `)
+    }
+
+    //All category,name and item
+    if (req.body.price != "10000" && req.body.type != "all" && req.body.search != "") {
+        let price = parseInt(req.body.price)
+        product_query = product_query.concat(`where product_price<${price} and product_category='${req.body.type}' and product_name like'%${req.body.search}%' `)
+    }
+
     client.query(product_query)
         .then(response => {
             if (response.rows.length > 0) {
