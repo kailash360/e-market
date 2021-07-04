@@ -53,11 +53,12 @@
 .bubble {
     background: transparent;
     color: black;
-    margin-top: 15px;
-    padding: 4px 12px;
+    padding: 1px 2px;
+    margin-top: 20px;
+    font-size: 0.8em;
     position: absolute;
     border-radius: 4px;
-    left: 50%;
+    left: 58%;
     transform: translateX(-50%);
     text-align: center;
     align-items: center;
@@ -75,13 +76,23 @@
     align-items: center;
 }
 
+.apply-changes {
+    margin-left: 5px;
+    font-size: 0.8em;
+    font-weight: bold;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 2px 10px;
+    border-radius: 5px;
+}
+
 
 /* Displaying all the products here  */
 
 .product-container {
     width: 65vw;
     height: fit-content;
-    margin: 1em auto;
+    margin: 2em auto;
 }
 
 

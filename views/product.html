@@ -60,9 +60,16 @@
 
         <span class="filter-product-price">
             <label for="price-range">Price</label>
-            <input type="range" id="price-range" name="price-range" value="" min="0" max="10000" step="2000">
+            <input type="range" id="price-range" name="price-range" value="10000" min="0" max="10000" step="2000">
             <output class="bubble"></output>
         </span>
+
+        <span>
+            <button class="apply-changes" type="button" onclick="show_products()">
+                Apply Changes
+            </button>
+        </span>
+
     </div>
 
     <div class="product-container">
