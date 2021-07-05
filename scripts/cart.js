@@ -86,6 +86,11 @@ async function show_cart_items() {
             quantity.type = "number"
             quantity.min = "0"
             quantity.addEventListener("input", () => {
+                if (quantity.value > element.product_quantity) {
+                    alert(`Only ${element.product_quantity} units of ${element.product_name} are available`)
+                    quantity.value = ""
+                    return
+                }
                 calculate()
             })
 
@@ -138,7 +143,7 @@ async function show_cart_items() {
             cart_item.appendChild(btn_section_1)
             cart_item.appendChild(btn_section_2)
 
-            //Add to crd container
+            //Add to card container
             card_container.appendChild(cart_item)
         });
     })
