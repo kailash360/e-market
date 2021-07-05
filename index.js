@@ -243,12 +243,10 @@ app.post("/add-to-cart", customer_auth, async(req, res) => {
     await client
         .query(add_to_cart_query)
         .then(response => {
-            console.log("Added to the cart")
             res.status = 200
             res.send()
             res.end()
         }).catch(err => {
-            console.log("Error adding to cart")
             res.statusCode = 405
             res.send()
             res.end()
@@ -266,6 +264,17 @@ app.post("/cart-products", customer_auth, async(req, res) => {
         })
 })
 
+//Deleting item from cart
+app.post("/delete-from-cart", customer_auth, async(req, res) => {
+    let delete_query = `delete from customer_cart where username='${req.locals.customer_username}' and product_name='${req.body.name}'`
+    client
+        .query(delete_query)
+        .then(response => {
+            res.status = 200
+            res.send()
+            res.end()
+        })
+})
 
 // For seller 
 //Signing up the seller
