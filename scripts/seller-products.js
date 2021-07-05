@@ -122,7 +122,7 @@ async function show_products() {
             item.appendChild(edit_btn)
             edit_btn.addEventListener("click", () => {
 
-                let elements = [product_name, product_price, product_quantity, product_info]
+                let elements = [product_price, product_quantity, product_info]
                 elements.forEach(item => {
                     item.classList.add("edit-mode")
                     item.contentEditable = true
@@ -136,7 +136,7 @@ async function show_products() {
             save_btn.classList.add("save-item")
             item.appendChild(save_btn)
             save_btn.addEventListener("click", () => {
-                let elements = [product_name, product_price, product_quantity, product_info]
+                let elements = [product_price, product_quantity, product_info]
                 elements.forEach(x => {
                     x.classList.remove("edit-mode")
                     x.contentEditable = false

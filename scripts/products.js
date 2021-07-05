@@ -100,7 +100,7 @@ async function show_products() {
                     product_quantity.style.display = "flex"
                     product_quantity.innerText = "Out of stock!"
                     product_info.appendChild(product_quantity)
-                } else {
+                } else if (item["product_quantity"] <= 10) {
                     let product_quantity = document.createElement("p")
                     product_quantity.classList.add("product-quantity")
                     product_quantity.style.display = "flex"
