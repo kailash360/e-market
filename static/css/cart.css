@@ -15,6 +15,14 @@
     text-align: center;
 }
 
+.empty-cart {
+    margin: auto;
+    font-size: 2.5vw;
+    width: fit-content;
+    text-align: center;
+    margin-top: 5em;
+}
+
 .card-container {
     width: inherit;
     height: fit-content;
@@ -116,6 +124,10 @@
 .delete-from-cart:active {
     transform: scale(1.01);
     color: rgb(190, 245, 218);
+}
+
+.footer {
+    margin-top: 20vh;
 }
 
 @media screen and (max-width: 450px) {

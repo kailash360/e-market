@@ -34,6 +34,9 @@ async function show_cart_items() {
             </div>
         */
 
+        if (cart_items.length > 0) {
+            document.querySelector(".empty-cart").style.display = "none"
+        }
 
         cart_items.forEach(element => {
 
@@ -121,6 +124,10 @@ async function delete_cart_item(cart_item, name) {
             body: JSON.stringify(({ name }))
         })
         .then(response => {
-            document.querySelector(".card-container").removeChild(cart_item)
+            let x = document.querySelector(".card-container")
+            x.removeChild(cart_item)
+            if (x.innerHTML == "") {
+                document.querySelector(".empty-cart").style.display = "block"
+            }
         })
 }
