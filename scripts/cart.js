@@ -16,22 +16,21 @@ async function show_cart_items() {
     }).then((cart_items) => {
 
         /* <div class="card-item">
-                <div class="item-image">
-                    <img src="../static/media/sample-product.png" alt="">
-                </div>
-                <div class="item-info">
-                    <div class="info">
-                        <p class="title">Common Projects Bball High </p>
-                        <p class="color">White</p>
-                        <p class="price">Rs. 540</p>
-                        <p class="availability">Available</p>
-                    </div>
-                    <span class="button-section">
-                        <button class="buy-now" id="buy-now" type="button">BUY NOW</button>
-                        <button class="delete-from-cart" type="button"><i class="fas fa-trash"></i></button>
-                    </span>
+            <div class="item-image">
+                <img src="../static/media/sample-product.png" alt="">
+            </div>
+            <div class="item-info">
+                <div class="info">
+                    <p class="title">Common Projects Bball High </p>
+                    <p class="price">Rs. 540</p>
+                    <p class="availability">Hurry,only 4 left!</p>
+                    <label for="count" class="count-label">Quantity</label>
+                    <input type="number" name="count" class="count" min="0">
                 </div>
             </div>
+            <span class="btn-section-1"><button class="delete-from-cart" type="button"><i class="fas fa-trash"></i></button></span>
+            <span class="btn-section-2"><button class="buy-now" id="buy-now" type="button">BUY NOW</button></span>
+        </div>
         */
 
         if (cart_items.length > 0) {
@@ -70,19 +69,53 @@ async function show_cart_items() {
             price.classList.add("price")
             price.innerText = "Rs." + element.product_price
 
-            let description = document.createElement("p")
-            description.classList.add("availability")
-            description.innerText = element.product_info
+            let availability = document.createElement("p")
+            availability.classList.add("availability")
+
+            if (element.product_quantity == 0) {
+                availability.innerText = `Out of stock!`
+                availability.style.backgroundColor = "#e6054c"
+            } else if (element.product_quantity < 10) {
+                availability.innerText = `Hurry, only ${element.product_quantity} left!`
+                availability.style.backgroundColor = "#cece0a"
+            }
+
+            let quantity = document.createElement("input")
+            quantity.classList.add("count")
+            quantity.name = "count"
+            quantity.type = "number"
+            quantity.min = "0"
+            quantity.addEventListener("input", () => {
+                calculate()
+            })
+
+            let quantity_label = document.createElement("label")
+            quantity_label.classList.add("count-label")
+            quantity_label.for = "count"
+            quantity_label.innerText = "Quantity"
+
 
             info.appendChild(title)
             info.appendChild(price)
-            info.appendChild(description)
+            info.appendChild(availability)
+            info.appendChild(quantity_label)
+            info.appendChild(quantity)
 
-            //Button section
-            let btn_section = document.createElement("span")
-            btn_section.classList.add("button-section")
+            //Adding these to info
+            item_info.appendChild(info)
 
-            //Buy-Now button
+            //Add to info-item to card 
+            cart_item.appendChild(item_info)
+
+            //Button section 1
+            let btn_section_1 = document.createElement("span")
+            btn_section_1.classList.add("btn-section-1")
+
+            //Button section 2
+            let btn_section_2 = document.createElement("span")
+            btn_section_2.classList.add("btn-section-2")
+
+            //Buy-Now button 
             let buy_now = document.createElement("button")
             buy_now.classList.add("buy-now")
             buy_now.type = "button"
@@ -98,15 +131,12 @@ async function show_cart_items() {
             })
 
             //adding these to button section
-            btn_section.appendChild(buy_now)
-            btn_section.appendChild(del_from_cart_btn)
+            btn_section_2.appendChild(buy_now)
+            btn_section_1.appendChild(del_from_cart_btn)
 
             //Adding these to info
-            item_info.appendChild(info)
-            item_info.appendChild(btn_section)
-
-            //Add to info-item to card 
-            cart_item.appendChild(item_info)
+            cart_item.appendChild(btn_section_1)
+            cart_item.appendChild(btn_section_2)
 
             //Add to crd container
             card_container.appendChild(cart_item)
@@ -126,8 +156,40 @@ async function delete_cart_item(cart_item, name) {
         .then(response => {
             let x = document.querySelector(".card-container")
             x.removeChild(cart_item)
+            calculate()
             if (x.innerHTML == "") {
                 document.querySelector(".empty-cart").style.display = "block"
             }
         })
+}
+
+calculate()
+async function calculate() {
+    let quantity_list = [],
+        price_list = [],
+        count = 0,
+        sum = 0
+        //Extracting count of all products
+    document.querySelectorAll(".count").forEach(item => {
+            if (item.value == "") {
+                quantity_list.push(0)
+            } else {
+                quantity_list.push(parseInt(item.value))
+                count += parseInt(item.value)
+            }
+        })
+        //Extracting price of each product
+    document.querySelectorAll(".price").forEach(item => {
+        price_list.push(parseInt(item.innerText.split(".")[1]))
+    })
+
+    document.querySelector(".total-items").innerText = count
+
+    //Calculating total cost
+    for (var i = 0; i < price_list.length; i++) {
+        sum += price_list[i] * quantity_list[i]
+    }
+
+    document.querySelector(".total-cost").innerText = sum
+    document.querySelector(".total-amount").innerText = sum + 200
 }
