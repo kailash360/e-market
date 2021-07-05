@@ -255,6 +255,17 @@ app.post("/add-to-cart", customer_auth, async(req, res) => {
         })
 })
 
+//Displaying products of cart to the customer
+app.post("/cart-products", customer_auth, async(req, res) => {
+    let query = `select * from customer_cart where username='${req.locals.customer_username}'`
+    client
+        .query(query)
+        .then(response => {
+            res.send(response.rows)
+            res.end()
+        })
+})
+
 
 // For seller 
 //Signing up the seller

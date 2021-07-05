@@ -1,14 +1,16 @@
 console.log("JS integrated successfully")
 let card_container = document.querySelector(".card-container")
 
-//Fetch the data 
-const url = "https://my-json-server.typicode.com/AnifaMd/shopping-cart/products"
-
-fetch(url).then((response) => {
+//Fetch the products in the cart
+fetch("/cart-products", {
+    method: "POST",
+    headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${window.localStorage.getItem("token")}`
+    }
+}).then((response) => {
     return response.json()
 }).then((cart_items) => {
-    console.log(cart_items)
-
 
     /* <div class="card-item">
                 <div class="item-image">
@@ -53,24 +55,19 @@ fetch(url).then((response) => {
 
         let title = document.createElement("p")
         title.classList.add("title")
-        title.innerText = element.title
-
-        let color = document.createElement("p")
-        color.classList.add("color")
-        color.innerText = element.color
+        title.innerText = element.product_name
 
         let price = document.createElement("p")
         price.classList.add("price")
-        price.innerText = "Rs." + element.price
+        price.innerText = "Rs." + element.product_price
 
-        let availability = document.createElement("p")
-        availability.classList.add("availability")
-        availability.innerText = element.availability
+        let description = document.createElement("p")
+        description.classList.add("availability")
+        description.innerText = element.product_info
 
         info.appendChild(title)
-        info.appendChild(color)
         info.appendChild(price)
-        info.appendChild(availability)
+        info.appendChild(description)
 
         //Buy-Now button
         let buy_now = document.createElement("button")

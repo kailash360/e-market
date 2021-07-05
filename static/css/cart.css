@@ -3,6 +3,7 @@
     margin: 0px;
     padding: 0px;
     font-family: "Nunito Sans";
+    overflow-x: hidden;
 }
 
 
@@ -84,6 +85,7 @@
     padding: 0.1em 1em;
     background-color: white;
     box-shadow: 1px 3px 4px 0px rgb(0 0 0 / 20%);
+    overflow-y: hidden;
 }
 
 .buy-now:active {
