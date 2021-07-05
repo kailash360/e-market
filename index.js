@@ -178,7 +178,7 @@ app.get("/products-page", (req, res) => {
     res.end(fs.readFileSync("./views/product.html"))
 })
 
-//To display all the products to the user
+//To display all the products to the customer
 app.post("/products", customer_auth, (req, res) => {
     let product_query = `select * from seller_products `
 
@@ -234,6 +234,27 @@ app.post("/products", customer_auth, (req, res) => {
             }
         })
 })
+
+//To add to the cart
+app.post("/add-to-cart", customer_auth, async(req, res) => {
+
+    //Adding to cart 
+    let add_to_cart_query = `insert into customer_cart(username,product_name,product_price,product_quantity,product_info) values('${req.locals.customer_username}','${req.body.name}','${req.body.price}','${req.body.quantity}','${req.body.info}')`
+    await client
+        .query(add_to_cart_query)
+        .then(response => {
+            console.log("Added to the cart")
+            res.status = 200
+            res.send()
+            res.end()
+        }).catch(err => {
+            console.log("Error adding to cart")
+            res.statusCode = 405
+            res.send()
+            res.end()
+        })
+})
+
 
 // For seller 
 //Signing up the seller

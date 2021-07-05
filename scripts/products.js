@@ -134,6 +134,14 @@ async function show_products() {
                 let add_cart = document.createElement("button")
                 add_cart.classList.add("add-to-cart")
                 add_cart.innerText = "Add to cart"
+                add_cart.addEventListener("click", () => {
+                    let name = item["product_name"]
+                    let price = item["product_price"]
+                    let quantity = item["product_quantity"]
+                    let info = item["product_info"]
+
+                    add_to_cart(add_cart, name, price, quantity, info)
+                })
                 btn_section.appendChild(add_cart)
 
                 let buy_now = document.createElement("button")
@@ -161,3 +169,25 @@ search_btn.addEventListener("click", () => {
         show_products()
     }
 })
+
+//Function for adding to cart
+async function add_to_cart(add_cart, name, price, quantity, info) {
+    await fetch("/add-to-cart", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${window.localStorage.getItem("token")}`
+            },
+            body: JSON.stringify(({ name, price, quantity, info }))
+        })
+        // .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                alert("Item already exists in cart")
+            } else {
+                add_cart.innerText = "Added to cart"
+                add_cart.disabled = "true"
+                add_cart.style.backgroundColor = "#b7b7b7"
+            }
+        })
+}
