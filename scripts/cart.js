@@ -35,6 +35,8 @@ async function show_cart_items() {
 
         if (cart_items.length > 0) {
             document.querySelector(".empty-cart").style.display = "none"
+            document.querySelector(".calculation-container").style.display = "grid"
+            document.querySelector(".checkout-btn-section").style.display = "block"
         }
 
         cart_items.forEach(element => {
@@ -166,6 +168,8 @@ async function delete_cart_item(cart_item, name) {
             calculate()
             if (x.innerHTML == "") {
                 document.querySelector(".empty-cart").style.display = "block"
+                document.querySelector(".calculation-container").style.display = "none"
+                document.querySelector(".checkout-btn-section").style.display = "none"
             }
         })
 }
