@@ -396,7 +396,7 @@ app.get("/seller-login", (req, res) => {
     res.end(fs.readFileSync("./views/seller-login.html"))
 })
 
-//Serving login to seller
+//Serving signed up to seller
 app.get("/seller-signed-up", (req, res) => {
     res.end(fs.readFileSync("./views/seller-signed-up.html"))
 })
