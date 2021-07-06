@@ -85,6 +85,7 @@ async function show_cart_items() {
             quantity.name = "count"
             quantity.type = "number"
             quantity.min = "0"
+            quantity.value = "1"
             quantity.addEventListener("input", () => {
                 if (quantity.value > element.product_quantity) {
                     alert(`Only ${element.product_quantity} units of ${element.product_name} are available`)
@@ -147,6 +148,7 @@ async function show_cart_items() {
             card_container.appendChild(cart_item)
         });
     })
+    calculate()
 }
 
 async function delete_cart_item(cart_item, name) {
