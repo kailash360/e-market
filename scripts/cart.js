@@ -35,6 +35,8 @@ async function show_cart_items() {
 
         if (cart_items.length > 0) {
             document.querySelector(".empty-cart").style.display = "none"
+            document.querySelector(".calculation-container").style.display = "grid"
+            document.querySelector(".checkout-btn-section").style.display = "block"
         }
 
         cart_items.forEach(element => {
@@ -166,6 +168,8 @@ async function delete_cart_item(cart_item, name) {
             calculate()
             if (x.innerHTML == "") {
                 document.querySelector(".empty-cart").style.display = "block"
+                document.querySelector(".calculation-container").style.display = "none"
+                document.querySelector(".checkout-btn-section").style.display = "none"
             }
         })
 }
@@ -202,6 +206,28 @@ async function calculate() {
 }
 
 async function purchased() {
+
+    //Extrac the values to be sent
+    let name_list = document.querySelectorAll(".title")
+    let count_list = document.querySelectorAll(".count")
+    let list1 = new Array()
+    let list2 = new Array()
+    for (i in name_list) {
+        list1.push(name_list[i].innerText)
+        list2.push(count_list[i].value)
+    }
+    const product_name_list = list1.filter(item => item != undefined)
+    const product_quantity_list = list2.filter(item => item != undefined)
+
+    fetch("/checkout", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${window.localStorage.getItem("token")}`
+        },
+        body: JSON.stringify(({ product_name_list, product_quantity_list }))
+    })
+
     window.location.href = "/purchased"
         // fetch("/purchased", {
         //     headers: {

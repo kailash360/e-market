@@ -21,12 +21,16 @@
     text-align: center;
 }
 
+
+/* Class for displaying a message when cart is empty  */
+
 .empty-cart {
     margin: auto;
     font-size: 2.5vw;
     width: fit-content;
     text-align: center;
     margin-top: 5em;
+    margin-bottom: 5em;
 }
 
 .card-container {
@@ -158,6 +162,7 @@
     display: grid;
     grid-template-rows: repeat(25%, 4);
     font-size: 1.2em;
+    display: none;
 }
 
 .row {
@@ -175,6 +180,7 @@
 
 .checkout-btn-section {
     text-align: center;
+    display: none;
 }
 
 .checkout-btn {
