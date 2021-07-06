@@ -198,3 +198,18 @@ async function calculate() {
     document.querySelector(".total-cost").innerText = sum
     document.querySelector(".total-amount").innerText = sum + 200
 }
+
+async function purchased() {
+    window.location.href = "/purchased"
+        // fetch("/purchased", {
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //         'Authorization': `Bearer ${window.localStorage.getItem("token")}`
+        //     }
+        // }).then(response => {
+        //     console.log(response)
+        //     r = response.json()
+        //     console.log(r)
+        //     window.location.href = "/purchased"
+        // })
+}

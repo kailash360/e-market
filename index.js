@@ -277,7 +277,9 @@ app.post("/delete-from-cart", customer_auth, async(req, res) => {
 })
 
 //Finally buying the product
-
+app.get('/purchased', (req, res) => {
+    res.end(fs.readFileSync("./views/thank-you.html"))
+})
 
 
 
