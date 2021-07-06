@@ -3,7 +3,7 @@
 }
 
 .footer {
-    width: 100vw;
+    width: inherit;
     height: fit-content;
     padding: 2em 0.8em;
     background-color: rgb(48, 48, 48);
