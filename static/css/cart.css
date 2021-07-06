@@ -223,4 +223,7 @@
     .nav-end {
         margin-right: -5%;
     }
+    .calculation-container {
+        width: 90vw;
+    }
 }
