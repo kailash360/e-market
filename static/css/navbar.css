@@ -5,16 +5,20 @@
 }
 
 :root {
-    --font-color: rgb(159, 209, 255);
+    --font-color: white;
 }
 
 .navbar {
     width: inherit;
     height: fit-content;
-    background-color: transparent;
     display: grid;
     grid-template-columns: 2fr 1fr;
     padding: 0.8em;
+    background: linear-gradient(to right, #fa24fa,#6609B8 );
+}
+
+.navbar li a{
+    color: white;
 }
 
 .hamburger {

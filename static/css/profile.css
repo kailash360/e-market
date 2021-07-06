@@ -15,6 +15,10 @@
     --font-color: rgb(255, 255, 255);
 }
 
+.navbar {
+    background: transparent;
+}
+
 i {
     vertical-align: middle;
 }
