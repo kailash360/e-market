@@ -202,6 +202,15 @@ async function calculate() {
 }
 
 async function purchased() {
+
+    await fetch("/checkout", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${window.localStorage.getItem("token")}`
+        },
+    })
+
     window.location.href = "/purchased"
         // fetch("/purchased", {
         //     headers: {

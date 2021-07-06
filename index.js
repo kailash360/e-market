@@ -281,7 +281,15 @@ app.get('/purchased', (req, res) => {
     res.end(fs.readFileSync("./views/thank-you.html"))
 })
 
-
+//Checkout
+app.post("/checkout", customer_auth, (req, res) => {
+    let query = `delete from customer_cart where username='${req.locals.customer_username}'`
+    client
+        .query(query)
+        .then(response => {
+            res.end()
+        })
+})
 
 // For seller 
 //Signing up the seller
