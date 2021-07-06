@@ -219,8 +219,6 @@ async function purchased() {
     const product_name_list = list1.filter(item => item != undefined)
     const product_quantity_list = list2.filter(item => item != undefined)
 
-    console.log(product_quantity_list)
-
     fetch("/checkout", {
         method: "POST",
         headers: {

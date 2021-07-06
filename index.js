@@ -292,6 +292,7 @@ app.post("/checkout", customer_auth, (req, res) => {
     }
 
     client.query("update seller_products set product_quantity=0 where product_quantity<0")
+    res.end()
 })
 
 // For seller 
