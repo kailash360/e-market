@@ -286,8 +286,8 @@ app.post("/checkout", customer_auth, (req, res) => {
     let delete_from_cart_query = `delete from customer_cart where username='${req.locals.customer_username}'`
     client.query(delete_from_cart_query)
 
-    for (item of req.body.product_name_list) {
-        let update_products_query = `update seller_products set product_quantity=product_quantity-1 where product_name='${item}'`
+    for (i in req.body.product_name_list) {
+        let update_products_query = `update seller_products set product_quantity=product_quantity-${req.body.product_quantity_list[i]} where product_name='${req.body.product_name_list[i]}'`
         client.query(update_products_query)
     }
 
@@ -438,7 +438,7 @@ app.post("/show-products", seller_auth, async(req, res) => {
         })
 })
 
-//Updating information of an item
+//Updating information of an item by seller
 app.post("/update-item", seller_auth, async(req, res) => {
     client
         .query(`update seller_products set product_price='${parseInt(req.body.price)}',product_quantity='${parseInt(req.body.quantity)}',product_info='${req.body.data}' where (username='${req.locals.seller_username}' AND product_name='${req.body.name}');commit;`)

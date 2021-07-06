@@ -207,22 +207,27 @@ async function calculate() {
 
 async function purchased() {
 
-    let list = document.querySelectorAll(".title")
+    //Extrac the values to be sent
+    let name_list = document.querySelectorAll(".title")
+    let count_list = document.querySelectorAll(".count")
     let list1 = new Array()
-    for (i in list) {
-        list1.push(list[i].innerText)
+    let list2 = new Array()
+    for (i in name_list) {
+        list1.push(name_list[i].innerText)
+        list2.push(count_list[i].value)
     }
     const product_name_list = list1.filter(item => item != undefined)
-    console.log(product_name_list)
-    console.log(typeof(product_name_list))
-    console.log(JSON.stringify(({ product_name_list })))
+    const product_quantity_list = list2.filter(item => item != undefined)
+
+    console.log(product_quantity_list)
+
     fetch("/checkout", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${window.localStorage.getItem("token")}`
         },
-        body: JSON.stringify(({ product_name_list }))
+        body: JSON.stringify(({ product_name_list, product_quantity_list }))
     })
 
     window.location.href = "/purchased"
