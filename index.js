@@ -276,6 +276,11 @@ app.post("/delete-from-cart", customer_auth, async(req, res) => {
         })
 })
 
+//Finally buying the product
+
+
+
+
 // For seller 
 //Signing up the seller
 app.post("/seller-signup", async(req, res) => {
@@ -380,6 +385,11 @@ app.get("/seller-login", (req, res) => {
 //Serving login to seller
 app.get("/seller-signed-up", (req, res) => {
     res.end(fs.readFileSync("./views/seller-signed-up.html"))
+})
+
+//Serving home
+app.get("/seller-home", (req, res) => {
+    res.end(fs.readFileSync("./views/seller-home.html"))
 })
 
 //Serving profile
