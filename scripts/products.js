@@ -139,8 +139,11 @@ async function show_products() {
                     let price = item["product_price"]
                     let quantity = item["product_quantity"]
                     let info = item["product_info"]
-
-                    add_to_cart(add_cart, name, price, quantity, info)
+                    if (quantity > 0) {
+                        add_to_cart(add_cart, name, price, quantity, info)
+                    } else {
+                        alert(`${name} is not available now.`)
+                    }
                 })
                 btn_section.appendChild(add_cart)
 
