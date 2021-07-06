@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="../static/css/navbar.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
     <link rel="stylesheet" href="../static/css/seller.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seller</title>
 </head>
@@ -37,10 +39,35 @@
         <div class="heading">Add a new product</div>
         <hr class="hr1">
         <form action="submit" class="input-form">
-            <input type="text" class="product-name" placeholder="Name of the product">
-            <input type="number" class="product-price" placeholder="Price">
-            <input type="number" class="product-quantity" placeholder="Quantity">
-            <input type="text" class="additional-data" placeholder="About the product">
+            <span>
+                <label for="name" class="label">Name</label>
+                <input type="text" name="name" id="name" class="product-name" placeholder="">
+            </span>
+            <span>
+                <label for="price" class="label">Price</label>
+                <input type="number" name="price" id="price" class="product-price" placeholder="">
+            </span>
+            <span>
+                <label for="quantity" class="label">Quantity</label>
+                <input type="number" name="quantity" id="quantity" class="product-quantity" placeholder="">
+            </span>
+            <span>
+                <label for="extra" class="label">Features</label>
+                <textarea type="text" rows="8" name="extra" id="extra" class="additional-data" placeholder=""></textarea>
+            </span>
+            <span>
+                <label for=category" class="label">Category</label>
+                <select name="category" id="category" class="category">
+                    <option value="" selected disabled hidden>Select a category for the product</option>
+                    <option value="accessories">Accessories</option>
+                    <option value="clothing and fashion">Clothing and Fashion</option>
+                    <option value="desktops and laptops">Desktops and Laptops</option>
+                    <option value="electrical appliances">Electrical Appliances</option>
+                    <option value="grocery items">Grocery Items</option>
+                    <option value="smartphones">Smartphones</option>
+                    <option value="any other">Any Other</option>
+                </select>
+            </span>
             <button class="add-product-btn" type="button" id="add-product-btn">Add Product</button>
         </form>
     </div>
@@ -73,9 +100,20 @@
 
         </div>
     </div>
+    <footer class="footer">
+        <p class="footer-item">
+            <a href="">Copyright © 2021-2022 &nbsp|</a>
+            <a href="">Terms and Conditions &nbsp|</a>
+            <span>
+                <a href=""><i class="fab fa-facebook-square"></i></a>
+                <a href=""><i class="fab fa-twitter-square"></i></a>
+                <a href=""><i class="fab fa-instagram-square"></i></a>
+            </span>
+        </p>
+    </footer>
 </body>
 <script src="../scripts/navbar.js"></script>
-<script src="../scripts/seller.js"></script>
+<script src="../scripts/seller-products.js"></script>
 <script src="https://kit.fontawesome.com/2c32a0aecc.js" crossorigin="anonymous"></script>
 
 </html>

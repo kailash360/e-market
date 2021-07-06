@@ -1,8 +1,13 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+:root {
+    --font-color: rgb(159, 209, 255);
+}
+
 .navbar {
     width: inherit;
     height: fit-content;
@@ -14,7 +19,7 @@
 
 .hamburger {
     display: none;
-    color: rgb(255, 255, 255);
+    color: var(--font-color);
     font-size: 2.5em;
     vertical-align: middle;
 }
@@ -33,7 +38,7 @@
 
 .menu-list li,
 .menu-list-responsive li {
-    color: rgb(255, 255, 255);
+    color: var(--font-color);
     font-size: 1.5em;
     font-weight: bolder;
     margin: auto 1em;
@@ -45,7 +50,7 @@
 
 .menu-list li a,
 .menu-list-responsive li a {
-    color: rgb(255, 255, 255);
+    color: var(--font-color);
     text-decoration: none;
 }
 
@@ -64,12 +69,12 @@
 .nav-end li {
     font-size: 1.8em;
     margin: auto 0.5em;
-    color: white;
+    color: var(--font-color)
 }
 
 .nav-end li a {
     text-decoration: none;
-    color: white;
+    color: var(--font-color)
 }
 
 .nav-end li a:hover {
@@ -82,7 +87,7 @@
 
 @media screen and (max-width: 450px) {
     .navbar {
-        width: 120vw;
+        width: 105vw;
         grid-template-columns: 1fr 1fr;
     }
     .menu-list {
@@ -91,8 +96,5 @@
     .hamburger {
         display: block;
         width: 60%;
-    }
-    .nav-end {
-        margin-right: 36%;
     }
 }

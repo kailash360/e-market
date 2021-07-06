@@ -18,27 +18,33 @@
         </div>
 
         <div id="login-form">
-            <form action="/profile">
-                <input type="text" placeholder="Enter email or username" />
-                <input type="password" placeholder="Enter password" />
-                <button type="submit" class="btn login">login</button>
-                <!-- <p><a href="#" onclick="toggleSignup()">Register Account</a> </p> -->
+            <form>
+                <input type="text" name="username" id="username" placeholder="Enter email or username" />
+                <input type="password" name="password" id="password" placeholder="Enter password" />
+                <button type="button" onclick="customer_login()" class="btn login">login</button>
             </form>
         </div>
 
         <div id="signup-form">
             <form>
-                <input type="email" placeholder="Enter your email" />
-                <input type="text" placeholder="Choose username" />
-                <input type="password" placeholder="Create password" />
-                <button type="button" class="btn signup"><i class="fa fa-spinner fa-pulse"></i> create account
+                <input type="text" name="fullname" id="sign-up-fullname" placeholder="Enter your full name" />
+                <input type="text" name="username" id="sign-up-username" placeholder="Choose your username" />
+                <input type="email" name="email" id="sign-up-email" placeholder="Enter your email" />
+                <input type="tel" name="phone" id="sign-up-phone" placeholder="Enter your contact number" />
+                <textarea type="text" name="add1" id="sign-up-add1" rows="10" cols="15" placeholder="Enter your preferred address"></textarea>
+                <textarea type="text" name="add2" id="sign-up-add2" rows="10" cols="15" placeholder="Enter another address"></textarea>
+                <input type="password" name="password" id="sign-up-password" placeholder="Create password" />
+                <input type="password" name="confirm-password" id="sign-up-confirm-password" placeholder="Confirm password" />
+                <button type="button" onclick="customer_signup()" class="btn signup"> create account
               </button>
-
             </form>
         </div>
         <p class="Identifier"><a class="loginAs" href="/seller-login">Log in as a Seller</a></p>
     </div>
     <script src="../scripts/login.js"></script>
+    <script>
+        window.csrf = '{{csrf}}';
+    </script>
 </body>
 
 </html>

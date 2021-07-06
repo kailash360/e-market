@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/navbar.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
     <link rel="stylesheet" href="../static/css/cart.css">
     <title>My Cart</title>
 </head>
@@ -18,7 +19,7 @@
         </div>
         <ul class="menu-list" id="menu">
             <li><a href="/home">Home</a></li>
-            <li><a href="#">Products</a></li>
+            <li><a href="/products-page">Products</a></li>
             <li><a href="/about">About Us</a></li>
         </ul>
         <ul class="nav-end">
@@ -42,8 +43,167 @@
         <hr style="width: 70%;margin:auto">
     </div>
 
+    <p class="empty-cart">
+        Looks like you haven't added anything to your cart yet.
+        <br> Go to the Products and start shopping.
+    </p>
+
     <div class="card-container">
+        <div class="card-item">
+            <div class="item-image">
+                <img src="../static/media/sample-product.png" alt="">
+            </div>
+            <div class="item-info">
+                <div class="info">
+                    <p class="title">Common Projects Bball High </p>
+                    <p class="price">Rs. 540</p>
+                    <!-- <p class="availability">Hurry!only 400 left</p> -->
+                </div>
+            </div>
+            <span class="btn-section-1"><button class="delete-from-cart" type="button"><i class="fas fa-trash"></i></button></span>
+            <span class="btn-section-2"><button class="buy-now" id="buy-now" type="button">BUY NOW</button></span>
+
+
+        </div>
+        <div class="card-item">
+            <div class="item-image">
+                <img src="../static/media/sample-product.png" alt="">
+            </div>
+            <div class="item-info">
+                <div class="info">
+                    <p class="title">Common Projects Bball High </p>
+                    <p class="price">Rs. 540</p>
+                    <!-- <p class="availability">Hurry!only 400 left</p> -->
+                </div>
+            </div>
+            <span class="btn-section-1"><button class="delete-from-cart" type="button"><i class="fas fa-trash"></i></button></span>
+            <span class="btn-section-2"><button class="buy-now" id="buy-now" type="button">BUY NOW</button></span>
+
+
+        </div>
+        <div class="card-item">
+            <div class="item-image">
+                <img src="../static/media/sample-product.png" alt="">
+            </div>
+            <div class="item-info">
+                <div class="info">
+                    <p class="title">Common Projects Bball High </p>
+                    <p class="price">Rs. 540</p>
+                    <!-- <p class="availability">Hurry!only 400 left</p> -->
+                </div>
+            </div>
+            <span class="btn-section-1"><button class="delete-from-cart" type="button"><i class="fas fa-trash"></i></button></span>
+            <span class="btn-section-2"><button class="buy-now" id="buy-now" type="button">BUY NOW</button></span>
+
+
+        </div>
+        <div class="card-item">
+            <div class="item-image">
+                <img src="../static/media/sample-product.png" alt="">
+            </div>
+            <div class="item-info">
+                <div class="info">
+                    <p class="title">Common Projects Bball High </p>
+                    <p class="price">Rs. 540</p>
+                    <!-- <p class="availability">Hurry!only 400 left</p> -->
+                </div>
+            </div>
+            <span class="btn-section-1"><button class="delete-from-cart" type="button"><i class="fas fa-trash"></i></button></span>
+            <span class="btn-section-2"><button class="buy-now" id="buy-now" type="button">BUY NOW</button></span>
+
+
+        </div>
+        <div class="card-item">
+            <div class="item-image">
+                <img src="../static/media/sample-product.png" alt="">
+            </div>
+            <div class="item-info">
+                <div class="info">
+                    <p class="title">Common Projects Bball High </p>
+                    <p class="price">Rs. 540</p>
+                    <!-- <p class="availability">Hurry!only 400 left</p> -->
+                </div>
+            </div>
+            <span class="btn-section-1"><button class="delete-from-cart" type="button"><i class="fas fa-trash"></i></button></span>
+            <span class="btn-section-2"><button class="buy-now" id="buy-now" type="button">BUY NOW</button></span>
+
+
+        </div>
+        <div class="card-item">
+            <div class="item-image">
+                <img src="../static/media/sample-product.png" alt="">
+            </div>
+            <div class="item-info">
+                <div class="info">
+                    <p class="title">Common Projects Bball High </p>
+                    <p class="price">Rs. 540</p>
+                    <!-- <p class="availability">Hurry!only 400 left</p> -->
+                </div>
+            </div>
+            <span class="btn-section-1"><button class="delete-from-cart" type="button"><i class="fas fa-trash"></i></button></span>
+            <span class="btn-section-2"><button class="buy-now" id="buy-now" type="button">BUY NOW</button></span>
+
+
+        </div>
+        <div class="card-item">
+            <div class="item-image">
+                <img src="../static/media/sample-product.png" alt="">
+            </div>
+            <div class="item-info">
+                <div class="info">
+                    <p class="title">Common Projects Bball High </p>
+                    <p class="price">Rs. 540</p>
+                    <label for="count" class="count-label">Quantity</label>
+                    <input type="number" name="count" class="count" min="0">
+                    <!-- <p class="availability">Hurry!only 400 left</p> -->
+                </div>
+            </div>
+            <span class="btn-section-1"><button class="delete-from-cart" type="button"><i class="fas fa-trash"></i></button></span>
+            <span class="btn-section-2"><button class="buy-now" id="buy-now" type="button">BUY NOW</button></span>
+
+
+        </div>
     </div>
+
+    <!-- Calculating total amount -->
+    <div class="final-section">
+        <div class="calculation-container">
+            <span class="row">
+                <p>Total Items</p>
+                <p class="total-items values">17</p>
+            </span>
+            <span class="row">
+                <p>Total Cost of Products</p>
+                <p class="total-cost values">10000</p>
+            </span>
+            <span class="row">
+                <p>Delivery Charge</p>
+                <p class="total-delivery values">200</p>
+            </span>
+            <span class="row total">
+                <p>Total Amount</p>
+                <p class="total-amount values">10200</p>
+            </span>
+        </div>
+        <div class="checkout-btn-section">
+            <button class="checkout-btn" type="button">Proceed to Checkout</button>
+        </div>
+    </div>
+
+
+
+    <!-- Footer here  -->
+    <footer class="footer">
+        <p class="footer-item">
+            <a href="">Copyright © 2021-2022 &nbsp|</a>
+            <a href="">Terms and Conditions &nbsp|</a>
+            <span>
+                <a href=""><i class="fab fa-facebook-square"></i></a>
+                <a href=""><i class="fab fa-twitter-square"></i></a>
+                <a href=""><i class="fab fa-instagram-square"></i></a>
+            </span>
+        </p>
+    </footer>
 </body>
 <script src="../scripts/cart.js"></script>
 <script src="../scripts/navbar.js"></script>

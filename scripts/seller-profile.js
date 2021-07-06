@@ -5,6 +5,39 @@ let save_change_btn = document.querySelector(".save-change-btn")
 let edit_name_btn = document.getElementById("edit-name-btn")
 let user_name = document.getElementById("user-name")
 
+
+display_seller_data()
+
+//Fetch user data
+async function display_seller_data() {
+    await fetch("/seller-data", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${window.localStorage.getItem("token")}`
+        },
+    }).then(response => {
+        console.log(response)
+        return response.json()
+    }).then(response => {
+        console.log(response)
+
+        //Showing data of the customer in profiles page
+        let business_name = document.getElementById("user-name")
+        let user_email = document.getElementById("user-email")
+        let user_phone = document.getElementById("user-phone")
+        let office_add = document.getElementById("user-address-1")
+        let home_add = document.getElementById("user-address-2")
+
+        business_name.innerText = response[0].business_name
+        user_email.innerText = response[0].email
+        user_phone.innerText = response[0].contact_no
+        office_add.innerText = response[0].office_address
+        home_add.innerText = response[0].home_address
+    })
+}
+
+
 // Editing the user name 
 let edit_mode = false;
 edit_name_btn.addEventListener("click", () => {
@@ -61,28 +94,58 @@ edit_address_btn.addEventListener("click", () => {
     }
 })
 
+// Function to saev changes
+async function save_changes() {
+    let business_name = document.getElementById("user-name")
+    let user_email = document.getElementById("user-email")
+    let user_phone = document.getElementById("user-phone")
+    let office_address = document.getElementById("user-address-1")
+    let home_address = document.getElementById("user-address-2")
 
 
-//Saving the changes
-save_change_btn.addEventListener("click", () => {
-    if (edit_mode) {
-        user_name.contentEditable = false;
-        user_name.style.border = "0px"
-
-        user_email.contentEditable = false;
-        user_email.style.backgroundColor = "transparent"
-
-        user_phone.contentEditable = false;
-        user_phone.style.backgroundColor = "transparent"
-
-        user_address_list.forEach((user_address) => {
-            user_address.contentEditable = false;
-            user_address.style.backgroundColor = "transparent"
-        })
-
-        edit_mode = false;
-        setTimeout(() => {
-            save_change_btn.classList.add("hide-btn")
-        }, 10);
+    //Making necessary checks before saving changes
+    if (business_name.innerText == "" || user_email.innerText == "" || user_phone.innerText == "" || office_address.innerText == "" || home_address.innerText == "") {
+        alert("Fields cannot be empty")
+        return
     }
-})
+
+    if (!((/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/).test(user_email.innerText))) {
+        alert("Invalid Email Address")
+        return
+    }
+
+    if (!((/^(\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/).test(user_phone.innerText))) {
+        alert("Invalid Contact Number")
+        return
+    }
+
+    userBusinessName = business_name.innerText
+    userEmail = user_email.innerText
+    userPhone = user_phone.innerText
+    office_add = office_address.innerText
+    home_add = home_address.innerText
+
+    //Sending new data to the database
+    await fetch("/update-seller-data", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${window.localStorage.getItem("token")}`
+        },
+        body: JSON.stringify({ userBusinessName, userEmail, userPhone, office_add, home_add }),
+    }).then(response => {
+        if (response.ok) {
+            document.querySelector('.name-section').style.border = "transparent"
+
+            elements = [business_name, user_email, user_phone, office_address, home_address]
+            elements.forEach(item => {
+                item.contentEditable = false;
+                item.style.backgroundColor = "transparent"
+            })
+
+            save_change_btn.classList.add("hide-btn").edit_mode = false;
+        } else {
+            alert("Failed to update data")
+        }
+    })
+}

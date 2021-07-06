@@ -3,34 +3,56 @@
     margin: 0px;
     padding: 0px;
     font-family: "Nunito Sans";
+    overflow-x: hidden;
+    color: black
 }
+
+
+/* body {
+    background: linear-gradient(45deg, rgb(0, 0, 218), rgb(66, 66, 255));
+} */
 
 
 /* For card container  */
 
 .heading {
-    font-size: 5em;
+    font-size: 3em;
     font-weight: bolder;
     text-align: center;
 }
 
+.empty-cart {
+    margin: auto;
+    font-size: 2.5vw;
+    width: fit-content;
+    text-align: center;
+    margin-top: 5em;
+}
+
 .card-container {
-    width: inherit;
+    width: fit-content;
     height: fit-content;
     margin: 0px auto;
-    padding: 3em;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .card-item {
-    width: 40em;
-    height: 20em;
-    margin: 3em;
+    width: 20em;
+    height: 16em;
+    margin: 1em;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 35% 65%;
+    grid-template-rows: 80% 20%;
     box-shadow: 0px 2px 5px 4px rgb(0 0 0 / 20%);
     transition-duration: 0.5s;
+    border-radius: 20px;
+    /* background-color: rgba(0, 60, 255, 0.425);
+    color: white; */
 }
 
 .card-item:hover {
@@ -41,68 +63,145 @@
     display: flex;
     justify-content: center;
     vertical-align: middle;
+    text-align: center;
+    width: fit-content;
 }
 
 .item-image img {
-    margin: auto auto;
-}
-
-.item-info {
-    padding: 1em;
-    background: linear-gradient(to bottom right, #11bcc9, #1bdac0);
-    color: white;
-    display: grid;
-    grid-template-rows: 4.5fr 0.5fr;
+    margin: 1em auto;
+    width: auto;
+    height: 55%;
 }
 
 .title {
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 900;
-}
-
-.color {
-    font-size: 1.8em;
-    font-weight: 500;
 }
 
 .price {
     margin: 0.2em 0em 0em 0em;
-    font-size: 1.9em;
-    font-weight: bold;
+    font-size: 1.1em;
 }
 
 .availability {
+    width: fit-content;
+    padding: 2px 4px;
+    font-size: 0.8em;
+    color: white;
+}
+
+.count-label {
+    font-size: 1.2em;
+}
+
+.count {
+    margin-top: 2em;
+    padding-left: 10px;
+    width: 80px;
+    margin-left: 1.2em;
+    text-align: center;
     font-size: 1em;
+    border-radius: 5px;
+    /* border-color: white; */
+    outline: none;
+    background-color: transparent;
+}
+
+.btn-section-1,
+.btn-section-2 {
+    text-align: center;
+    vertical-align: middle;
 }
 
 .buy-now {
-    margin: 0px auto;
-    font-size: 1.5em;
+    margin: 5px auto;
+    font-size: 1em;
     font-weight: bolder;
-    border: none;
+    border: 2px solid black;
     border-radius: 20px;
     padding: 0.1em 1em;
+    height: fit-content;
+    /* background: linear-gradient(45deg, rgb(0, 0, 197), rgb(101, 101, 252)); */
+    /* color: white; */
+    /* box-shadow: 1px 3px 4px 0px rgb(0 0 0 / 20%); */
     background-color: white;
-    box-shadow: 1px 3px 4px 0px rgb(0 0 0 / 20%);
+    overflow-y: hidden;
 }
 
 .buy-now:active {
     background-color: rgb(0, 117, 111);
+    color: white
+}
+
+.delete-from-cart {
+    color: black;
+    background-color: transparent;
+    font-size: 1.5em;
+    font-weight: bold;
+    height: max-content;
+    border: none;
+}
+
+.delete-from-cart i {
+    vertical-align: middle;
+}
+
+.delete-from-cart:active {
+    transform: scale(1.01);
+    color: rgb(190, 245, 218);
+}
+
+.calculation-container {
+    width: 30vw;
+    height: fit-content;
+    margin: 4em auto 2em auto;
+    display: grid;
+    grid-template-rows: repeat(25%, 4);
+    font-size: 1.2em;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 80% 20%;
+}
+
+.total {
+    border-top: 1px solid black;
+}
+
+.values {
+    text-align: right;
+}
+
+.checkout-btn-section {
+    text-align: center;
+}
+
+.checkout-btn {
+    margin: 0px auto;
+    align-self: center;
+    background-color: black;
     color: white;
+    font-weight: bold;
+    padding: 2px 4px;
+    border-radius: 5px;
+    font-size: 1.05em;
+}
+
+.footer {
+    margin-top: 20vh;
 }
 
 @media screen and (max-width: 450px) {
     .heading {
-        position: absolute;
-        width: fit-content;
-        left: 33%;
+        text-align: center;
     }
     .card-container {
         grid-template-columns: 10fr;
         margin-top: 5em;
     }
     .card-item {
-        width: 110vw;
+        width: 90vw;
         height: fit-content;
         margin: 1em 0px;
     }
