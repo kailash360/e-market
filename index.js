@@ -283,12 +283,15 @@ app.get('/purchased', (req, res) => {
 
 //Checkout
 app.post("/checkout", customer_auth, (req, res) => {
-    let query = `delete from customer_cart where username='${req.locals.customer_username}'`
-    client
-        .query(query)
-        .then(response => {
-            res.end()
-        })
+    let delete_from_cart_query = `delete from customer_cart where username='${req.locals.customer_username}'`
+    client.query(delete_from_cart_query)
+
+    for (item of req.body.product_name_list) {
+        let update_products_query = `update seller_products set product_quantity=product_quantity-1 where product_name='${item}'`
+        client.query(update_products_query)
+    }
+
+    client.query("update seller_products set product_quantity=0 where product_quantity<0")
 })
 
 // For seller 

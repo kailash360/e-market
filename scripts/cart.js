@@ -207,12 +207,22 @@ async function calculate() {
 
 async function purchased() {
 
-    await fetch("/checkout", {
+    let list = document.querySelectorAll(".title")
+    let list1 = new Array()
+    for (i in list) {
+        list1.push(list[i].innerText)
+    }
+    const product_name_list = list1.filter(item => item != undefined)
+    console.log(product_name_list)
+    console.log(typeof(product_name_list))
+    console.log(JSON.stringify(({ product_name_list })))
+    fetch("/checkout", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${window.localStorage.getItem("token")}`
         },
+        body: JSON.stringify(({ product_name_list }))
     })
 
     window.location.href = "/purchased"
