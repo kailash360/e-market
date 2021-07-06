@@ -265,13 +265,15 @@ body {
 .box {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 25vw;
+  height: fit-content;
   text-align: center;
   padding: 0rem 1rem;
   border: none;
   margin: 1rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.342);
 }
+
 img {
   border-radius: 0.5rem;
 }
@@ -334,15 +336,7 @@ img {
 }
 .client-item img:hover {
   transform: scale(1.1);
-  box-shadow: 0px 0px 10px 5px rgba(153, 0, 77, 0.452);
-}
-.client-item1 {
-  height: 60%;
-  width: 60%;
-}
-.client-item4 {
-  height: 60%;
-  width: 60%;
+  box-shadow: 0px 0px 10px 5px #fa24fa;
 }
 
 /* Footer  */
@@ -351,4 +345,10 @@ footer {
   color: white;
   font-family: 'Source Sans Pro', sans-serif;
   padding: 9px 20px;
+}
+
+@media screen and (max-width : 480px) {
+  .box{
+    width: fit-content;
+  }
 }
