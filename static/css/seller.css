@@ -355,6 +355,19 @@ hr {
 
 
 @media screen and (max-width: 450px) {
+    .card{
+        width: fit-content;
+    }
+    .card img {
+        height: auto;
+        width: 29%;
+    }
+    .edit-btn, .delete-btn {
+        font-size: 1.3rem;  
+    }
+    .delete-btn{
+        margin-left: 10px;
+    }
     .heading {
         font-size: 2em;
     }
