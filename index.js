@@ -414,7 +414,7 @@ app.get("/seller-profile", (req, res) => {
 //Adding products of seller
 app.post("/add-product", seller_auth, async(req, res) => {
     client
-        .query(`insert into seller_products(username,product_name,product_price,product_quantity,product_info,product_category) values ('${req.locals.seller_username}','${req.body.item_name}','${req.body.item_price}','${req.body.item_quantity}','${req.body.item_data}','${req.body.item_category}')`)
+        .query(`insert into seller_products(username,product_name,product_price,product_quantity,product_info,product_category) values ("${req.locals.seller_username}","${req.body.item_name}",'${req.body.item_price}','${req.body.item_quantity}',"${req.body.item_data}","${req.body.item_category}")`)
         .then(response => {
             res.statusCode = 201
             res.end()
@@ -442,7 +442,7 @@ app.post("/show-products", seller_auth, async(req, res) => {
 //Updating information of an item by seller
 app.post("/update-item", seller_auth, async(req, res) => {
     client
-        .query(`update seller_products set product_price='${parseInt(req.body.price)}',product_quantity='${parseInt(req.body.quantity)}',product_info='${req.body.data}' where (username='${req.locals.seller_username}' AND product_name='${req.body.name}');commit;`)
+        .query(`update seller_products set product_price="${parseInt(req.body.price)}",product_quantity="${parseInt(req.body.quantity)}",product_info='${req.body.data}' where (username="${req.locals.seller_username}" AND product_name="${req.body.name}");commit;`)
         .then(response => {
             res.ok = true
             res.end()
@@ -456,7 +456,7 @@ app.post("/update-item", seller_auth, async(req, res) => {
 //Deleting information of an item
 app.post("/delete-item", seller_auth, async(req, res) => {
     client
-        .query(`delete from seller_products where product_price='${parseInt(req.body.price)}'and product_quantity='${parseInt(req.body.quantity)}' and product_info='${req.body.data}' and username='${req.locals.seller_username}' AND product_name='${req.body.name}';commit;`)
+        .query(`delete from seller_products where username="${req.locals.seller_username}" AND product_name="${req.body.name}";commit;`)
         .then(response => {
             res.ok = true
             res.end()
