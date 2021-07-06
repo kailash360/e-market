@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/navbar.css">
+    <link rel="stylesheet" href="../static/css/home.css">
     <title>Home</title>
 </head>
 
@@ -34,9 +35,132 @@
             <li><a href="/about">About Us</a></li>
         </ul>
     </nav>
-    This is home sweet home
+
+    <!-- Crousel -->
+    <div id="myModal" class="modal">
+        <span onclick="closePopup()" class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+
+    <section class="nw">
+        <div class="slideshow-container">
+
+            <div class="mySlides fade one">
+                <img src="https://images.pexels.com/photos/1371360/pexels-photo-1371360.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    style="width:100%" alt="nature_river" onclick="openPopup(this)">
+            </div>
+
+            <div class="mySlides fade">              
+                <img src="https://images.pexels.com/photos/2007401/pexels-photo-2007401.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    style="width:100%" alt="air_plane" onclick="openPopup(this)">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="https://images.pexels.com/photos/4226100/pexels-photo-4226100.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    style="width:100%" alt="img3" onclick="openPopup(this)">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+                    style="width:100%" alt="img4" onclick="openPopup(this)">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        </div>
+        <br>
+    </section>
+
+    <!-- <section id="categories">
+        <h1 class="h-primary">Welcome to MyShop</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque cumque culpa laudantium sapiente ut
+            ipsam,Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        </p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque cumque culpa laudantium sapiente ut ipsam,
+        </p>
+        <button class="btn">Order Now</button>
+    </section> -->
+    <section class="services-container">
+        <h1 class="h-primary">Our Products</h1>;
+        <div class="services">
+            <div class="box">
+                <img src="../static/media/Accessories.jpg" alt="img">
+                <h2>Latest Fashion Wear</h2>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor quaerat dolores consequatur eaque,
+                repellat veritatis necessitatibus id enim ratione minima.
+            </div>
+            <div class="box">
+                <img src="../static/media/Accessories.jpg" alt="">
+                <h2>Men's Jackets</h2>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor quaerat dolores consequatur eaque,
+                repellat veritatis necessitatibus id enim ratione minima.
+            </div>
+            <div class="box">
+                <img src="../static/media/Accessories.jpg" alt="">
+                    <div class="category_info">
+                    <h2>Women Wear</h2>
+                    <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor quaerat dolores consequatur eaque,
+                    repellat veritatis necessitatibus id enim ratione minima.</p>
+                </div>
+                
+            </div>
+            <div class="box">
+                <img src="../static/media/Accessories.jpg" alt="">
+                <div class="category_info"></div>
+                    <h2>Skirts</h2>
+                    <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor quaerat dolores consequatur eaque,
+                    repellat veritatis necessitatibus id enim ratione minima.</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="category_info"></div>
+                <img src="../static/media/Accessories.jpg" alt="">
+                    <h2>Casuals</h2>
+                    <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor quaerat dolores consequatur eaque,
+                    repellat veritatis necessitatibus id enim ratione minima.</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="category_info"></div>
+                <img src="../static/media/Accessories.jpg" alt="">
+                    <h2>Accessories</h2>
+                    <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor quaerat dolores consequatur eaque,
+                    repellat veritatis necessitatibus id enim ratione minima.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Section -->
+    <section class="client-container">
+        <h1 class="h-primary">Our Clients</h1>
+        <div class="clients">
+            <div class="client-item client-item1">
+                <img src="client1.png" alt="">
+            </div>
+            <div class="client-item">
+                <img src="client2.png" alt="">
+            </div>
+            <div class="client-item">
+                <img src="client3.png" alt="">
+            </div>
+            <div class="client-item client-item4">
+                <img src="client4.png" alt="">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="center">
+            Copyright &copy; www.myShop.com. All rights reserved!
+        </div>
+    </footer>
+
 </body>
 <script src="../scripts/navbar.js"></script>
+<script src="../scripts/home.js"></script>
 <script src="https://kit.fontawesome.com/2c32a0aecc.js" crossorigin="anonymous"></script>
 
 </html>
