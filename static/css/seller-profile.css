@@ -8,8 +8,10 @@
 
 :root {
     --left-spacing: 1em;
-    --general-font: 1.5em
+    --general-font: 1.5em;
+    --font-color: rgb(255, 255, 255);
 }
+
 
 i{
     vertical-align: middle;
@@ -135,7 +137,8 @@ i{
     padding: 1rem 1rem;
     border-radius: 0.5rem;
     color: black;
-    border: 4px solid rgba(0, 0, 0, 0.26);
+    border: 2px solid transparent;
+    box-shadow: 0 0 0.7rem 0px rgba(0, 0, 0, 0.226);
     transition: 0.5s;
 }
 
@@ -147,7 +150,7 @@ i{
 .user-email:hover,
 .user-phone:hover,
 .user-address-section:hover {
-    border: 4px solid #FA24FA;
+    border: 2px solid #FA24FA;
     box-shadow: 0 0 0.7rem 0px rgba(0, 0, 0, 0.377);
     transform: scale(1.02);
 }
@@ -208,11 +211,12 @@ i{
     background: white;
     border-radius: 0.5rem;
     margin: 6rem;
-    border: 4px solid rgba(0, 0, 0, 0.26);
+    border: 2px solid transparent;
+    box-shadow: 0 0 0.7rem 0px rgba(0, 0, 0, 0.226);
     transition: 0.5s;
 }
 .financial-info:hover{
-    border: 4px solid #FA24FA;
+    border: 2px solid #FA24FA;
     box-shadow: 0 0 0.7rem 0px rgba(0, 0, 0, 0.377);
     transform: scale(1.02);
 }
@@ -279,3 +283,26 @@ i{
 hr{
     color: black;
 }
+
+.financial-info,
+.user-email,
+.user-phone,
+.user-address-section {
+        animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+
+
+  @keyframes slide-top {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    60% {
+        opacity: 0.3;
+    }
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+  }
