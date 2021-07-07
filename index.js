@@ -276,15 +276,9 @@ app.post("/delete-from-cart", customer_auth, async(req, res) => {
         })
 })
 
-//Finally buying the product
-app.get('/purchased', (req, res) => {
-    res.end(fs.readFileSync("./views/thank-you.html"))
-})
-
 //Checkout
 app.post("/checkout", customer_auth, (req, res) => {
-    console.log(req.body)
-        //First remove the items from cart
+    //First remove the items from cart
     let delete_from_cart_query = `delete from customer_cart where username='${req.locals.customer_username}'`
     client.query(delete_from_cart_query)
 
@@ -314,6 +308,17 @@ app.post("/checkout", customer_auth, (req, res) => {
     client.query("update seller_products set product_quantity=0 where product_quantity<0")
     res.end()
 })
+
+//Finally buying the product
+app.get('/payment', (req, res) => {
+    res.end(fs.readFileSync("./views/payment.html"))
+})
+
+//After making the payment
+app.get('/purchased', (req, res) => {
+    res.end(fs.readFileSync("./views/thank-you.html"))
+})
+
 
 // For seller 
 //Signing up the seller
