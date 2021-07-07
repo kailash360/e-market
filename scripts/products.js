@@ -2,7 +2,7 @@ const range = document.querySelector("#price-range");
 
 range.addEventListener("input", () => {
     const bubble = document.querySelector(".bubble");
-    bubble.style.display = ""
+    bubble.style.display = "inline-block";
 
     const val = range.value;
     const min = range.min ? range.min : 0;
@@ -184,6 +184,12 @@ async function show_products() {
 }
 
 //Search button
+/*Removing placeholder*/
+let search_input = document.getElementById("search");
+search.addEventListener("click", ()=>{
+    search_input.placeholder = "";  
+})
+//Searching text
 let search_btn = document.getElementById("search-btn")
 search_btn.addEventListener("click", () => {
     if (document.getElementById("search").value == "") {
