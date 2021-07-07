@@ -205,3 +205,22 @@ async function delete_item(name, price, quantity, data) {
             }
         })
 }
+
+//Read more function for Product's Cards :
+read_more = document.querySelector(".read-more");
+read_more.addEventListener ("click", ()=> {
+    readMore();
+});
+
+function readMore() {
+    addInfo = document.querySelector(".addInfo");
+  
+    if (addInfo.style.display == "none"){
+        addInfo.style.display = "inline";
+        read_more.innerText = "See Less...";   
+    } 
+    else{
+        addInfo.style.display = "none";        
+        read_more.innerText = "Read more...";
+    }
+}

@@ -274,7 +274,100 @@ hr {
     border-radius: 3px;
 }
 
+.card{
+    position: relative;
+    font-size: 1rem;
+    /* background: red; */
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+
+    width: 30vw;
+    /* height: 30vh; */
+    margin: 1rem;
+    height: fit-content;
+    padding: 1rem 0;
+    border: 4px solid transparent;
+    border-radius: 0.7rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.356);
+    transition-duration: 0.4s;
+}
+
+.card:hover{
+    border: 4px solid #fa24fa;
+    /* box-shadow: 0 0 10px #fa24fa; */
+    transform: scale(1.01);
+}
+.cardInfo{
+    display: flex;
+    flex-direction: column;
+    /* margin-left: 5rem; */
+}
+
+.cardInfo h3, .cardInfo p{
+    display: inline;
+}
+
+.cardInfo h3{
+    margin-right: 1.5rem;
+}
+.cardInfo>div{
+    display: flex;
+    flex-direction: row;
+    margin-left: 1.5rem;
+}
+.cardList{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.read-more{
+    background: transparent;
+    border: none;
+    text-align: left;
+    margin-left: 1.5rem;
+}
+
+.addInfo > h3{
+    display: block;
+}
+
+.card-btns {
+    position: absolute;
+    margin-bottom: 0.5rem;
+    margin-right: 0.5rem;
+    bottom: 0;
+    right: 0;
+}
+
+.edit-btn, .delete-btn {
+    background: transparent;
+    font-size: 2rem;
+    border: none;
+}
+.edit-btn:hover, .delete-btn:hover {
+    color: #fa24fa;
+}
+
+
 @media screen and (max-width: 450px) {
+    .card{
+        width: fit-content;
+    }
+    .card img {
+        height: auto;
+        width: 29%;
+    }
+    .edit-btn, .delete-btn {
+        font-size: 1.3rem;  
+    }
+    .delete-btn{
+        margin-left: 10px;
+    }
     .heading {
         font-size: 2em;
     }
