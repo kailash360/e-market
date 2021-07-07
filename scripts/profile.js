@@ -26,12 +26,16 @@ async function display_customer_data() {
         let user_phone = document.getElementById("user-phone")
         let user_address_1 = document.getElementById("user-address-1")
         let user_address_2 = document.getElementById("user-address-2")
+        let total_supercoins = document.getElementById("total-supercoins")
+        let total_orders = document.getElementById("total-orders")
 
         user_name.innerText = response[0].user_fullname
         user_email.innerText = response[0].email
         user_phone.innerText = response[0].contact_no
         user_address_1.innerText = response[0].address_1
         user_address_2.innerText = response[0].address_2
+        total_supercoins.innerText = response[0].total_supercoins
+        total_orders.innerText = response[0].total_orders
     })
 }
 

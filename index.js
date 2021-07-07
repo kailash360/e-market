@@ -127,7 +127,7 @@ app.post("/customer-sign-up", async(req, res) => {
     }
 })
 
-//Serving signed-up
+//Serving signed-up page
 app.get("/signed-up", (req, res) => {
     res.end(fs.readFileSync("./views/signed-up.html"))
 })
@@ -283,12 +283,24 @@ app.get('/purchased', (req, res) => {
 
 //Checkout
 app.post("/checkout", customer_auth, (req, res) => {
+    //First remove the items from cart
     let delete_from_cart_query = `delete from customer_cart where username='${req.locals.customer_username}'`
     client.query(delete_from_cart_query)
 
+    //Update products database when products are purchased
     for (i in req.body.product_name_list) {
         let update_products_query = `update seller_products set product_quantity=product_quantity-${req.body.product_quantity_list[i]} where product_name='${req.body.product_name_list[i]}'`
         client.query(update_products_query)
+    }
+
+    //Update order data after purchasing
+    let order_update_query = `update customers set total_orders=total_orders+1 where username='${req.locals.customer_username}'`
+    client.query(order_update_query)
+
+    //Update number of supercoins if amount>500 
+    let supercoin_update_query = `update customers set total_supercoins=total_supercoins+1 where username='${req.locals.customer_username}'`
+    if (parseInt(req.body.sum) >= 500) {
+        client.query(supercoin_update_query)
     }
 
     client.query("update seller_products set product_quantity=0 where product_quantity<0")

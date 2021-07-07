@@ -1,5 +1,7 @@
 console.log("JS integrated successfully")
 let card_container = document.querySelector(".card-container")
+let sum = 0;
+
 
 show_cart_items()
 async function show_cart_items() {
@@ -178,8 +180,8 @@ calculate()
 async function calculate() {
     let quantity_list = [],
         price_list = [],
-        count = 0,
-        sum = 0
+        count = 0;
+    sum = 0
         //Extracting count of all products
     document.querySelectorAll(".count").forEach(item => {
             if (item.value == "") {
@@ -206,8 +208,9 @@ async function calculate() {
 }
 
 async function purchased() {
+    calculate()
 
-    //Extrac the values to be sent
+    //Extract the values to be sent
     let name_list = document.querySelectorAll(".title")
     let count_list = document.querySelectorAll(".count")
     let list1 = new Array()
@@ -225,7 +228,7 @@ async function purchased() {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${window.localStorage.getItem("token")}`
         },
-        body: JSON.stringify(({ product_name_list, product_quantity_list }))
+        body: JSON.stringify(({ product_name_list, product_quantity_list, sum }))
     })
 
     window.location.href = "/purchased"
