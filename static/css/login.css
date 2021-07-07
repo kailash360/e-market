@@ -5,7 +5,9 @@
 }
 
 body {
-    background: #fff;
+    background: url("../media/login-bg1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .form-modal {
@@ -202,5 +204,12 @@ body {
 @media only screen and (max-width:400px) {
     i {
         display: none!important;
+    }
+}
+
+@media only screen and (max-width:450px) {
+    body {
+        background: linear-gradient(45deg, rgb(112, 112, 245), rgba(202, 67, 255, 0.37));
+        height: 100vh;
     }
 }
