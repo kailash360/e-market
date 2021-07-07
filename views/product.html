@@ -39,43 +39,44 @@
 
     <!-- product search section  -->
     <div class="search-container">
-        <p>Everything is yours.Search your product</p>
-        <input type="text" id="search">
-        <button type="button" id="search-btn">Search</i></button>
+        <p>Everything is yours...</p>
+        <input type="text" id="search" placeholder="Search your products">
+        <button type="button" id="search-btn">Search</button>
     </div>
 
     <div class="filter-container">
         <span class="filter-product-type">
             <label for="cars">Category</label>
 
-            <select name="cars" id="type">
-                <option value="all">All</option>
-                <option value="accessories">Accessories</option>
-                <option value="clothing and fashion">Clothing and Fashion</option>
-                <option value="desktops and laptops">Desktops and Laptops</option>
-                <option value="electrical appliances">Electrical Appliances</option>
-                <option value="grocery items">Grocery Items</option>
-                <option value="smartphones">Smartphones</option>
-                <option value="any other">Any Other</option>
+            <select name="cars" id="type" class="drop-down">
+                <option class="option" value="all">All</option>
+                <option class="option" value="accessories">Accessories</option>
+                <option class="option" value="clothing and fashion">Clothing and Fashion</option>
+                <option class="option" value="desktops and laptops">Desktops and Laptops</option>
+                <option class="option" value="electrical appliances">Electrical Appliances</option>
+                <option class="option" value="grocery items">Grocery Items</option>
+                <option class="option" value="smartphones">Smartphones</option>
+                <option class="option" value="any other">Any Other</option>
             </select>
         </span>
 
         <span class="filter-product-price">
             <label for="price-range">Price</label>
-            <input type="range" id="price-range" name="price-range" value="10000" min="0" max="10000" step="2000">
+            <input type="range" id="price-range" name="price-range" value="10000" min="0" max="10000" step="100">
             <output class="bubble"></output>
+            <span>
+                <button class="apply-changes" type="button" onclick="show_products()">
+                    Apply Filters
+                </button>
+            </span>
         </span>
 
-        <span>
-            <button class="apply-changes" type="button" onclick="show_products()">
-                Apply Filters
-            </button>
-        </span>
 
     </div>
 
     <div class="product-container">
     </div>
+    
 
     <!-- Footer here  -->
     <footer class="footer">
