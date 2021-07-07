@@ -6,16 +6,12 @@
     font-family: "Source Sans Pro", sans-serif;
 }
 
-.navbar{
-    background: linear-gradient(to right, #fa24fa,#7823e7 );
+.navbar {
+    background: linear-gradient(to right, #fa24fa, #7823e7);
 }
 
-.navbar li a{
+.navbar li a {
     color: white;
-}
-
-body {
-    /* background: linear-gradient(to right, #fa24fa,#6609B8 ); */
 }
 
 .search-container {
@@ -134,7 +130,7 @@ body {
     transition-duration: 0.4s;
 }
 
-.product:hover{
+.product:hover {
     transform: scale(1.02);
     border: 4px solid #fa24fa;
 }
@@ -198,7 +194,8 @@ body {
     flex-direction: column;
 }
 
-.add-to-cart, .buy-now{
+.add-to-cart,
+.buy-now {
     width: 9.5em;
     padding: 0.7rem 0.7rem;
     margin: 1rem 0.5rem;
@@ -211,7 +208,8 @@ body {
     /* margin-top: 1.5rem; */
 }
 
-.add-to-cart:hover, .buy-now:hover{
+.add-to-cart:hover,
+.buy-now:hover {
     background: white;
     border: 4px solid #fa24fa;
     color: black;
@@ -219,7 +217,7 @@ body {
 
 .add-to-wishlist {
     margin: 0px auto;
-   /* padding-left: 2rem; */
+    /* padding-left: 2rem; */
     width: 20%;
     background: transparent;
     border: none;
@@ -229,15 +227,16 @@ body {
     padding: 0px;
 }
 
-.add-to-wishlist i{
+.add-to-wishlist i {
     padding: 1rem;
     border: none;
     border-radius: 50%;
     /* padding: 1.5rem; */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.329);
 }
-.add-to-wishlist i:hover{
-    box-shadow:  0 0 10px #fa24fa;
+
+.add-to-wishlist i:hover {
+    box-shadow: 0 0 10px #fa24fa;
 }
 
 .add-to-cart {
@@ -245,18 +244,20 @@ body {
     margin-bottom: 1px;
     background-color: black;
     color: white;
-    background: linear-gradient(to right, #fa24fa,#6609B8 );
+    background: linear-gradient(to right, #fa24fa, #6609B8);
 }
 
-.addInfo{
+.addInfo {
     display: none;
 }
-.read-more{
+
+.read-more {
     background: transparent;
     font-size: 1rem;
     border: none;
 }
-.read-more:hover{
+
+.read-more:hover {
     text-decoration: underline;
 }
 
@@ -264,9 +265,7 @@ body {
     margin-top: 10px;
     background-color: black;
     color: white;
-    background: linear-gradient(to right, #fa24fa,#6609B8 );
+    background: linear-gradient(to right, #fa24fa, #6609B8);
 }
 
-@media screen and (max-width:450px) {
-
-}
+@media screen and (max-width:450px) {}
