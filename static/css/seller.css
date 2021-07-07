@@ -451,3 +451,20 @@ hr {
         margin-left: auto;
     }
 }
+
+@media screen and (max-width: 1634px) {
+    .card{
+        width: fit-content;
+        padding-bottom: 2rem;
+    }
+    .card img {
+        height: auto;
+        width: 29%;
+    }
+    .edit-btn, .delete-btn {
+        font-size: 1.3rem;  
+    }
+    .delete-btn{
+        margin-left: 10px;
+    }
+}
