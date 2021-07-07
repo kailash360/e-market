@@ -439,7 +439,7 @@ app.get("/seller-profile", (req, res) => {
 //Adding products of seller
 app.post("/add-product", seller_auth, async(req, res) => {
     client
-        .query(`insert into seller_products(username,product_name,product_price,product_quantity,product_info,product_category) values ("${req.locals.seller_username}","${req.body.item_name}",'${req.body.item_price}','${req.body.item_quantity}',"${req.body.item_data}","${req.body.item_category}")`)
+        .query(`insert into seller_products(username,product_name,product_price,product_quantity,product_info,product_category) values ('${req.locals.seller_username}','${req.body.item_name}','${req.body.item_price}','${req.body.item_quantity}','${req.body.item_data}','${req.body.item_category}')`)
         .then(response => {
             res.statusCode = 201
             res.end()
