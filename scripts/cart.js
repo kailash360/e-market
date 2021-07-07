@@ -1,5 +1,9 @@
 console.log("JS integrated successfully")
 let card_container = document.querySelector(".card-container")
+let sum = 0,
+    seller_amount_list = [],
+    seller_list = [];
+
 
 show_cart_items()
 async function show_cart_items() {
@@ -102,12 +106,16 @@ async function show_cart_items() {
             quantity_label.for = "count"
             quantity_label.innerText = "Quantity"
 
+            let seller = document.createElement("p")
+            seller.classList.add("seller")
+            seller.innerText = element.seller_username
 
             info.appendChild(title)
             info.appendChild(price)
             info.appendChild(availability)
             info.appendChild(quantity_label)
             info.appendChild(quantity)
+            info.appendChild(seller)
 
             //Adding these to info
             item_info.appendChild(info)
@@ -174,23 +182,41 @@ async function delete_cart_item(cart_item, name) {
         })
 }
 
-calculate()
+// calculate()
 async function calculate() {
-    let quantity_list = [],
-        price_list = [],
-        count = 0,
-        sum = 0
-        //Extracting count of all products
-    document.querySelectorAll(".count").forEach(item => {
-            if (item.value == "") {
-                quantity_list.push(0)
-            } else {
-                quantity_list.push(parseInt(item.value))
-                count += parseInt(item.value)
-            }
-        })
-        //Extracting price of each product
-    document.querySelectorAll(".price").forEach(item => {
+    let price_list = [],
+        count_list = [],
+        count = 0;
+    sum = 0
+    seller_amount_list = []
+    seller_list = []
+
+    //Making the list of sellers and their amounts
+    let prices = document.querySelectorAll(".price")
+    let counts = document.querySelectorAll(".count")
+    let sellers = document.querySelectorAll(".seller")
+
+    for (let i = 0; i < sellers.length; i++) {
+        if (seller_list.includes(sellers[i].innerText)) {
+            seller_amount_list[seller_list.indexOf(sellers[i].innerText)] += parseInt((prices[i].innerText.split("."))[1]) * parseInt(counts[i].value)
+        } else {
+            seller_list.push(sellers[i].innerText)
+            seller_amount_list.push(parseInt(prices[i].innerText.split(".")[1]) * parseInt(counts[i].value))
+        }
+    }
+
+    //Extracting count of all products
+    counts.forEach(item => {
+        if (item.value == "") {
+            count_list.push(0)
+        } else {
+            count_list.push(parseInt(item.value))
+            count += parseInt(item.value)
+        }
+    })
+
+    //Extracting price of each product
+    prices.forEach(item => {
         price_list.push(parseInt(item.innerText.split(".")[1]))
     })
 
@@ -198,7 +224,7 @@ async function calculate() {
 
     //Calculating total cost
     for (var i = 0; i < price_list.length; i++) {
-        sum += price_list[i] * quantity_list[i]
+        sum += price_list[i] * count_list[i]
     }
 
     document.querySelector(".total-cost").innerText = sum
@@ -206,8 +232,9 @@ async function calculate() {
 }
 
 async function purchased() {
+    calculate()
 
-    //Extrac the values to be sent
+    //Extract the values to be sent
     let name_list = document.querySelectorAll(".title")
     let count_list = document.querySelectorAll(".count")
     let list1 = new Array()
@@ -225,19 +252,8 @@ async function purchased() {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${window.localStorage.getItem("token")}`
         },
-        body: JSON.stringify(({ product_name_list, product_quantity_list }))
+        body: JSON.stringify(({ product_name_list, product_quantity_list, sum, seller_amount_list, seller_list }))
     })
 
     window.location.href = "/purchased"
-        // fetch("/purchased", {
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //         'Authorization': `Bearer ${window.localStorage.getItem("token")}`
-        //     }
-        // }).then(response => {
-        //     console.log(response)
-        //     r = response.json()
-        //     console.log(r)
-        //     window.location.href = "/purchased"
-        // })
 }

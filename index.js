@@ -127,7 +127,7 @@ app.post("/customer-sign-up", async(req, res) => {
     }
 })
 
-//Serving signed-up
+//Serving signed-up page
 app.get("/signed-up", (req, res) => {
     res.end(fs.readFileSync("./views/signed-up.html"))
 })
@@ -239,7 +239,7 @@ app.post("/products", customer_auth, (req, res) => {
 app.post("/add-to-cart", customer_auth, async(req, res) => {
 
     //Adding to cart 
-    let add_to_cart_query = `insert into customer_cart(username,product_name,product_price,product_quantity,product_info) values('${req.locals.customer_username}','${req.body.name}','${req.body.price}','${req.body.quantity}','${req.body.info}')`
+    let add_to_cart_query = `insert into customer_cart(username,product_name,product_price,product_quantity,product_info,seller_username) values('${req.locals.customer_username}','${req.body.name}','${req.body.price}','${req.body.quantity}','${req.body.info}','${req.body.seller_username}')`
     await client
         .query(add_to_cart_query)
         .then(response => {
@@ -283,13 +283,33 @@ app.get('/purchased', (req, res) => {
 
 //Checkout
 app.post("/checkout", customer_auth, (req, res) => {
+    console.log(req.body)
+        //First remove the items from cart
     let delete_from_cart_query = `delete from customer_cart where username='${req.locals.customer_username}'`
     client.query(delete_from_cart_query)
 
+    //Update products' database when products are purchased
     for (i in req.body.product_name_list) {
         let update_products_query = `update seller_products set product_quantity=product_quantity-${req.body.product_quantity_list[i]} where product_name='${req.body.product_name_list[i]}'`
         client.query(update_products_query)
     }
+
+    //Update customer data after purchasing
+    let order_update_query = `update customers set total_orders=total_orders+1 where username='${req.locals.customer_username}'`
+    client.query(order_update_query)
+
+    //Update number of supercoins if amount>500 
+    let supercoin_update_query = `update customers set total_supercoins=total_supercoins+1 where username='${req.locals.customer_username}'`
+    if (parseInt(req.body.sum) >= 500) {
+        client.query(supercoin_update_query)
+    }
+
+    //Update seller data on purchase
+    for (i in req.body.seller_list) {
+        let seller_update_query = `update sellers set total_orders=total_orders+1,total_revenue=total_revenue+${req.body.seller_amount_list[i]} where username='${req.body.seller_list[i]}'`
+        client.query(seller_update_query)
+    }
+
 
     client.query("update seller_products set product_quantity=0 where product_quantity<0")
     res.end()

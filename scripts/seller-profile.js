@@ -28,12 +28,16 @@ async function display_seller_data() {
         let user_phone = document.getElementById("user-phone")
         let office_add = document.getElementById("user-address-1")
         let home_add = document.getElementById("user-address-2")
+        let total_revenue = document.getElementById("total-revenue")
+        let total_orders = document.getElementById("total-orders")
 
         business_name.innerText = response[0].business_name
         user_email.innerText = response[0].email
         user_phone.innerText = response[0].contact_no
         office_add.innerText = response[0].office_address
         home_add.innerText = response[0].home_address
+        total_revenue.innerText = response[0].total_revenue
+        total_orders.innerText = response[0].total_orders
     })
 }
 

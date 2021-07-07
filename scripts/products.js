@@ -29,8 +29,8 @@ async function show_products() {
     let price = document.getElementById("price-range").value
     let search = document.getElementById("search").value
 
-    // HTML of a product 
-    /* <div class="product">
+    // HTML of a products
+    /*    <div class="product">
         <div class="product-image">
             <img src="../static/media/sample-product.png" alt="">
         </div>
@@ -38,10 +38,11 @@ async function show_products() {
             <p class="product-name">Sunflower oil</p>
             <p class="product-price">Rs.500</p>
             <p class="product-quantity">Hurry,only 2 left!</p>
-            <p class="nil-product-quantity">Out of stock!</p>
-            <p class="product-about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae eligendi ab facere doloribus nesciunt nemo, tempora vel blanditiis quisquam ratione.</p>
-            <p class="product-delivery">Delivery in 2 days</p>
-
+            <button class="read-more"">Read more...</button>
+            <div class="addInfo">
+                <p class="product-about">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                <p class="product-delivery">Delivery in 2 days</p>
+            </div>
         </div>
         <div class="button-section">
             <button class="add-to-wishlist">
@@ -54,36 +55,8 @@ async function show_products() {
                 Buy Now
             </button>
         </div>
-    </div> */
-
-    //NEW SAMPLE CARD
-//     <div class="product">
-//     <div class="product-image">
-//         <img src="../static/media/sample-product.png" alt="">
-//     </div>
-//     <div class="product-info">
-//         <p class="product-name">Sunflower oil</p>
-//         <p class="product-price">Rs.500</p>
-//         <p class="product-quantity">Hurry,only 2 left!</p>
-//         <button class="read-more"">Read more...</button>
-//         <div class="addInfo">
-//             <p class="nil-product-quantity">Out of stock!</p>
-//             <p class="product-about">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
-//             <p class="product-delivery">Delivery in 2 days</p>
-//         </div>
-//     </div>
-//     <div class="button-section">
-//         <button class="add-to-wishlist">
-//             <i class="fas fa-heart"></i>
-//         </button>
-//         <button class="add-to-cart">
-//             Add to Cart
-//         </button>
-//         <button class="buy-now">
-//             Buy Now
-//         </button>
-//     </div>
-// </div>
+    </div>
+    */
 
     await fetch("/products", {
             method: "POST",
@@ -94,8 +67,6 @@ async function show_products() {
             body: JSON.stringify(({ type, price, search }))
         }).then(response => response.json())
         .then(response => {
-            // response = JSON.stringify(response)
-            console.log(response)
             response.forEach(item => {
                 let product = document.createElement("div")
                 product.classList.add("product")
@@ -136,16 +107,36 @@ async function show_products() {
                     product_quantity.innerText = `Hurry, only ${item["product_quantity"]} left!`
                     product_info.appendChild(product_quantity)
                 }
+                let add_info = document.createElement("div")
+                add_info.classList.add("addInfo")
+
+                //Additional info section
+                let read_more_btn = document.createElement("button")
+                read_more_btn.classList.add("read-more")
+                read_more_btn.type = "button"
+                read_more_btn.innerText = "Read more.."
+                read_more_btn.addEventListener("click", () => {
+                    if (add_info.style.display != "none") {
+                        add_info.style.display = "none";
+                        read_more_btn.innerText = "Read more..";
+                    } else {
+                        add_info.style.display = "inline";
+                        read_more_btn.innerText = "See Less..";
+                    }
+                })
 
                 let product_about = document.createElement("p")
                 product_about.classList.add("product-about")
                 product_about.innerText = item["product_info"]
-                product_info.appendChild(product_about)
+                add_info.appendChild(product_about)
 
                 let product_delivery = document.createElement("p")
                 product_delivery.classList.add("product-delivery")
                 product_delivery.innerText = "Delivery in 2 days"
-                product_info.appendChild(product_delivery)
+                add_info.appendChild(product_delivery)
+
+                product_info.appendChild(read_more_btn)
+                product_info.appendChild(add_info)
 
                 //Adding buttons
                 let btn_section = document.createElement("div")
@@ -159,7 +150,6 @@ async function show_products() {
                 })
                 btn_section.appendChild(add_wishlist)
 
-
                 let add_cart = document.createElement("button")
                 add_cart.classList.add("add-to-cart")
                 add_cart.innerText = "Add to cart"
@@ -169,7 +159,8 @@ async function show_products() {
                     let quantity = item["product_quantity"]
                     let info = item["product_info"]
                     if (quantity > 0) {
-                        add_to_cart(add_cart, name, price, quantity, info)
+                        let seller_username = item["username"]
+                        add_to_cart(add_cart, name, price, quantity, info, seller_username)
                     } else {
                         alert(`${name} is not available now.`)
                     }
@@ -203,14 +194,14 @@ search_btn.addEventListener("click", () => {
 })
 
 //Function for adding to cart
-async function add_to_cart(add_cart, name, price, quantity, info) {
+async function add_to_cart(add_cart, name, price, quantity, info, seller_username) {
     await fetch("/add-to-cart", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${window.localStorage.getItem("token")}`
             },
-            body: JSON.stringify(({ name, price, quantity, info }))
+            body: JSON.stringify(({ name, price, quantity, info, seller_username }))
         })
         // .then(response => response.json())
         .then(response => {
@@ -219,26 +210,7 @@ async function add_to_cart(add_cart, name, price, quantity, info) {
             } else {
                 add_cart.innerText = "Added to cart"
                 add_cart.disabled = "true"
-                add_cart.style.backgroundColor = "#b7b7b7"
+                add_cart.style.background = "linear-gradient(45deg, #ffc800, #2cf307)"
             }
         })
-}
-
-//Read more function for Product's Cards :
-read_more = document.querySelector(".read-more");
-read_more.addEventListener ("click", ()=> {
-    readMore();
-});
-
-function readMore() {
-    addInfo = document.querySelector(".addInfo");
-  
-    if (addInfo.style.display == "none"){
-        addInfo.style.display = "inline";
-        read_more.innerText = "See Less...";   
-    } 
-    else{
-        addInfo.style.display = "none";        
-        read_more.innerText = "Read more...";
-    }
 }
