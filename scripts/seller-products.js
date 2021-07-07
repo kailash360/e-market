@@ -1,6 +1,6 @@
 //fetching elements
 let add_product = document.getElementById("add-product-btn")
-let product_list = document.querySelector(".product-list")
+// let product_list = document.querySelector(".product-list")
 let empty_list = document.querySelector(".empty-list")
 let card_list = document.querySelector(".cardList")
 
@@ -79,8 +79,8 @@ async function show_products() {
         //Changes before data will be displayed
         if (data.length > 0) {
             empty_list.style.display = "none"
-            product_list.style.marginBottom = "30vh"
-            product_list.innerText = ""
+            card_list.style.marginBottom = "30vh"
+            card_list.innerText = ""
         }
 
         //Displaying data
