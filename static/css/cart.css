@@ -198,6 +198,10 @@
     margin-top: 20vh;
 }
 
+.seller {
+    display: none;
+}
+
 @media screen and (max-width: 450px) {
     .heading {
         text-align: center;

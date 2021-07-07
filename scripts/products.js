@@ -140,7 +140,8 @@ async function show_products() {
                     let quantity = item["product_quantity"]
                     let info = item["product_info"]
                     if (quantity > 0) {
-                        add_to_cart(add_cart, name, price, quantity, info)
+                        let seller_username = item["username"]
+                        add_to_cart(add_cart, name, price, quantity, info, seller_username)
                     } else {
                         alert(`${name} is not available now.`)
                     }
@@ -174,14 +175,14 @@ search_btn.addEventListener("click", () => {
 })
 
 //Function for adding to cart
-async function add_to_cart(add_cart, name, price, quantity, info) {
+async function add_to_cart(add_cart, name, price, quantity, info, seller_username) {
     await fetch("/add-to-cart", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${window.localStorage.getItem("token")}`
             },
-            body: JSON.stringify(({ name, price, quantity, info }))
+            body: JSON.stringify(({ name, price, quantity, info, seller_username }))
         })
         // .then(response => response.json())
         .then(response => {

@@ -235,7 +235,7 @@ i {
 
 .financial-heading {
     margin-top: 15px;
-    font-size: 2.2em;
+    font-size: 2em;
     text-align: center;
 }
 
@@ -259,6 +259,7 @@ i {
     position: relative;
     display: flex;
     flex-direction: row-reverse;
+    font-weight: normal;
 }
 
 @media screen and (max-width: 450px) {
