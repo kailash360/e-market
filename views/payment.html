@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/signed-up.css">
+    <link rel="stylesheet" href="../static/css/payment.css">
     <link rel="stylesheet" href="../static/css/navbar.css">
     <link rel="stylesheet" href="../static/css/footer.css">
-    <title>Thank You</title>
+
+    <title>Payment</title>
 </head>
 
 <body>
@@ -38,13 +39,27 @@
 
 
 
-    <div class="container scale-up-center">
-        <p class="message">
-            <i class="far fa-grin-beam emoji"></i>
-            <br> Thank You for purchasing our product.
-        </p>
-        <a class="link" href="/products-page">Keep Shopping</a>
+    <div class="container">
+        <form>
+            <p><strong>Please select a payment method</strong></p>
+            <input type="radio" id="debit-card" name="payment-mode" value="debit-card">
+            <label for="debit-card">Debit Card</label><br>
+            <input type="radio" id="credit-card" name="payment-mode" value="credit-card">
+            <label for="credit-card">Credit Card</label><br>
+            <input type="radio" id="net-banking" name="payment-mode" value="net-banking">
+            <label for="net-banking">Credit Card</label><br>
+            <input type="radio" id="upi" name="payment-mode" value="upi">
+            <label for="upi">UPI</label><br>
+            <input type="radio" id="cod" name="payment-mode" value="cod">
+            <label for="cod">Cash On Delivery</label><br>
+
+            <button class="submit-btn" type="button" onclick="pay()">Proceed</button>
+        </form>
+
     </div>
+
+
+
     <!-- Footer here  -->
     <footer class="footer">
         <span class="footer-item">
@@ -76,5 +91,6 @@
 </body>
 <script src="https://kit.fontawesome.com/2c32a0aecc.js " crossorigin="anonymous "></script>
 <script src="../scripts/navbar.js"></script>
+<script src="../scripts/payment.js"></script>
 
 </html>

@@ -255,5 +255,5 @@ async function purchased() {
         body: JSON.stringify(({ product_name_list, product_quantity_list, sum, seller_amount_list, seller_list }))
     })
 
-    window.location.href = "/purchased"
+    window.location.href = "/payment"
 }
