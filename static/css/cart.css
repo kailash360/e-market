@@ -33,6 +33,11 @@
     margin-bottom: 5em;
 }
 
+.empty-cart a {
+    text-decoration: none;
+    color: rgb(2, 2, 211);
+}
+
 .card-container {
     width: fit-content;
     height: fit-content;

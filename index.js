@@ -462,7 +462,7 @@ app.post("/show-products", seller_auth, async(req, res) => {
 //Updating information of an item by seller
 app.post("/update-item", seller_auth, async(req, res) => {
     client
-        .query(`update seller_products set product_price="${parseInt(req.body.price)}",product_quantity="${parseInt(req.body.quantity)}",product_info='${req.body.data}' where (username="${req.locals.seller_username}" AND product_name="${req.body.name}");commit;`)
+        .query(`update seller_products set product_price='${parseInt(req.body.price)}',product_quantity='${parseInt(req.body.quantity)}',product_info='${req.body.data}' where (username='${req.locals.seller_username}' AND product_name='${req.body.name}');commit;`)
         .then(response => {
             res.ok = true
             res.end()

@@ -170,6 +170,19 @@ async function show_products() {
                 let buy_now = document.createElement("button")
                 buy_now.classList.add("buy-now")
                 buy_now.innerText = "Buy Now"
+                buy_now.addEventListener("click", () => {
+                    let name = item["product_name"]
+                    let price = item["product_price"]
+                    let quantity = item["product_quantity"]
+                    let info = item["product_info"]
+                    if (quantity > 0) {
+                        let seller_username = item["username"]
+                        add_to_cart(add_cart, name, price, quantity, info, seller_username)
+                        window.location.href = "/cart"
+                    } else {
+                        alert(`${name} is not available now.`)
+                    }
+                })
                 btn_section.appendChild(buy_now)
 
                 //Adding these sections to the product
