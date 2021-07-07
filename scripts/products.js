@@ -44,17 +44,46 @@ async function show_products() {
 
         </div>
         <div class="button-section">
-            <button id="add-to-wishlist">
+            <button class="add-to-wishlist">
                 <i class="fas fa-heart"></i>
             </button>
-            <button id="add-to-cart">
+            <button class="add-to-cart">
                 Add to Cart
             </button>
-            <button id="buy-now">
+            <button class="buy-now">
                 Buy Now
             </button>
         </div>
     </div> */
+
+    //NEW SAMPLE CARD
+//     <div class="product">
+//     <div class="product-image">
+//         <img src="../static/media/sample-product.png" alt="">
+//     </div>
+//     <div class="product-info">
+//         <p class="product-name">Sunflower oil</p>
+//         <p class="product-price">Rs.500</p>
+//         <p class="product-quantity">Hurry,only 2 left!</p>
+//         <button class="read-more"">Read more...</button>
+//         <div class="addInfo">
+//             <p class="nil-product-quantity">Out of stock!</p>
+//             <p class="product-about">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+//             <p class="product-delivery">Delivery in 2 days</p>
+//         </div>
+//     </div>
+//     <div class="button-section">
+//         <button class="add-to-wishlist">
+//             <i class="fas fa-heart"></i>
+//         </button>
+//         <button class="add-to-cart">
+//             Add to Cart
+//         </button>
+//         <button class="buy-now">
+//             Buy Now
+//         </button>
+//     </div>
+// </div>
 
     await fetch("/products", {
             method: "POST",
@@ -193,4 +222,23 @@ async function add_to_cart(add_cart, name, price, quantity, info) {
                 add_cart.style.backgroundColor = "#b7b7b7"
             }
         })
+}
+
+//Read more function for Product's Cards :
+read_more = document.querySelector(".read-more");
+read_more.addEventListener ("click", ()=> {
+    readMore();
+});
+
+function readMore() {
+    addInfo = document.querySelector(".addInfo");
+  
+    if (addInfo.style.display == "none"){
+        addInfo.style.display = "inline";
+        read_more.innerText = "See Less...";   
+    } 
+    else{
+        addInfo.style.display = "none";        
+        read_more.innerText = "Read more...";
+    }
 }
