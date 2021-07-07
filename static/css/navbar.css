@@ -8,16 +8,20 @@
     --font-color: white;
 }
 
+.fa-user {
+    color: var(--font-color);
+}
+
 .navbar {
     width: inherit;
     height: fit-content;
     display: grid;
     grid-template-columns: 2fr 1fr;
     padding: 0.8em;
-    background: linear-gradient(to right, #fa24fa,#6609B8 );
+    background: linear-gradient(to right, #fa24fa, #6609B8);
 }
 
-.navbar li a{
+.navbar li a {
     color: white;
 }
 

@@ -34,9 +34,18 @@
     color: var(--font-colour);
 }
 
+.reach-us strong {
+    color: var(--font-colour);
+}
+
 .texts {
     color: var(--font-colour);
     text-align: left;
+}
+
+.texts strong,
+.texts a i {
+    color: var(--font-colour);
 }
 
 @media screen and (max-width: 450px) {
