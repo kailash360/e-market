@@ -9,7 +9,7 @@
 }
 
 body {
-    background: linear-gradient(135deg, #FA24FA, #6609B8);
+    /* background: linear-gradient(135deg, #FA24FA, #6609B8); */
     background-repeat: no-repeat;
     background-size: 100%;
     height: 100vh;
@@ -21,8 +21,10 @@ body {
     padding-left: 1em;
     font-size: 5em;
     font-weight: bolder;
-    width: max-content;
+    width: fit-content;
     color: white;
+    /* opacity: 10%; */
+    background: transparent;
 }
 
 img {
@@ -37,18 +39,21 @@ img {
 .button-section {
     margin: 1rem;
     padding: 1rem;
-    margin-left: 4em
+    margin-left: 4em;
+    width: fit-content;
+    /* background: inherit; */
 }
 
 .button-section button {
     font-size: 1.5em;
     font-weight: bolder;
-    background: #6c0abb;
+    background: transparent;
     color: white;
     border: none;
     border-radius: 100px;
     padding: 0.5em 1.7em;
     transition: 1s;
+    box-shadow: inset 0 0 0 200px rgba(255,255,255,0.3);
 }
 
 .button-section button:hover {
