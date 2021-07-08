@@ -145,3 +145,9 @@ async function save_changes() {
         }
     })
 }
+
+
+async function logout() {
+    window.localStorage.removeItem("token")
+    window.location.href = "/customer-login"
+}
