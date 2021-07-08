@@ -4,7 +4,8 @@ function toggleSignup() {
     document.getElementById("signup-toggle").style.background = "linear-gradient(to top left,#FA24FA, #6609B8)";
     document.getElementById("signup-toggle").style.color = "#fff";
     document.getElementById("login-form").style.display = "none";
-    document.getElementById("signup-form").style.display = "block";
+    document.getElementById("signup-form").style.display = "flex";
+    document.querySelector(".body").style.backgroundSize = "contain";
 }
 
 function toggleLogin() {
@@ -14,6 +15,7 @@ function toggleLogin() {
     document.getElementById("signup-toggle").style.color = "#222";
     document.getElementById("signup-form").style.display = "none";
     document.getElementById("login-form").style.display = "block";
+    document.querySelector(".body").style.backgroundSize = "cover";
 }
 
 

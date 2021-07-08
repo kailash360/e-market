@@ -5,8 +5,8 @@
 }
 
 body {
-    background: url("../media/login-bg1.jpg");
-    background-repeat: no-repeat;
+    background: url("../media/login-bg-4.jpg");
+    /* background-repeat: no-repeat; */
     background-size: cover;
 }
 
@@ -14,7 +14,8 @@ body {
     position: relative;
     width: 450px;
     height: auto;
-    margin-top: 4em;
+    margin-top: 10em;
+    margin-top: auto auto;
     left: 50%;
     transform: translateX(-50%);
     background: #fff;
@@ -108,6 +109,8 @@ body {
 
 #signup-form {
     display: none;
+    width: fit-content;
+
 }
 
 #login-form button,
