@@ -355,6 +355,10 @@
     background: linear-gradient(to right, #fa24fa, #6609B8);
 }
 
+.footer {
+    margin-top: 200px;
+}
+
 @media screen and (max-width:1300px) {
     .search-container {
         width: 80vw;
