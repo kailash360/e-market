@@ -42,3 +42,7 @@ document.querySelectorAll(".box").forEach(item => {
         window.location.href = "/products-page"
     })
 })
+
+setInterval(() => {
+    plusSlides(1)
+}, 3000)
