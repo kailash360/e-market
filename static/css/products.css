@@ -15,6 +15,16 @@
 .navbar li a {
     color: white;
 }
+.menu-list li a:hover,
+.menu-list-responsive:hover {
+    color: rgb(0, 0, 0);
+}
+.nav-end li a:hover {
+    color: rgb(0, 0, 0);
+}
+.nav-end li a i:hover {
+    color: rgb(0, 0, 0);
+}
 
 .search-container {
     width: 40vw;

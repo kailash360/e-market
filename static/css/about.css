@@ -1,9 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&display=swap');
 * {
     margin: 0px;
     padding: 0px;
     font-family: "Nunito Sans";
     overflow-x: hidden;
+}
+
+.menu-list li a:hover,
+.menu-list-responsive:hover {
+    color: rgb(0, 0, 0);
+}
+.nav-end li a:hover {
+    color: rgb(0, 0, 0);
+}
+.nav-end li a i:hover {
+    color: rgb(0, 0, 0);
 }
 
 .heading {
@@ -12,8 +24,17 @@
     font-size: 3em;
     font-weight: bolder;
     text-align: center;
-    margin-top: 60px;
+    margin-top:20px;
+    font-size: 3em;
+    font-family: 'Maven Pro', sans-serif;
+    background: -webkit-linear-gradient(#fa24fa, #7823e7);
+    background-clip: content-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: +1;
 }
+
+
 
 .slogan-section {
     width: 100vw;
@@ -22,9 +43,10 @@
 }
 
 .slogan-section img {
-    height: 80vh;
+    height: 100vh;
     width: 100vw;
     object-fit: cover;
+    /* position: absolute; */
 }
 
 .slogan {
@@ -55,7 +77,14 @@
     padding: 1em 2em;
     font-size: 1.2em;
 }
-
+h2{
+    font-size: 2em;
+    font-family: 'Maven Pro', sans-serif;
+    background: -webkit-linear-gradient(#fa24fa, #7823e7);
+    background-clip: content-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 .left {
     text-align: left;
 }
@@ -69,6 +98,7 @@
     animation-delay: 2s;
 }
 
+
 @keyframes slide-right {
     100% {
         -webkit-transform: translateX(0);
@@ -77,5 +107,49 @@
     0% {
         -webkit-transform: translateX(-100px);
         transform: translateX(-100px);
+    }
+}
+
+@media screen and (max-width:820px){
+    .slogan{
+        font-size: 2.5em;
+    }
+    .subscript{
+        font-size: 1.5em;
+    }
+    .slogan-section img{
+        height: 50vh;
+        width: auto;
+
+    }
+}
+@media screen and (max-width:520px){
+    .slogan{
+        font-size: 2em;
+    }
+    .subscript{
+        font-size: 1em;
+    }
+    .slogan-section img{
+        height: 40vh;
+        width: auto;
+    }
+}
+@media screen and (max-width:380px){
+    .slogan{
+        font-size: 1.5em;
+    }
+    .subscript{
+        font-size: 1em;
+    }
+    .slogan-section img{
+        height: 30vh;
+        width: auto;
+    }
+    .heading{
+        font-size: 2em;
+    }
+    h2{
+        font-size: 1.5em;
     }
 }
