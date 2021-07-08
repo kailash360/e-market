@@ -233,6 +233,16 @@
     display: none;
 }
 
+.checkout-btn-section input {
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+
+.checkout-btn-section label a {
+    color: blue;
+    text-decoration: none;
+}
+
 .checkout-btn {
     background: linear-gradient(to right, #fa24fa, #6609B8);
     color: white;
