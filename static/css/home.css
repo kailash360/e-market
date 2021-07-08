@@ -206,6 +206,7 @@ body {
     padding: 12px;
     font-family: "Source Sans Pro", sans-serif;
     color: rgb(153, 0, 77);
+    text-align: center;
 }
 
 .center {
@@ -241,7 +242,7 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    z-index: -1;
+    /* z-index: -1; */
     /* padding-top: 25rem; */
     font-family: "Source Sans Pro", sans-serif;
     color: rgb(153, 0, 77);
@@ -288,7 +289,7 @@ body {
 }
 
 .box:hover {
-    transform: scale(1.02);
+    transform: scale(1.03);
     box-shadow: 0px 0px 10px 5px #fa24fa;
 }
 
@@ -324,29 +325,45 @@ body {
 .client-container {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     font-family: "Source Sans Pro", sans-serif;
     color: #fa24fa;
+    margin-top: 1em;
 }
 
 .clients {
     display: flex;
+    flex-direction: row;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: center;
+    width: 80%;
+    margin: 0px auto;
+    margin-bottom: 2em;
 }
 
 .client-item {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 34px 34px;
+    width: 220px;
+    padding: 5px 10px;
+    margin: 0px 20px;
+    margin-bottom: 3rem;
+    box-shadow: 0px 0px 10px 0px #0000004f;
+    border-radius: 0.5rem;
 }
 
 .client-item img {
-    width: 100%;
-    height: 100%;
+    width: 200px;
+    height: auto;
     transition-duration: 0.2s;
+    /* padding: 10px; */
+}
+
+.client-item:hover {
+    box-shadow: none;
 }
 
 .client-item img:hover {
@@ -372,5 +389,8 @@ body {
 @media screen and (max-width: 480px) {
     .box {
         width: fit-content;
+    }
+    .clients {
+        flex-direction: column;
     }
 }
