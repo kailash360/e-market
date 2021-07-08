@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito Sans";
+}
+
+.top-heading{
+    width: fit-content;
+    margin: 0 auto;
+    font-family: 'Maven Pro', sans-serif;
+    background: -webkit-linear-gradient(#fa24fa, #7823e7);
+    background-clip: content-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 3rem;
+}
+
+.heads{
+    font-size: 1.5em;
+    font-weight: bold;
+    background: -webkit-linear-gradient(#fa24fa, #7823e7);
+    background-clip: content-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.product-name-list{
+    display: flex;
+    flex-direction: column;
+}
+
+.product-item{
+    display: grid;
+    grid-template-columns: 35% 20% 20% 25%;
+    padding: 1rem 2rem;
+}
+.hover:hover{
+    background: rgba(0, 0, 0, 0.144);
+}
+.product-heading-container{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.322);
+    width: 60vw;
+    padding: 1rem;
+    margin: auto;
+    border: none;
+    border-radius: 0.5rem;
+    margin-top: 3rem;
+}
+@media screen and (max-width: 890px){
+    .product-item{
+        font-size: 0.7em;
+    }
+    .heads{
+        font-size: 1em;
+    }
+    .product-heading-container{
+        width: 80vw;
+    }
+}
+@media screen and (max-width: 550px){
+    .product-item{
+        font-size: 0.5em;
+    }
+    .heads{
+        font-size: 0.7em;
+    }
+    .product-heading-container{
+        width: 90vw;
+    }
+}
+
+
+
