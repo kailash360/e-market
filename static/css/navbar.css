@@ -69,7 +69,7 @@
 
 .menu-list li a:hover,
 .menu-list-responsive:hover {
-    color: rgb(0, 0, 0);
+    color: grey;
 }
 
 .nav-end {
@@ -94,9 +94,12 @@
 .nav-end li a:hover {
     color: rgb(179, 179, 179);
 }
+.nav-end li a i:hover {
+    color: rgb(179, 179, 179);
+}
 
 .active {
-    color: rgb(0, 0, 0);
+    color: gray;
 }
 
 @media screen and (max-width: 496px) {
