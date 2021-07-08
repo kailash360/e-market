@@ -46,6 +46,7 @@ hr {
     font-size: 3em;
     font-weight: bolder;
     background: -webkit-linear-gradient(#fa24fa, #7823e7);
+    background-clip: content-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -82,13 +83,14 @@ hr {
 .input-form label {
     display: flex;
     align-items: center;
-    justify-content:flex-end;
+    justify-content: flex-end;
     font-family: 'Lato', sans-serif;
     font-size: 1.4rem;
     padding-right: 20px;
 }
+
 .input-form label:nth-child(4) {
-    align-items:baseline;
+    align-items: baseline;
 }
 
 .input-form input,
@@ -106,8 +108,9 @@ hr {
     border: 4px solid transparent;
     transition-duration: 0.5s;
 }
+
 .input-form input:hover,
-.input-form textarea:hover{
+.input-form textarea:hover {
     background: white;
     border: 4px solid #fa24fa;
 }
@@ -115,10 +118,11 @@ hr {
 .input-form textarea {
     text-align: left;
 }
+
 .category {
     font-family: 'Lato', sans-serif;
     background: rgba(0, 0, 0, 0.103);
-    width:100%;
+    width: 100%;
     font-size: 0.6em;
     font-weight: bolder;
     color: rgba(0, 0, 0, 0.418);
@@ -131,21 +135,21 @@ hr {
     transition-duration: 0.5s;
 }
 
-.category:hover{
+.category:hover {
     background: white;
     border: 4px solid #fa24fa;
     color: black;
 }
 
-
-.add-btn-class{
+.add-btn-class {
     display: flex;
     align-items: flex-end;
 }
+
 .add-product-btn {
     font-size: 0.6em;
-    background: linear-gradient(to right, #fa24fa,#6609B8 );
-    box-shadow:0 0 10px rgba(0, 0, 0, 0.322);
+    background: linear-gradient(to right, #fa24fa, #6609B8);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.322);
     color: rgb(240, 240, 240);
     font-weight: bolder;
     width: fit-content;
@@ -156,6 +160,7 @@ hr {
     border-radius: 0.5rem;
     border: 4px solid white;
 }
+
 .add-product-btn:hover {
     border: 4px solid #fa24fa;
     background: white;
@@ -311,7 +316,7 @@ hr {
     display: flex;
     flex-direction: row;
     align-items: center;
-    width:40%;
+    width: 40%;
     margin: 1rem;
     height: fit-content;
     border: 4px solid transparent;
@@ -326,13 +331,14 @@ hr {
     transform: scale(1.01);
 }
 
-.card{
+.card {
     display: grid;
     grid-template-columns: 3fr 7fr;
     grid-template-rows: 8fr 2fr;
     /* grid-auto-flow: row; */
 }
-.cardInfo{
+
+.cardInfo {
     display: grid;
     grid-template-rows: 2fr 2fr 2fr 2fr 6fr;
     font-family: 'Lato', sans-serif;
@@ -341,13 +347,13 @@ hr {
     align-self: center;
 }
 
-.cardInfo div{
+.cardInfo div {
     display: grid;
     grid-template-columns: 3fr 7fr;
     font-family: 'Lato', sans-serif;
 }
 
-.cardInfo div p{
+.cardInfo div p {
     background: rgba(0, 0, 0, 0.103);
     border-radius: 0.5rem;
     padding: 0.3rem;
@@ -365,13 +371,15 @@ hr {
     align-items: center;
     justify-content: center;
 }
-.card img{
+
+.card img {
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
     grid-row-end: 2;
 }
-.cardInfo{
+
+.cardInfo {
     width: 80%;
     grid-column-start: 2;
     grid-column-end: 3;
@@ -379,7 +387,7 @@ hr {
     grid-row-end: 2;
 }
 
-.card-btns{
+.card-btns {
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 2;
@@ -387,7 +395,8 @@ hr {
     justify-self: end;
     border-radius: 0.5rem;
 }
-.garbage{
+
+.garbage {
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 2;
@@ -396,17 +405,20 @@ hr {
     display: none;
 }
 
-.edit-btn, .delete-btn{
+.edit-btn,
+.delete-btn {
     margin: 8px;
     font-size: 1.2rem;
     padding: 0.5rem 0.8rem;
-    background: linear-gradient(to right, #fa24fa,#6609B8 );
+    background: linear-gradient(to right, #fa24fa, #6609B8);
     border: 3px solid white;
     color: rgb(255, 255, 255);
     box-shadow: 0 0 10px rgb(0 0 0 / 35%);
     border-radius: 50%;
 }
-.edit-btn:hover, .delete-btn:hover {
+
+.edit-btn:hover,
+.delete-btn:hover {
     color: #000000;
     border: 3px solid #fa24fa;
     background: white;
@@ -418,25 +430,76 @@ hr {
     border: none;
     text-align: left;
 }
-.read-more:hover{
+
+.read-more:hover {
     text-decoration: underline;
     color: #fa24fa;
 }
-.addInfo{
+
+.addInfo {
     display: none;
 }
+
 .addInfo>h3 {
     display: block;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 1634px) {
     .card {
-        width: fit-content;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 2rem;
+    }
+    .cardInfo {
+        grid-template-rows: 2fr 2fr 2fr 6fr;
+    }
+    .read-more {
+        display: none;
+    }
+    .addInfo {
+        display: grid;
+    }
+    /* .addInfo{
+        overflow: scroll;
+    } */
+    .card img {
+        height: auto;
+        width: 29%;
+    }
+    .edit-btn,
+    .delete-btn {
+        font-size: 1.3rem;
+    }
+    .delete-btn {
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 1110px) {
+    .cardList {
+        flex-direction: column;
+    }
+    .card {
+        padding: 0px 1rem;
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 810px) {
+    .card {
+        width: 90vw;
+    }
+}
+
+@media screen and (max-width: 496px) {
+    .card {
+        /* width: fit-content; */
         margin: 0.5rem;
-        grid-template-columns:2fr 8fr ;
+        grid-template-columns: 2fr 8fr;
         /* grid-template-rows: ; */
     }
-    .cardInfo{
+    .cardInfo {
         width: 100%;
         grid-template-rows: 2fr 2fr 2fr 2fr 2fr;
     }
@@ -469,7 +532,8 @@ hr {
         justify-content: center;
         align-items: center;
     }
-    .input-form input {
+    .input-form input,
+    .input-form textarea {
         width: 90%;
         margin-bottom: 0.5em;
         padding-left: 0px;
@@ -536,44 +600,3 @@ hr {
         margin-left: auto;
     }
 }
-
-@media screen and (max-width: 1634px) {
-    .card {
-        height: fit-content;
-        display: flex;
-        flex-direction: column;
-        padding-bottom: 2rem;
-    }
-    .cardInfo{  
-        grid-template-rows: 2fr 2fr 2fr 6fr;
-    }
-    .read-more{
-        display: none;
-    }
-    .addInfo{
-        display:grid;
-    }
-    /* .addInfo{
-        overflow: scroll;
-    } */
-    .card img {
-        height: auto;
-        width: 29%;
-    }
-    .edit-btn,
-    .delete-btn {
-        font-size: 1.3rem;
-    }
-    .delete-btn {
-        margin-left: 10px;
-    }
-}
-
-@media screen and (max-width: 810px) {
-    .card{
-        width: 90vw;
-    }
-}
-/* @media screen and (min-width: 1634px) {
-
-} */

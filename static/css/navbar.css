@@ -124,4 +124,7 @@
         display: block;
         width: 60%;
     }
+    .hamburger i {
+        color: white;
+    }
 }
