@@ -262,6 +262,29 @@ i {
     font-weight: normal;
 }
 
+
+/* Log out section  */
+
+.log-out-section {
+    margin-right: 2rem;
+    margin-top: auto;
+    text-align: right;
+}
+
+#log-out-btn {
+    width: fit-content;
+    height: fit-content;
+    padding: 4px 8px;
+    border: 2px solid rgb(211, 211, 211);
+    border-radius: 5px;
+    font-size: 1.4em;
+    background-color: rgb(182, 0, 0);
+    font-weight: bolder;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 450px) {
      :root {
         --left-spacing: 0px;

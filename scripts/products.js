@@ -146,7 +146,7 @@ async function show_products() {
                 add_wishlist.classList.add("add-to-wishlist")
                 add_wishlist.innerHTML += '<i class="fas fa-heart"></i>'
                 add_wishlist.addEventListener("click", () => {
-                    add_wishlist.style.color = "red"
+                    add_wishlist.classList.toggle("added")
                 })
                 btn_section.appendChild(add_wishlist)
 
@@ -199,10 +199,10 @@ async function show_products() {
 //Search button
 /*Removing placeholder*/
 let search_input = document.getElementById("search");
-search.addEventListener("click", ()=>{
-    search_input.placeholder = "";  
-})
-//Searching text
+search.addEventListener("click", () => {
+        search_input.placeholder = "";
+    })
+    //Searching text
 let search_btn = document.getElementById("search-btn")
 search_btn.addEventListener("click", () => {
     if (document.getElementById("search").value == "") {
