@@ -179,17 +179,22 @@ body {
     }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 480px) {
     .slideshow-container {
-        height: 60vh;
+        height: 20vh;
+    }
+    .mySlides img {
+        width: inherit;
+        height: auto;
     }
     .next,
     .prev {
         position: absolute;
         font-size: 50px;
         color: white;
-        top: 35%;
+        top: 60%;
         cursor: pointer;
+        font-size: 1em;
     }
 }
 
