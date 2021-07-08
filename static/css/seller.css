@@ -35,7 +35,16 @@ hr {
     margin: auto;
     margin-bottom: 0.5em;
 }
-
+.menu-list li a:hover,
+.menu-list-responsive:hover {
+    color: rgb(0, 0, 0);
+}
+.nav-end li a:hover {
+    color: rgb(0, 0, 0);
+}
+.nav-end li a i:hover {
+    color: rgb(0, 0, 0);
+}
 
 /* Input section of the container */
 

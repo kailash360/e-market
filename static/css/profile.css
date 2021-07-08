@@ -210,11 +210,18 @@ i {
     margin-top: 1em;
     margin-left: 1em;
     font-size: 120%;
-    background-color: black;
+    background: linear-gradient(to right, #fa24fa, #6609B8);
     color: white;
-    padding: 0.3em 0.5em;
+    padding: 0.5rem 1.5rem;
     font-weight: bolder;
-    border-radius: 0.2em;
+    border-radius: 0.5rem;
+    border:4px solid white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.322);
+}
+.save-change-btn:hover {
+    border:4px solid #fa24fa;
+    background: white;
+    color: black;
 }
 
 .hide-btn {
@@ -222,7 +229,7 @@ i {
 }
 
 .save-change-btn:active {
-    color: rgb(0, 201, 201);
+    color: #fa24fa;
 }
 
 

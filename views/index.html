@@ -6,13 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/index.css">
-    <link rel="stylesheet" href="../static/css/particle.css">
+    <link rel="stylesheet" href="../static/json/particle.json">
+    <link rel="stylesheet" href="../static/css/particle-index.css">
     <title>Home</title>
 </head>
-
-<body id="particles-js">
+<div id="particles-js"></div>
+<body>
         <div class="slogan-section">
-            ANYTHING<br> BUT<br> ORDINARY
+            <p>ANYTHING<br> BUT<br> ORDINARY</p>
         </div>
         <div class="image-section">
             <img src="../static/media/bg.png" alt="">
@@ -26,7 +27,10 @@
 
 </html>
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.js"></script>
-<script src="../scripts/particle.js"></script>
+<script>
+    particlesJS.load('particles-js', '../static/json/particle-index.json', function() {
+    console.log('Particle.js has been loaded ...');
+  });</script>
 <script src="https://kit.fontawesome.com/2c32a0aecc.js" crossorigin="anonymous"></script>
 
 </html>
