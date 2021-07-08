@@ -1,17 +1,17 @@
 {
     "particles": {
       "number": {
-        "value": 200,
+        "value": 250,
         "density": {
           "enable": true,
           "value_area": 800
         }
       },
       "color": {
-        "value": "#ffffff"
+        "value": ["#fa24fa", "#6609B8"]
       },
       "shape": {
-        "type": "circle",
+        "type": ["circle","triangle"],
         "stroke": {
             "width": 0,
             "color": "#000000"
