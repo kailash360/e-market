@@ -277,7 +277,7 @@ body {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.342);
 }
 
-img {
+.box img {
     border-radius: 0.5rem;
 }
 
@@ -346,12 +346,13 @@ img {
 .client-item img {
     width: 100%;
     height: 100%;
-    transition-duration: 0.4s;
+    transition-duration: 0.2s;
 }
 
 .client-item img:hover {
     transform: scale(1.1);
     box-shadow: 0px 0px 10px 5px #fa24fa;
+    border-radius: 50%;
 }
 
 .fade {
