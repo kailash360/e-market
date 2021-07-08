@@ -8,39 +8,43 @@
     <link rel="stylesheet" href="../static/css/navbar.css">
     <link rel="stylesheet" href="../static/css/seller-profile.css">
     <link rel="stylesheet" href="../static/css/footer.css">
+    <link rel="stylesheet" href="../static/json/particle.json">
+    <link rel="stylesheet" href="../static/css/particle.css">
     <title>Seller Profile</title>
 </head>
 
 <body>
 
     <!-- For user image  -->
-    <div class="image-container">
-        <!-- navbar  -->
-        <nav class="navbar">
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
+    <div id="particles">
+        <div class="image-container"  >
+            <!-- navbar  -->
+            <nav class="navbar">
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="menu-list" id="menu">
+                    <li><a href="/seller-products">My Products</a></li>
+                    <li><a href="/seller-about-us">About Us</a></li>
+                </ul>
+                <ul class="nav-end">
+                    <li>
+                        <a href="/seller-profile"><i class="fa fa-user active"></i></a>
+                    </li>
+                </ul>
+                <ul class="menu-list-responsive">
+                    <li><a href="/seller-products">My Products</a></li>
+                    <li><a href="/seller-about-us">About Us</a></li>
+                </ul>
+            </nav>
+        
+            <img src="../static/media/user-image.png" alt="" style="height: 10em;">
+            <div class="name-section">
+                <h2 id="user-name"></h2>
             </div>
-            <ul class="menu-list" id="menu">
-                <li><a href="/seller-products">My Products</a></li>
-                <li><a href="/seller-about-us">About Us</a></li>
-            </ul>
-            <ul class="nav-end">
-                <li>
-                    <a href="/seller-profile"><i class="fa fa-user active"></i></a>
-                </li>
-            </ul>
-            <ul class="menu-list-responsive">
-                <li><a href="/seller-products">My Products</a></li>
-                <li><a href="/seller-about-us">About Us</a></li>
-            </ul>
-        </nav>
-
-        <img src="../static/media/user-image.png" alt="">
-        <div class="name-section">
-            <h2 id="user-name"></h2>
+            <button class="edit-name" id="edit-name-btn" name="edit-name" type="button"><i
+                    class="fa fa-pencil"></i></button>
         </div>
-        <button class="edit-name" id="edit-name-btn" name="edit-name" type="button"><i
-                class="fa fa-pencil"></i></button>
     </div>
 
     <!-- For user details  -->
@@ -168,7 +172,12 @@
 
     </footer>
 </body>
-
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.js"></script>
+<script>
+    particlesJS.load('particles', '../static/json/particle.json', function() {
+    console.log('Particle.js has been loaded ...');
+  });
+</script>
 <script src="https://kit.fontawesome.com/2c32a0aecc.js " crossorigin="anonymous "></script>
 <script src="../scripts/seller-profile.js "></script>
 <script src="../scripts/navbar.js "></script>

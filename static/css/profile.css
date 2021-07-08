@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&display=swap');
 * {
     padding: 0px;
     margin: 0px;
@@ -18,6 +19,11 @@
     background: transparent;
 }
 
+.menu-list li a:hover,
+.menu-list-responsive:hover {
+    color: grey;
+}
+
 i {
     vertical-align: middle;
 }
@@ -26,8 +32,21 @@ i {
     transform: rotate(90deg);
 }
 
+.fa-pencil-square-o{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.301);
+    border-radius: 50%;
+    margin: auto;
+    font-size: 1.5rem;
+    padding: 0.7rem;
+    border: 3px solid white;
+    background: linear-gradient(#fa24fa, #6609B8);
+    color: white;
+    
+}
 .fa-pencil-square-o:hover {
-    color: #08b7ec;
+    color: #fa24fa;
+    background: white;
+    border: 3px solid #fa24fa;
 }
 
 [contenteditable] {
@@ -40,13 +59,14 @@ i {
 .image-container {
     width: 100vw;
     height: fit-content;
-    background: linear-gradient(to bottom right, #08b7ec, #1637f3);
     padding: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-bottom: 10px;
     box-shadow: 0px 0px 15px 0px black;
+    background: transparent;
+    z-index: 1;
 }
 
 .image-container img {
@@ -57,6 +77,7 @@ i {
     margin-top: 15px;
     background-color: white;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.623);
+    z-index: 1;
 }
 
 .name-section {
@@ -65,12 +86,14 @@ i {
     margin-top: 1em;
     margin-bottom: 0.5em;
     padding: 0.1em 2em;
+    z-index: 1;
 }
 
 .name-section h2 {
     text-align: center;
     color: white;
     font-size: 250%;
+    z-index: 1;
 }
 
 .edit-name {
@@ -82,10 +105,11 @@ i {
     width: 1.8em;
     overflow: hidden;
     border: none;
+    z-index: 1;
 }
 
 .edit-name:hover {
-    color: #08b7ec;
+    color: #fa24fa;
 }
 
 .edit-name:active {
@@ -114,7 +138,15 @@ i {
     font-size: 420%;
     font-weight: bold;
     margin-left: 0.2em;
+    
 }
+.user-details-heading{
+    font-family: 'Maven Pro', sans-serif;
+    background: -webkit-linear-gradient(#fa24fa, #6609B8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 
 .user-details {
     width: 85vw;
@@ -136,7 +168,7 @@ i {
 .user-address-section {
     margin: 1rem;
     padding: 1rem 1rem;
-    border: 2px solid transparent;
+    border: 4px solid transparent;
     box-shadow: 0 0 0.7rem 0px rgba(0, 0, 0, 0.226);
     transition: 0.5s;
     border-radius: 0.5rem;
@@ -145,11 +177,15 @@ i {
 .user-email:hover,
 .user-phone:hover,
 .user-address-section:hover {
-    border: 2px solid #08b7ec;
+    border: 4px solid #fa24fa;
     box-shadow: 0 0 0.7rem 0px rgba(0, 0, 0, 0.377);
     transform: scale(1.02);
 }
-
+.user-email section,
+.user-phone section,
+.user-address-section section {
+    padding: 5px 0;
+}
 .user-email p,
 .user-phone p {
     font-size: var(--general-font);
@@ -195,13 +231,13 @@ i {
     background: white;
     border-radius: 0.5rem;
     margin: 6rem 2rem;
-    border: 2px solid transparent;
+    border: 4px solid transparent;
     box-shadow: 0 0 0.7rem 0px rgba(0, 0, 0, 0.226);
     transition: 0.5s;
 }
 
 .financial-info:hover {
-    border: 2px solid #08b7ec;
+    border: 4px solid #fa24fa;
     box-shadow: 0 0 0.7rem 0px rgba(0, 0, 0, 0.377);
     transform: scale(1.02);
 }
@@ -246,15 +282,18 @@ i {
 #log-out-btn {
     width: fit-content;
     height: fit-content;
-    padding: 4px 8px;
-    border: 2px solid rgb(211, 211, 211);
+    padding: 0.5rem 1rem;
+    border: 4px solid transparent;
     border-radius: 5px;
     font-size: 1.4em;
-    background-color: rgb(182, 0, 0);
+    background-color: #d63031;
     font-weight: bolder;
     color: white;
-    border: none;
     cursor: pointer;
+}
+#log-out-btn:hover {
+    background-color: #ff7675;
+    border: 4px solid #d63031;
 }
 
 @media screen and (max-width: 1000px) {
