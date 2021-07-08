@@ -222,6 +222,7 @@ app.post("/products", customer_auth, (req, res) => {
         product_query = product_query.concat(`where product_price<${price} and product_category='${req.body.type}' and product_name like'%${req.body.search}%' `)
     }
 
+    product_query += ' order by product_name'
     client.query(product_query)
         .then(response => {
             if (response.rows.length > 0) {
@@ -255,7 +256,7 @@ app.post("/add-to-cart", customer_auth, async(req, res) => {
 
 //Displaying products of cart to the customer
 app.post("/cart-products", customer_auth, async(req, res) => {
-    let query = `select * from customer_cart where username='${req.locals.customer_username}'`
+    let query = `select * from customer_cart where username='${req.locals.customer_username}' order by product_name`
     client
         .query(query)
         .then(response => {
@@ -453,7 +454,7 @@ app.post("/add-product", seller_auth, async(req, res) => {
 //Displaying the products to seller
 app.post("/show-products", seller_auth, async(req, res) => {
     client
-        .query(`select * from seller_products where username='${req.locals.seller_username}'`)
+        .query(`select * from seller_products where username='${req.locals.seller_username}' order by product_name`)
         .then(response => {
             res.send(response.rows)
             res.end()
@@ -481,7 +482,7 @@ app.post("/update-item", seller_auth, async(req, res) => {
 //Deleting information of an item
 app.post("/delete-item", seller_auth, async(req, res) => {
     client
-        .query(`delete from seller_products where username="${req.locals.seller_username}" AND product_name="${req.body.name}";commit;`)
+        .query(`delete from seller_products where username='${req.locals.seller_username}' AND product_name='${req.body.name}';commit;`)
         .then(response => {
             res.ok = true
             res.end()

@@ -9,7 +9,6 @@ body {
     background-size: cover;
 }
 
-
 .form-modal {
     position: relative;
     width: 450px;
@@ -110,7 +109,6 @@ body {
 #signup-form {
     display: none;
     width: fit-content;
-
 }
 
 #login-form button,
@@ -164,12 +162,14 @@ body {
     top: 50%;
     transform: translateX(-10%) translateY(-50%);
 }
-.user-type{
+
+.user-type {
     text-align: center;
     width: fit-content;
     margin: 10px auto;
-    font-size: 1.2rem  !important;
+    font-size: 1.2rem !important;
     background: -webkit-linear-gradient(#fa24fa, #7823e7);
+    background-clip: content-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -219,9 +219,9 @@ body {
     }
 }
 
-@media only screen and (max-width:450px) {
+@media only screen and (max-width:1120px) {
     body {
-        background: linear-gradient(45deg, rgb(112, 112, 245), rgba(202, 67, 255, 0.37));
+        background: rgb(194, 28, 235);
         height: 100vh;
     }
 }

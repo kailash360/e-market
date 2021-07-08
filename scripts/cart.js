@@ -136,6 +136,9 @@ async function show_cart_items() {
             buy_now.classList.add("buy-now")
             buy_now.type = "button"
             buy_now.innerText = "BUY NOW"
+            buy_now.addEventListener("click", () => {
+                window.location.href = "/payment"
+            })
 
             //Delete from cart button
             let del_from_cart_btn = document.createElement("button")
