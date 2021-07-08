@@ -1,6 +1,6 @@
 //fetching elements
 let add_product = document.getElementById("add-product-btn")
-// let product_list = document.querySelector(".product-list")
+    // let product_list = document.querySelector(".product-list")
 let empty_list = document.querySelector(".empty-list")
 let card_list = document.querySelector(".cardList")
 
@@ -136,6 +136,9 @@ async function show_products() {
             let quantity = document.createElement("p")
             quantity.classList.add("quantity-class")
             quantity.innerText = item_quantity
+            if (item_quantity == 0) {
+                quantity.style.border = "2px solid red"
+            }
             div3.appendChild(quantity_label)
             div3.appendChild(quantity)
             card_info.appendChild(div3)
@@ -143,12 +146,12 @@ async function show_products() {
             //Read more section
             let read_more = document.createElement("div")
             read_more.classList.add("addInfo")
-            // if((window.matchMedia('max-width: 1634').matches)){
-            //     read_more.style.display = "inline-block";
-            // }
-            // else{
-            //     read_more.style.display = "none";
-            // }
+                // if((window.matchMedia('max-width: 1634').matches)){
+                //     read_more.style.display = "inline-block";
+                // }
+                // else{
+                //     read_more.style.display = "none";
+                // }
 
             //Button for read more
             let read_more_btn = document.createElement("button")
@@ -172,9 +175,9 @@ async function show_products() {
             let add_info = document.createElement("p")
             add_info.classList.add("add-info-child")
             add_info.innerText = item_data
-            // if(!(window.matchMedia('min-width: 1634').matches)){
-            //     add_info.style.display = "inline-block";
-            // }
+                // if(!(window.matchMedia('min-width: 1634').matches)){
+                //     add_info.style.display = "inline-block";
+                // }
             read_more.appendChild(add_info_heading)
             read_more.appendChild(add_info)
             card_info.appendChild(read_more)
