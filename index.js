@@ -111,7 +111,7 @@ app.post("/customer-sign-up", async(req, res) => {
     //If user does not exist, then insert into database
     if (!registered) {
         let hashed_pwd = await bcrypt.hash(req.body.password, 10)
-        let sign_up_query = `insert into customers(user_fullname,username,email,contact_no,address_1,address_2,password) values ('${req.body.fullname}','${req.body.username}','${req.body.email}','${req.body.phone}','${req.body.add1}','${req.body.add2}','${hashed_pwd}')`
+        let sign_up_query = `insert into customers(user_fullname,username,email,contact_no,address_1,address_2,password,total_orders,total_supercoins) values ('${req.body.fullname}','${req.body.username}','${req.body.email}','${req.body.phone}','${req.body.add1}','${req.body.add2}','${hashed_pwd}',0,0)`
         client
             .query(sign_up_query)
             .then(response => {
@@ -343,7 +343,7 @@ app.post("/seller-signup", async(req, res) => {
     //If user does not exist, then insert into database
     if (!registered) {
         let hashed_pwd = await bcrypt.hash(req.body.password, 10)
-        let sign_up_query = `insert into sellers(business_name,username,email,contact_no,office_address,home_address,password) values ('${req.body.business_name}','${req.body.username}','${req.body.email}','${req.body.phone}','${req.body.office_add}','${req.body.home_add}','${hashed_pwd}')`
+        let sign_up_query = `insert into sellers(business_name,username,email,contact_no,office_address,home_address,password,total_revenue,total_orders) values ('${req.body.business_name}','${req.body.username}','${req.body.email}','${req.body.phone}','${req.body.office_add}','${req.body.home_add}','${hashed_pwd}',0,0)`
         client
             .query(sign_up_query)
             .then(response => {
