@@ -99,15 +99,28 @@
     color: rgb(0, 0, 0);
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 496px) {
     .navbar {
-        width: 105vw;
+        /* width: 105vw; */
+        height: 40px;
         grid-template-columns: 1fr 1fr;
+        padding: 0.2em 0.5em;
+    }
+    .nav-end {
+        padding-top: 5px;
+    }
+    .menu-list li,
+    .menu-list-responsive li {
+        font-size: 1.2em;
+    }
+    .nav-end li {
+        font-size: 1.2em;
     }
     .menu-list {
         display: none;
     }
     .hamburger {
+        font-size: 1.5em;
         display: block;
         width: 60%;
     }
