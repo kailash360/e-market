@@ -184,6 +184,16 @@
     display: none;
 }
 
+.checkout-btn-section input {
+    margin-top: 50px;
+    margin-bottom: 15px;
+}
+
+.checkout-btn-section label a {
+    color: blue;
+    text-decoration: none;
+}
+
 .checkout-btn {
     margin: 0px auto;
     align-self: center;

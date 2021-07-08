@@ -93,7 +93,7 @@ async function customer_login(e) {
         }).then(response => {
             response = JSON.parse(JSON.parse(response))
             window.localStorage.setItem("token", `${response.token}`)
-            window.location = "/profile"
+            window.location = "/home"
         })
 }
 
@@ -171,6 +171,6 @@ async function seller_login(e) {
         }).then(response => {
             response = JSON.parse(JSON.parse(response))
             window.localStorage.setItem("token", `${response.token}`)
-            window.location = "/seller-profile"
+            window.location = "/seller-products"
         })
 }

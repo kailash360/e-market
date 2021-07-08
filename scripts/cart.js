@@ -234,6 +234,11 @@ async function calculate() {
 async function purchased() {
     calculate()
 
+    if (!document.getElementById("terms").checked) {
+        alert("Please agree to our Terms and Conditions")
+        return
+    }
+
     //Extract the values to be sent
     let name_list = document.querySelectorAll(".title")
     let count_list = document.querySelectorAll(".count")
