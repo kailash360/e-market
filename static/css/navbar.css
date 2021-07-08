@@ -13,12 +13,17 @@
 }
 
 .navbar {
-    width: inherit;
-    height: fit-content;
+    /* width: inherit;
+    height: fit-content; */
     display: grid;
     grid-template-columns: 2fr 1fr;
-    padding: 0.8em;
+    padding: 0.5em;
     background: linear-gradient(to right, #fa24fa, #6609B8);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 55px;
+    z-index: +1;
 }
 
 .navbar li a {
