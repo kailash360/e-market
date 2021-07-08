@@ -279,7 +279,23 @@ app.post("/delete-from-cart", customer_auth, async(req, res) => {
 
 //Checkout
 app.post("/checkout", customer_auth, (req, res) => {
-    //First remove the items from cart
+    console.log(req.body)
+
+    //Add to order history
+    let date = new Date()
+    let d = date.getDate() + 1
+    let m = date.getMonth() + 1
+    let y = date.getFullYear()
+
+    let curr_date = y + "-" + m + "-" + d
+    console.log(curr_date)
+    for (i in req.body.product_name_list) {
+        let order_history_query = `insert into customer_history(username,product_name,quantity,price,date_of_purchase) values ('${req.locals.customer_username}','${req.body.product_name_list[i]}',${parseInt(req.body.product_quantity_list[i])},${req.body.product_price_list[i]},'${curr_date}')`
+        console.log(order_history_query)
+        client.query(order_history_query)
+    }
+
+    //Remove the items from cart
     let delete_from_cart_query = `delete from customer_cart where username='${req.locals.customer_username}'`
     client.query(delete_from_cart_query)
 
@@ -320,6 +336,22 @@ app.get('/purchased', (req, res) => {
     res.end(fs.readFileSync("./views/thank-you.html"))
 })
 
+//Serving history page
+app.get("/history-page", (req, res) => {
+    res.end(fs.readFileSync("./views/customer_history.html"))
+})
+
+//Fetching order history
+app.post("/history", customer_auth, (req, res) => {
+    let customer_history = `select * from customer_history where username='${req.locals.customer_username}'`
+    client
+        .query(customer_history)
+        .then(response => {
+            console.log(response.rows)
+            res.send(response.rows)
+            res.end()
+        })
+})
 
 // For seller 
 //Signing up the seller
