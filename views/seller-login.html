@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../static/css/login.css">
 </head>
 
-<body>
+<body class="body">
     <div class="form-modal">
 
         <div class="form-toggle">
@@ -19,6 +19,7 @@
 
         <div id="login-form">
             <form>
+                <p class="user-type">Seller</p>
                 <input type="text" name="username" id="username" placeholder="Enter email or username" />
                 <input type="password" name="password" id="password" placeholder="Enter password" />
                 <button class="btn login" onclick="seller_login()" type="button">login</button>
@@ -27,6 +28,7 @@
 
         <div id="signup-form">
             <form>
+                <p class="user-type">Seller</p>
                 <input type="text" name="fullname" id="sign-up-fullname" placeholder="Enter your business name" />
                 <input type="text" name="username" id="sign-up-username" placeholder="Choose your username" />
                 <input type="email" name="email" id="sign-up-email" placeholder="Enter your email" />

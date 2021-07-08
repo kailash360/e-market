@@ -8,14 +8,10 @@
 }
 
 
-/* body {
-    background: linear-gradient(45deg, rgb(0, 0, 218), rgb(66, 66, 255));
-} */
-
-
 /* For card container  */
 
 .heading {
+    margin-top: 5rem;
     font-size: 3em;
     font-weight: bolder;
     text-align: center;

@@ -10,6 +10,7 @@ body {
     background-size: cover;
 }
 
+
 .form-modal {
     position: relative;
     width: 450px;
@@ -163,6 +164,15 @@ body {
     left: 10%;
     top: 50%;
     transform: translateX(-10%) translateY(-50%);
+}
+.user-type{
+    text-align: center;
+    width: fit-content;
+    margin: 10px auto;
+    font-size: 1.2rem  !important;
+    background: -webkit-linear-gradient(#fa24fa, #7823e7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .fa-google {
