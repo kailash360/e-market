@@ -143,13 +143,18 @@ async function show_products() {
             //Read more section
             let read_more = document.createElement("div")
             read_more.classList.add("addInfo")
-            read_more.style.display = "none"
+            // if((window.matchMedia('max-width: 1634').matches)){
+            //     read_more.style.display = "inline-block";
+            // }
+            // else{
+            //     read_more.style.display = "none";
+            // }
 
             //Button for read more
             let read_more_btn = document.createElement("button")
             read_more_btn.classList.add("read-more")
             read_more_btn.type = "button"
-            read_more_btn.innerText = "Read more"
+            read_more_btn.innerText = "See Less"
             read_more_btn.addEventListener("click", () => {
                 if (read_more.style.display == "none") {
                     read_more.style.display = "inline";
@@ -163,10 +168,13 @@ async function show_products() {
 
             //Additional info
             let add_info_heading = document.createElement("h3")
-            add_info_heading.innerText = "Additional Information"
+            add_info_heading.innerText = "Features"
             let add_info = document.createElement("p")
             add_info.classList.add("add-info-child")
             add_info.innerText = item_data
+            // if(!(window.matchMedia('min-width: 1634').matches)){
+            //     add_info.style.display = "inline-block";
+            // }
             read_more.appendChild(add_info_heading)
             read_more.appendChild(add_info)
             card_info.appendChild(read_more)
