@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&family=Nunito+Sans:wght@300&display=swap');
 * {
     margin: 0px;
     padding: 0px;
     font-family: "Nunito Sans";
     overflow-x: hidden;
-    color: black
+    color: black;
+    font-weight: bold;
 }
 
 
@@ -15,6 +18,10 @@
     font-size: 3em;
     font-weight: bolder;
     text-align: center;
+    background: -webkit-linear-gradient(#fa24fa, #7823e7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Maven Pro', sans-serif;
 }
 
 
@@ -47,35 +54,46 @@
 }
 
 .card-item {
-    width: 20em;
-    height: 16em;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: bold;
+    width: 30vw;
+    height: fit-content;
     margin: 1em;
     display: grid;
-    grid-template-columns: 35% 65%;
-    grid-template-rows: 80% 20%;
-    box-shadow: 0px 2px 5px 4px rgb(0 0 0 / 20%);
+    grid-template-columns: 45% 55%;
+    grid-template-rows: 70% 30%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.308);
     transition-duration: 0.5s;
+    border: 4px solid transparent;
     border-radius: 20px;
     /* background-color: rgba(0, 60, 255, 0.425);
     color: white; */
 }
 
 .card-item:hover {
+    border: 4px solid #fa24fa;
+    /* box-shadow: 0 0 10px #fa24fa; */
     transform: scale(1.03);
 }
 
 .item-image {
     display: flex;
     justify-content: center;
-    vertical-align: middle;
-    text-align: center;
-    width: fit-content;
+    /* vertical-align: middle; */
+    align-items: center;
+    /* text-align: center; */
+    /* width: fit-content; */
 }
 
 .item-image img {
     margin: 1em auto;
     width: auto;
     height: 55%;
+}
+.item-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .title {
@@ -101,21 +119,51 @@
 
 .count {
     margin-top: 2em;
-    padding-left: 10px;
     width: 80px;
     margin-left: 1.2em;
     text-align: center;
     font-size: 1em;
     border-radius: 5px;
-    /* border-color: white; */
     outline: none;
-    background-color: transparent;
+    background-color:rgba(0, 0, 0, 0.123);
+    border: 2px solid transparent;
+    font-weight: bolder;
+    color: rgba(0, 0, 0, 0.404);
+}
+.count:hover {
+    background-color:white;
+    color: rgba(0, 0, 0, 0.404);
+    border: 2px solid #fa24fa;
 }
 
 .btn-section-1,
 .btn-section-2 {
-    text-align: center;
-    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn-section-1 button,
+.btn-section-2 button{
+    background: linear-gradient(to right, #fa24fa, #6609B8);
+    color: white;
+    border: 3px solid white;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.377);
+}
+.btn-section-1 button{
+    border-radius: 50%;
+}
+.btn-section-1 button i{
+    color: white;
+}
+.btn-section-1 button i:hover{
+    color: black;
+}
+.btn-section-1 button:hover,
+.btn-section-2 button:hover {
+    background: white;
+    color: black;
+    border: 3px solid #fa24fa;
 }
 
 .buy-now {
@@ -180,19 +228,27 @@
 }
 
 .checkout-btn-section {
+    padding: 10px 0;
     text-align: center;
     display: none;
 }
 
 .checkout-btn {
+    background: linear-gradient(to right, #fa24fa, #6609B8);
+    color: white;
+    border: 3px solid white;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.377);
     margin: 0px auto;
     align-self: center;
-    background-color: black;
-    color: white;
     font-weight: bold;
-    padding: 2px 4px;
-    border-radius: 5px;
+    border-radius: 0.8rem;
     font-size: 1.05em;
+}
+.checkout-btn:hover {
+    background: white;
+    color: black;
+    border: 3px solid #fa24fa;
 }
 
 .footer {
@@ -201,6 +257,12 @@
 
 .seller {
     display: none;
+}
+
+.calculation-container{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.281);
+    padding: 2rem 2rem;
+    border-radius: 0.8rem;
 }
 
 @media screen and (max-width: 450px) {
@@ -212,9 +274,24 @@
         margin-top: 5em;
     }
     .card-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         width: 90vw;
         height: fit-content;
         margin: 1em 0px;
+    }
+  
+    .delete-from-cart{
+        font-size: 0.8rem;
+    }
+    .btn-section-1{
+        padding: 0.5rem 0.7rem;
+    }
+    .btns{
+        display: flex;
+        flex-direction: row;
     }
     .item-info {
         width: fit-content;
@@ -236,5 +313,11 @@
     }
     .calculation-container {
         width: 90vw;
+    }
+}
+
+@media screen and (max-width: 1100px){
+    .card-item{
+        width: 80vw;
     }
 }
