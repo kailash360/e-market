@@ -1,132 +1,118 @@
-# e-market
+# EasyCart - Anything But Ordinary
 
-A simple but useful e-commerce platform to buy and sell products. Diffrent features provide the users with an amazing experience. 
+A simple but useful e-commerce platform to buy and sell products.The diffrent features provide the users with an amazing experience.
 
 # Screenshots
 
 #### 1. Landing page
-
+This is the landing page - the first appearance of our website to the user.
+![Landing Page](/static/screenshots/landing-page.jpeg)
 #### 2. Sign Up
-
-
 This is the Sign-Up page where users can sign up after provifing all the required details
-
+![Customer Sign Up](/static/screenshots/customer-sign-up.jpeg)
 
 
 After signing up, user will be redirected to a 'Hurray' page, from where he can log in with the credentials.
+![Customer Signed Up](/static/screenshots/customer-signed-up.jpeg)
+
 ### 3.Log In
 
-
 This is the Log-In page that requires username and password of any user to log in.
-
-
+![Log In](/static/screenshots/login.jpeg)
 
 Providing invalid credentials will redirect the user to an Invalid Login page. 
+![Invalid Login](/static/screenshots/invalid-login.jpeg)
 
 
 ## Customer view
 ### 4. Homepage
-
-
 This is the homepage that will be displayed once the customer logs in
 
+![Home Page Capture-1](/static/screenshots/home-img-1.jpeg)
+![Home Page Capture-2](/static/screenshots/home-img-2.jpeg)
+![Home Page Capture-3](/static/screenshots/home-img-3.jpeg)
 ### 5. Products 
-
-
 These are the products that are available to the customers. Every product can abe aded to wishlist, to the cart, or purchased immediately
 
+![Products](/static/screenshots/products.jpeg)
 ### 6. Products with filters
-
-
 By applying filters, the products can be more personalised. 
+![Products Filter](/static/screenshots/products-filters.jpeg)
 
 ### 7. Cart 
-
-
 Initially, the cart is empty.
-
-
+![Empty Cart](/static/screenshots/empty-cart.jpeg)
 ### 8. Adding a product to the cart from Products page 
+![Add To Cart](/static/screenshots/add-to-cart.jpeg)
 
 
 ### 9. Items in the cart 
-
-
 All items are now saved in the cart. User can also change the quantity he/she needs to buy. 
 
-
-
+![Cart items](/static/screenshots/cart.jpeg)
 
 The total items, total costs are calculated simultaneously and displayed to the customer.A confirmation is also taken from the user before proceeding for payment. 
 
+![Cart Calculations](/static/screenshots/cart-calculations.jpeg)
+
+
 ### 10. Payment
-
-
 The customer will need to select a method of payment to complete the process. 
 
+![Payment](/static/screenshots/payment.jpeg)
+
 ### 11. Thank You page
-
-
 After successful payment, customer will be redirected to a Thank You page, where he/she will have the option to shop again. 
+
+![Thank You Page](/static/screenshots/thank-you.jpeg)
 
 ### 12. Profile
 
-
 This will display all the details of a customer that he provided while signing up. 
-
-
+![Profile Capture 1 ](/static/screenshots/profile-capture-1.jpeg)
+![Profile Capture 2](/static/screenshots/profile-capture-2.jpeg)
 
 Details can be changed with the edit button and it will be updated in the database.
+![Edit Profile](/static/screenshots/profile-edit.jpeg)
 
 ### 13. Previous Orders 
-
-
 This will show the previous orders of a customer.
-
+![History](/static/screenshots/customer_history.jpeg)
 
 
 If the customer has not made any purchase then it will look like this. 
-
+![Empty History](/static/screenshots/empty-history.jpeg)
 
 
 ## Seller View  
 ### 14.Adding product
-
-
 A new seller does not have any products added.  
-
-
+![Empty History](/static/screenshots/empty-product.jpeg)
 
 He/She can add the products to sell.
-
+![Add History](/static/screenshots/add-product.jpeg)
 
 ### 15. My Products
-
-
 The products will be displyed to the seller. He/She will also have the liberty to change the details of any product he/she wants. Products can also be deleted
 
-
-
-
-
-
+![Add History](/static/screenshots/edit-products.jpeg)
 
 The products which have run out of stock will be displayed to the seller with a special colour. 
 
-
-
-
+![Add History](/static/screenshots/out-of-stock-product.jpeg)
 
 ### 16.Seller profile
-
-
 A seller will have a profile where all of his/her details will be listed. He/She can edit the details.
+![Add History](/static/screenshots/seller-profie.jpeg)
 
 
 ### 17.About Us 
-
-
 This section contains a little information about the ecommerce platform. 
+![Add History](/static/screenshots/about-us-1.jpeg)
+
+
+![Add History](/static/screenshots/about-us-2.jpeg)
+
 
 # Hosted URL
 > https://e-market-site.herokuapp.com/

@@ -25,6 +25,7 @@ async function fetch_history() {
 
             let list = document.querySelector(".product-name-list")
             history.forEach(element => {
+                console.log(element)
                 let item = document.createElement("li")
                 item.classList.add("product-item")
                 item.classList.add("hover")
