@@ -147,7 +147,7 @@ A simple but useful e-commerce platform to buy and sell products.The diffrent fe
 - ### Both customers and sellers can register  
     A customer can sign up on the website using a unique username. He can then place orders from his/her account.Sellers,too, will need to register using a unique username and can add products to sell.
 
-    It is always made sure that users cannot sign-up or login without providing all the required details.
+    It is always checked that users do not try to sign-up or login without providing all the required details.
 
 - ### Editable profile
 
@@ -156,7 +156,7 @@ A simple but useful e-commerce platform to buy and sell products.The diffrent fe
 - ### Finances
     Sellers can see the total sales that they have made, and the total orders that they have received. 
 
-    Customers can see the total number of orders that they have made till date, and also the number of coins that they have. For every purchase above Rs.500, a supercoin is given to the user. 
+    Customers can see the total number of orders that they have made till date, and also the number of supercoins that they have. For every purchase above Rs.500, a supercoin is given to the user. 
 
     *Finances cannot be edited by a user. It is strictly synchronized with the database.*
 
