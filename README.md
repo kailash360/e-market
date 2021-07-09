@@ -247,21 +247,19 @@ A simple but useful e-commerce platform to buy and sell products.The diffrent fe
 - **[dotenv](https://www.npmjs.com/package/dotenv)** - For storing the environment varibles
 
 # Local Setup
-### 1. Clone the project into local device
-### 2. Open terminal inside that folder
-### 3. Make sure you have installed NodeJS from internet. If note download from [here](https://nodejs.org/en/download/)
+### 1. Clone the project into local device and open terminal inside the corresponding folder
+### 2. Make sure NodeJS is already installed. If not, download from [here](https://nodejs.org/en/download/)
 ### 4. Run the following command in the terminal
 > ``` npm install ```
+#### The project has been successfully installed in the device.
 ### 5. To run the project,run the command
 > ``` nodemon index.js ```
-### 6. Now go to your default browser, and type the following command in search-bar
+### 6. Now go to your default browser, and type the following command
 > ```localhost ```
 
 *Steps 1-4 are needed for first-time installation only. Only steps 5 and 6 will be needed while working on the project.*
 
 # Team Members
-Kailash Kejriwal (2020BCS-044)
-
-Gurpreet Singh (2020BCS-036)
-
-Gaurav Kishore Sukhramani (2020BCS-033)
+- ### Kailash Kejriwal (2020BCS-044)
+- ### Gurpreet Singh (2020BCS-036)
+- ### Gaurav Kishor Sukhramani (2020BCS-033)
