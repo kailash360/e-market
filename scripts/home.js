@@ -44,4 +44,4 @@ document.querySelectorAll(".box").forEach(item => {
 
 setInterval(() => {
     plusSlides(1)
-}, 3000)
+}, 4000)

@@ -292,6 +292,10 @@ i {
     text-decoration: none;
 }
 
+.order-history-section a:hover {
+    text-decoration: underline
+}
+
 .log-out-section {
     margin-right: 2rem;
     margin-top: auto;
