@@ -1,132 +1,143 @@
-# e-market
+# EasyCart - Anything But Ordinary
 
-A simple but useful e-commerce platform to buy and sell products. Diffrent features provide the users with an amazing experience. 
+A simple but useful e-commerce platform to buy and sell products.The diffrent features provide the users with an amazing experience.
 
 # Screenshots
 
-#### 1. Landing page
+### 1. Landing page
+**This is the landing page - the first appearance of our website to the user.**
 
-#### 2. Sign Up
+![Landing Page](/static/screenshots/landing-page.jpeg)
+### 2. Sign Up
+**This is the Sign-Up page where users can sign up after provifing all the required details**
+
+![Customer Sign Up](/static/screenshots/customer-sign-up.jpeg)
 
 
-This is the Sign-Up page where users can sign up after provifing all the required details
+**After signing up, user will be redirected to a 'Hurray' page, from where he can log in with the credentials.**
 
+![Customer Signed Up](/static/screenshots/customer-signed-up.jpeg)
 
-
-After signing up, user will be redirected to a 'Hurray' page, from where he can log in with the credentials.
 ### 3.Log In
 
+**This is the Log-In page that requires username and password of any user to log in.**
 
-This is the Log-In page that requires username and password of any user to log in.
+![Log In](/static/screenshots/login.jpeg)
 
 
 
-Providing invalid credentials will redirect the user to an Invalid Login page. 
+**Providing invalid credentials will redirect the user to an Invalid Login page.**
+
+![Invalid Login](/static/screenshots/invalid-login.jpeg)
 
 
 ## Customer view
 ### 4. Homepage
+**This is the homepage that will be displayed once the customer logs in**
 
+![Home Page Capture-1](/static/screenshots/home-img-1.jpeg)
 
-This is the homepage that will be displayed once the customer logs in
+![Home Page Capture-2](/static/screenshots/home-img-2.jpeg)
+
+![Home Page Capture-3](/static/screenshots/home-img-3.jpeg)
+
 
 ### 5. Products 
+**These are the products that are available to the customers. Every product can abe aded to wishlist, to the cart, or purchased immediately**
 
+![Products](/static/screenshots/products.jpeg)
 
-These are the products that are available to the customers. Every product can abe aded to wishlist, to the cart, or purchased immediately
 
 ### 6. Products with filters
-
-
-By applying filters, the products can be more personalised. 
+**By applying filters, the products can be more personalised.** 
+![Products Filter](/static/screenshots/products-filters.jpeg)
 
 ### 7. Cart 
-
-
-Initially, the cart is empty.
+**Initially, the cart is empty.**
+![Empty Cart](/static/screenshots/empty-cart.jpeg)
 
 
 ### 8. Adding a product to the cart from Products page 
+![Add To Cart](/static/screenshots/add-to-cart.jpeg)
 
 
 ### 9. Items in the cart 
+**All items are now saved in the cart. User can also change the quantity he/she needs to buy.**
+
+![Cart items](/static/screenshots/cart.jpeg)
 
 
-All items are now saved in the cart. User can also change the quantity he/she needs to buy. 
 
+**The total items, total costs are calculated simultaneously and displayed to the customer.A confirmation is also taken from the user before proceeding for payment.** 
 
+![Cart Calculations](/static/screenshots/cart-calculations.jpeg)
 
-
-The total items, total costs are calculated simultaneously and displayed to the customer.A confirmation is also taken from the user before proceeding for payment. 
 
 ### 10. Payment
+**The customer will need to select a method of payment to complete the process.**
 
+![Payment](/static/screenshots/payment.jpeg)
 
-The customer will need to select a method of payment to complete the process. 
 
 ### 11. Thank You page
+**After successful payment, customer will be redirected to a Thank You page, where he/she will have the option to shop again.** 
 
+![Thank You Page](/static/screenshots/thank-you.jpeg)
 
-After successful payment, customer will be redirected to a Thank You page, where he/she will have the option to shop again. 
 
 ### 12. Profile
 
+**This will display all the details of a customer that he provided while signing up.**
 
-This will display all the details of a customer that he provided while signing up. 
+![Profile Capture 1 ](/static/screenshots/profile-capture-1.jpeg)
+![Profile Capture 2](/static/screenshots/profile-capture-2.jpeg)
 
 
+**Details can be changed with the edit button and it will be updated in the database.**
 
-Details can be changed with the edit button and it will be updated in the database.
+![Edit Profile](/static/screenshots/profile-edit.jpeg)
 
 ### 13. Previous Orders 
+**This will show the previous orders of a customer.**
+
+![History](/static/screenshots/customer_history.jpeg)
 
 
-This will show the previous orders of a customer.
+**If the customer has not made any purchase then it will look like this.**
 
-
-
-If the customer has not made any purchase then it will look like this. 
-
+![Empty History](/static/screenshots/empty-history.jpeg)
 
 
 ## Seller View  
 ### 14.Adding product
+**A new seller does not have any products added.**
+![Empty History](/static/screenshots/empty-product.jpeg)
 
-
-A new seller does not have any products added.  
-
-
-
-He/She can add the products to sell.
-
+**He/She can add the products to sell.**
+![Add History](/static/screenshots/add-product.jpeg)
 
 ### 15. My Products
+**The products will be displyed to the seller. He/She will also have the liberty to change the details of any product he/she wants. Products can also be deleted**
 
+![Add History](/static/screenshots/edit-products.jpeg)
 
-The products will be displyed to the seller. He/She will also have the liberty to change the details of any product he/she wants. Products can also be deleted
+**The products which have run out of stock will be displayed to the seller with a special colour.**
 
-
-
-
-
-
-
-The products which have run out of stock will be displayed to the seller with a special colour. 
-
-
-
-
+![Add History](/static/screenshots/out-of-stock-product.jpeg)
 
 ### 16.Seller profile
+**A seller will have a profile where all of his/her details will be listed. He/She can edit the details.**
 
-
-A seller will have a profile where all of his/her details will be listed. He/She can edit the details.
+![Add History](/static/screenshots/seller-profie.jpeg)
 
 
 ### 17.About Us 
+**This section contains a little information about the ecommerce platform.**
+![Add History](/static/screenshots/about-us-1.jpeg)
 
 
-This section contains a little information about the ecommerce platform. 
+![Add History](/static/screenshots/about-us-2.jpeg)
+
 
 # Hosted URL
 > https://e-market-site.herokuapp.com/
@@ -136,7 +147,7 @@ This section contains a little information about the ecommerce platform.
 - ### Both customers and sellers can register  
     A customer can sign up on the website using a unique username. He can then place orders from his/her account.Sellers,too, will need to register using a unique username and can add products to sell.
 
-    It is always made sure that users cannot sign-up or login without providing all the required details.
+    It is always checked that users do not try to sign-up or login without providing all the required details.
 
 - ### Editable profile
 
@@ -145,7 +156,7 @@ This section contains a little information about the ecommerce platform.
 - ### Finances
     Sellers can see the total sales that they have made, and the total orders that they have received. 
 
-    Customers can see the total number of orders that they have made till date, and also the number of coins that they have. For every purchase above Rs.500, a supercoin is given to the user. 
+    Customers can see the total number of orders that they have made till date, and also the number of supercoins that they have. For every purchase above Rs.500, a supercoin is given to the user. 
 
     *Finances cannot be edited by a user. It is strictly synchronized with the database.*
 
@@ -236,21 +247,19 @@ This section contains a little information about the ecommerce platform.
 - **[dotenv](https://www.npmjs.com/package/dotenv)** - For storing the environment varibles
 
 # Local Setup
-### 1. Clone the project into local device
-### 2. Open terminal inside that folder
-### 3. Make sure you have installed NodeJS from internet. If note download from [here](https://nodejs.org/en/download/)
+### 1. Clone the project into local device and open terminal inside the corresponding folder
+### 2. Make sure NodeJS is already installed. If not, download from [here](https://nodejs.org/en/download/)
 ### 4. Run the following command in the terminal
 > ``` npm install ```
+#### The project has been successfully installed in the device.
 ### 5. To run the project,run the command
 > ``` nodemon index.js ```
-### 6. Now go to your default browser, and type the following command in search-bar
+### 6. Now go to your default browser, and type the following command
 > ```localhost ```
 
 *Steps 1-4 are needed for first-time installation only. Only steps 5 and 6 will be needed while working on the project.*
 
 # Team Members
-Kailash Kejriwal (2020BCS-044)
-
-Gurpreet Singh (2020BCS-036)
-
-Gaurav Kishore Sukhramani (2020BCS-033)
+- ### Kailash Kejriwal (2020BCS-044)
+- ### Gurpreet Singh (2020BCS-036)
+- ### Gaurav Kishor Sukhramani (2020BCS-033)
