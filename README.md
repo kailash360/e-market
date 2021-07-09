@@ -4,6 +4,130 @@ A simple but useful e-commerce platform to buy and sell products. Diffrent featu
 
 # Screenshots
 
+#### 1. Landing page
+
+#### 2. Sign Up
+
+
+This is the Sign-Up page where users can sign up after provifing all the required details
+
+
+
+After signing up, user will be redirected to a 'Hurray' page, from where he can log in with the credentials.
+### 3.Log In
+
+
+This is the Log-In page that requires username and password of any user to log in.
+
+
+
+Providing invalid credentials will redirect the user to an Invalid Login page. 
+
+
+## Customer view
+### 4. Homepage
+
+
+This is the homepage that will be displayed once the customer logs in
+
+### 5. Products 
+
+
+These are the products that are available to the customers. Every product can abe aded to wishlist, to the cart, or purchased immediately
+
+### 6. Products with filters
+
+
+By applying filters, the products can be more personalised. 
+
+### 7. Cart 
+
+
+Initially, the cart is empty.
+
+
+### 8. Adding a product to the cart from Products page 
+
+
+### 9. Items in the cart 
+
+
+All items are now saved in the cart. User can also change the quantity he/she needs to buy. 
+
+
+
+
+The total items, total costs are calculated simultaneously and displayed to the customer.A confirmation is also taken from the user before proceeding for payment. 
+
+### 10. Payment
+
+
+The customer will need to select a method of payment to complete the process. 
+
+### 11. Thank You page
+
+
+After successful payment, customer will be redirected to a Thank You page, where he/she will have the option to shop again. 
+
+### 12. Profile
+
+
+This will display all the details of a customer that he provided while signing up. 
+
+
+
+Details can be changed with the edit button and it will be updated in the database.
+
+### 13. Previous Orders 
+
+
+This will show the previous orders of a customer.
+
+
+
+If the customer has not made any purchase then it will look like this. 
+
+
+
+## Seller View  
+### 14.Adding product
+
+
+A new seller does not have any products added.  
+
+
+
+He/She can add the products to sell.
+
+
+### 15. My Products
+
+
+The products will be displyed to the seller. He/She will also have the liberty to change the details of any product he/she wants. Products can also be deleted
+
+
+
+
+
+
+
+The products which have run out of stock will be displayed to the seller with a special colour. 
+
+
+
+
+
+### 16.Seller profile
+
+
+A seller will have a profile where all of his/her details will be listed. He/She can edit the details.
+
+
+### 17.About Us 
+
+
+This section contains a little information about the ecommerce platform. 
+
 # Hosted URL
 > https://e-market-site.herokuapp.com/
 
