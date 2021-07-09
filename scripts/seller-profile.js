@@ -1,5 +1,3 @@
-console.log("JS File integrated successfully!")
-
 //Fetching pre-required elements
 let save_change_btn = document.querySelector(".save-change-btn")
 let edit_name_btn = document.getElementById("edit-name-btn")
@@ -17,10 +15,8 @@ async function display_seller_data() {
             'Authorization': `Bearer ${window.localStorage.getItem("token")}`
         },
     }).then(response => {
-        console.log(response)
         return response.json()
     }).then(response => {
-        console.log(response)
 
         //Showing data of the customer in profiles page
         let business_name = document.getElementById("user-name")
@@ -58,7 +54,6 @@ edit_name_btn.addEventListener("click", () => {
 let edit_email_btn = document.getElementById("edit-email-btn")
 let user_email = document.getElementById("user-email")
 edit_email_btn.addEventListener("click", () => {
-    console.log("edit email clicked")
     edit_mode = true;
     if (edit_mode) {
         user_email = document.getElementById("user-email")
@@ -72,7 +67,6 @@ edit_email_btn.addEventListener("click", () => {
 let edit_phone_btn = document.getElementById("edit-phone-btn")
 let user_phone = document.getElementById("user-phone")
 edit_phone_btn.addEventListener("click", () => {
-    console.log("edit phone clicked")
     edit_mode = true;
     if (edit_mode) {
         user_phone = document.getElementById("user-phone")
@@ -86,7 +80,6 @@ edit_phone_btn.addEventListener("click", () => {
 let edit_address_btn = document.getElementById("edit-address-btn")
 let user_address_list = document.querySelectorAll(".user-address")
 edit_address_btn.addEventListener("click", () => {
-    console.log("edit address clicked")
     edit_mode = true;
     if (edit_mode) {
         user_address_list.forEach((user_address) => {

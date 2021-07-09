@@ -42,7 +42,8 @@ i {
 .fa-pencil-square-o:hover {
     color: #FA24FA;
 }
-.fa-pencil-square-o{
+
+.fa-pencil-square-o {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.301);
     border-radius: 50%;
     margin: auto;
@@ -51,8 +52,8 @@ i {
     border: 3px solid white;
     background: linear-gradient(#fa24fa, #6609B8);
     color: white;
-    
 }
+
 .fa-pencil-square-o:hover {
     color: #fa24fa;
     background: white;
@@ -67,8 +68,6 @@ i {
 /* For image section  */
 
 .image-container {
-    /* position: absolute; */
-    /* top:; */
     background: transparent;
     width: 100vw;
     height: fit-content;
@@ -151,9 +150,11 @@ i {
     font-weight: bold;
     margin-left: 0.2em;
 }
-.user-details-heading{
+
+.user-details-heading {
     font-family: 'Maven Pro', sans-serif;
     background: -webkit-linear-gradient(#fa24fa, #6609B8);
+    background-clip: content-box;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -183,12 +184,7 @@ i {
     box-shadow: 0 0 0.7rem 0px rgba(0, 0, 0, 0.226);
     transition: 0.5s;
 }
-/* .user-email p,
-.user-phone p,
-.user-address-section p{
-    border-radius: 0.5rem;
-    background: rgba(0, 0, 0, 0.192);
-} */
+
 .user-contact {
     border-radius: 0.5rem;
     margin-bottom: 1rem;
@@ -207,6 +203,7 @@ i {
 .user-address-section span {
     color: black;
 }
+
 .user-email section,
 .user-phone section,
 .user-address-section section {
@@ -321,6 +318,7 @@ i {
     color: white;
     cursor: pointer;
 }
+
 #log-out-btn:hover {
     background-color: #ff7675;
     border: 4px solid #d63031;

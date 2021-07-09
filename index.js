@@ -283,7 +283,7 @@ app.post("/checkout", customer_auth, (req, res) => {
 
     //Add to order history
     let date = new Date()
-    let d = date.getDate() + 1
+    let d = date.getDate()
     let m = date.getMonth() + 1
     let y = date.getFullYear()
 

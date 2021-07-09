@@ -1,17 +1,14 @@
-#particles-js{
-    
+#particles-js {
     height: 100vh;
     width: auto;
 }
-.particles-js-canvas-el{
+
+.particles-js-canvas-el {
     background: linear-gradient(to right, #fa24fa, #6609B8);
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    z-index:+1;
-    /* width: 100% !important;
-    height: 370px !important; */
+    z-index: +1;
 }
-

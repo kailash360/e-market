@@ -1,4 +1,6 @@
 fetch_history()
+
+//Function to fetch the purchase history of a customer
 async function fetch_history() {
     fetch("/history", {
             method: "POST",
@@ -8,12 +10,12 @@ async function fetch_history() {
             },
         }).then(response => response.json())
         .then(history => {
-            console.log(history)
             if (history.length > 0) {
                 document.querySelector(".empty-list").style.display = "none"
                 document.querySelector(".product-heading-container").classList.remove("empty")
             }
 
+            //Sample HTML of a row
             // <li class="product-item hover">
             //     <p class="item-name">iPhone</p>
             //     <p class="item-quantity">2</p>

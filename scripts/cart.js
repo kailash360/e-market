@@ -1,4 +1,3 @@
-console.log("JS integrated successfully")
 let card_container = document.querySelector(".card-container")
 let sum = 0,
     seller_amount_list = [],
@@ -8,6 +7,7 @@ let sum = 0,
 
 show_cart_items()
 async function show_cart_items() {
+
     //Fetch the products in the cart
     card_container.innerHTML = ""
     await fetch("/cart-products", {
@@ -20,6 +20,7 @@ async function show_cart_items() {
         return response.json()
     }).then((cart_items) => {
 
+        //Sample HTML of a cart item
         /* <div class="card-item">
             <div class="item-image">
                 <img src="../static/media/sample-product.png" alt="">
@@ -38,6 +39,7 @@ async function show_cart_items() {
         </div>
         */
 
+        //Check if there are products in the cart
         if (cart_items.length > 0) {
             document.querySelector(".empty-cart").style.display = "none"
             document.querySelector(".calculation-container").style.display = "grid"
@@ -165,6 +167,7 @@ async function show_cart_items() {
     calculate()
 }
 
+//To delete an item in the cart
 async function delete_cart_item(cart_item, name) {
     await fetch("/delete-from-cart", {
             method: "POST",
@@ -186,7 +189,7 @@ async function delete_cart_item(cart_item, name) {
         })
 }
 
-// calculate()
+// Function to calculate the amounts
 async function calculate() {
     let price_list = [],
         count_list = [],
@@ -237,6 +240,7 @@ async function calculate() {
     document.querySelector(".total-amount").innerText = sum + 200
 }
 
+//Finally purchasing items
 async function purchased() {
     calculate()
 

@@ -15,13 +15,16 @@
 .navbar li a {
     color: white;
 }
+
 .menu-list li a:hover,
 .menu-list-responsive:hover {
     color: rgb(0, 0, 0);
 }
+
 .nav-end li a:hover {
     color: rgb(0, 0, 0);
 }
+
 .nav-end li a i:hover {
     color: rgb(0, 0, 0);
 }
@@ -190,7 +193,6 @@
 
 .product-container {
     padding-top: 1rem;
-    /* background: linear-gradient(to right, #fa24fa,#6609B8 ); */
     width: inherit;
     height: fit-content;
     margin: 2em auto;
@@ -231,7 +233,6 @@
     justify-content: center;
     margin: 0.5rem;
     border-radius: 0.7rem;
-    /* border: 1px solid black; */
     text-align: center;
 }
 
@@ -311,13 +312,10 @@
 
 .add-to-wishlist {
     margin: 0px auto;
-    /* padding-left: 2rem; */
     width: 20%;
     background: transparent;
     border: none;
     font-size: 1.2em;
-    /* margin-top: 10px;
-    margin-right: 0.5rem; */
     padding: 0px;
 }
 
@@ -325,7 +323,6 @@
     padding: 1rem;
     border: none;
     border-radius: 50%;
-    /* padding: 1.5rem; */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.329);
 }
 

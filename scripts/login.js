@@ -1,3 +1,4 @@
+//Functions to toggle between signup and login
 function toggleSignup() {
     document.getElementById("login-toggle").style.background = "#fff";
     document.getElementById("login-toggle").style.color = "#222";
@@ -18,7 +19,7 @@ function toggleLogin() {
     document.querySelector(".body").style.backgroundSize = "cover";
 }
 
-
+//Function to sign up a customer
 async function customer_signup() {
     let fullname = document.getElementById("sign-up-fullname").value
     let email = document.getElementById("sign-up-email").value
@@ -60,7 +61,7 @@ async function customer_signup() {
 }
 
 
-
+//Functions to login a customer
 async function customer_login(e) {
 
     let username = document.getElementById("username").value
@@ -87,7 +88,6 @@ async function customer_login(e) {
             if (response.status == 200) {
                 return response.json()
             } else {
-                console.log(response)
                 window.location = "/invalid-login"
             }
         }).then(response => {
@@ -97,6 +97,7 @@ async function customer_login(e) {
         })
 }
 
+//Function to sign up a seller
 async function seller_signup() {
     let business_name = document.getElementById("sign-up-fullname").value
     let email = document.getElementById("sign-up-email").value
@@ -138,7 +139,7 @@ async function seller_signup() {
 }
 
 
-
+//Function to login a seller
 async function seller_login(e) {
 
     let username = document.getElementById("username").value
