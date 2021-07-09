@@ -1,6 +1,6 @@
 # EasyCart - Anything But Ordinary
 
-A simple but useful e-commerce platform to buy and sell products.The diffrent features provide the users with an amazing experience.
+A simple but useful e-commerce platform to buy and sell products.The different features of our website gives an amazing user experience to our customers.
 
 # Screenshots
 
