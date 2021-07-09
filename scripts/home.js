@@ -1,4 +1,3 @@
-console.log("Integrated successfully");
 var slideIndex = 1;
 showSlides(slideIndex);
 

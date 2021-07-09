@@ -1,5 +1,6 @@
 const range = document.querySelector("#price-range");
 
+//Displaying price range in filter
 range.addEventListener("input", () => {
     const bubble = document.querySelector(".bubble");
     bubble.style.display = "inline-block";
@@ -21,6 +22,7 @@ range.addEventListener("input", () => {
 
 show_products()
 
+//Function to show all the products to a user
 async function show_products() {
     let product_list = document.querySelector(".product-container")
     product_list.innerHTML = ""
@@ -29,7 +31,7 @@ async function show_products() {
     let price = document.getElementById("price-range").value
     let search = document.getElementById("search").value
 
-    // HTML of a products
+    // Sample HTML of a product
     /*    <div class="product">
         <div class="product-image">
             <img src="../static/media/sample-product.png" alt="">
@@ -200,9 +202,10 @@ async function show_products() {
 /*Removing placeholder*/
 let search_input = document.getElementById("search");
 search.addEventListener("click", () => {
-        search_input.placeholder = "";
-    })
-    //Searching text
+    search_input.placeholder = "";
+})
+
+//Searching text
 let search_btn = document.getElementById("search-btn")
 search_btn.addEventListener("click", () => {
     if (document.getElementById("search").value == "") {
@@ -222,7 +225,6 @@ async function add_to_cart(add_cart, name, price, quantity, info, seller_usernam
             },
             body: JSON.stringify(({ name, price, quantity, info, seller_username }))
         })
-        // .then(response => response.json())
         .then(response => {
             if (!response.ok) {
                 alert("Item already exists in cart")

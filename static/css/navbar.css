@@ -13,8 +13,6 @@
 }
 
 .navbar {
-    /* width: inherit;
-    height: fit-content; */
     display: grid;
     grid-template-columns: 2fr 1fr;
     padding: 0.5em;
@@ -94,6 +92,7 @@
 .nav-end li a:hover {
     color: rgb(179, 179, 179);
 }
+
 .nav-end li a i:hover {
     color: rgb(179, 179, 179);
 }

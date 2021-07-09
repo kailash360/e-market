@@ -1,3 +1,4 @@
+//Hamburger function for navbar
 document.querySelector(".fa-bars").addEventListener("click", () => {
     let menu = document.querySelector(".menu-list-responsive")
     if (menu.style.display == "none") {

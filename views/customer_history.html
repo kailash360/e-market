@@ -1,60 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/navbar.css">
+    <link rel="stylesheet" href="../static/css/footer.css">
     <link rel="stylesheet" href="../static/css/customer_history.css">
     <title>Customer History</title>
 </head>
+
 <body>
+    <!-- navbar  -->
+    <nav class="navbar">
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="menu-list" id="menu">
+            <li><a href="/home">Home</a></li>
+            <li><a href="/products-page">Products</a></li>
+            <li><a href="/about">About Us</a></li>
+        </ul>
+        <ul class="nav-end">
+            <li>
+                <a href="/profile"><i class="fa fa-user"></i></a>
+            </li>
+            <li>
+                <a href="/cart"><i class="fa fa-cart-plus"></i></a>
+            </li>
+        </ul>
+        <ul class="menu-list-responsive">
+            <li><a href="/home">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="/about">About Us</a></li>
+        </ul>
+    </nav>
     <h1 class="top-heading">Order History</h1>
     <div class="product-section">
-        <!-- <hr class="hr1"> -->
-        <div class="product-heading-container">
-                
-                    <li class="product-item heads">
-                        <p class="item-name">Product name</p>
-                        <p class="item-quantity">Quantity</p>
-                        <p class="item-price">Price</p>
-                        <p class="item-additional-info">Date of purchase</p>
-                    </li>
-                    <hr>
-                <ul class="product-name-list">
-                    <li class="product-item hover">
-                        <p class="item-name">iPhone</p>
-                        <p class="item-quantity">2</p>
-                        <p class="item-price">10000</p>
-                        <p class="item-additional-info">10/12/2900</p>
-                    </li>
-                    <hr>
-                    <li class="product-item hover">
-                        <p class="item-name">iPhone</p>
-                        <p class="item-quantity">2</p>
-                        <p class="item-price">10000</p>
-                        <p class="item-additional-info">10/12/2900</p>
-                    </li>
-                    <hr>
-                    <li class="product-item hover">
-                        <p class="item-name">iPhone</p>
-                        <p class="item-quantity">2</p>
-                        <p class="item-price">10000</p>
-                        <p class="item-additional-info">10/12/2900</p>
-                    </li>
-                </ul>
+
+        <!-- List of order history -->
+        <div class="product-heading-container empty">
+            <li class="product-item heads">
+                <p class="item-name">Product name</p>
+                <p class="item-quantity">Quantity</p>
+                <p class="item-price">Price</p>
+                <p class="item-additional-info">Date of purchase</p>
+            </li>
+            <hr>
+            <!-- Adding the products in history  -->
+            <ul class="product-name-list">
+            </ul>
         </div>
-        <!-- <hr class="hr2"> -->
+
+        <!-- If there is no order history  -->
         <div class="product-list-container">
-                <ul class="product-list">
-                </ul>
-                <div class="empty-list">
-                    <i class="far fa-frown" style="font-size: 3em;"></i>
-                    <br> Oops! It looks like you haven 't added anything to your products..
-                    <br> Enlist a product from 'Add a new product' section
-                    <br> Happy Selling
-                </div>
-    
+            <div class="empty-list">
+                <i class="far fa-frown" style="font-size: 3em;"></i>
+                <br> You have not purchased any product yet
+                <br> <a href="/products-page">Shop now and make a history</a>
+                <br> Happy Shopping
             </div>
         </div>
+
+        <!-- Go back to profile -->
+        <div class="go-back-section">
+            <a href="/profile"><i class="fas fa-arrow-left"></i> Go back to profile</a>
+        </div>
+    </div>
+
+    <!-- Footer here  -->
+    <footer class="footer">
+        <span class="footer-item">
+            <p class="reach-us">
+                <strong>Reach Us at:</strong><br>
+                S.V Road, Borivali (West)<br>
+                Mumbai<br>
+                Maharashtra,India<br>
+                PIN-400092<br>
+            </p>
+        </span>
+        <span class="footer-item texts">
+            <strong>Follow Us on:</strong><br>
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i> Facebook</a><br>
+            <a href="https://twitter.com/login"><i class="fab fa-twitter-square"></i> Twitter</a><br>
+            <a href="https://www.instagram.com/?hl=en"><i class="fab fa-instagram-square"></i> Instagram</a><br>
+        </span>
+        <span class="footer-item texts addn">
+            <a href="/seller-login">Register as a seller</a><br>
+            <a href="#">Subscribe to deals and offers</a><br>
+            <a href="/about">About Us</a>
+        </span>
+        <span class="footer-item texts">
+            <a href="">Copyrights Reserved <br>© 2021-2022 </a><br>
+            <a href="">Terms and Conditions</a>
+        </span>
+
+    </footer>
 </body>
+<script src="../scripts/history.js"></script>
+<script src="../scripts/navbar.js"></script>
+<script src="https://kit.fontawesome.com/2c32a0aecc.js" crossorigin="anonymous"></script>
+
 </html>

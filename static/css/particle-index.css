@@ -5,12 +5,15 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-}
-.particles-js-canvas-el{
+
+
+
+.particles-js-canvas-el {
     background: linear-gradient(to right, #fa24fa, #6609B8);
     z-index:-1; 
     position: absolute;
     top: 0;
     left: 0
 }
+
 
