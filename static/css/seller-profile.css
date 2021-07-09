@@ -67,8 +67,6 @@ i {
 /* For image section  */
 
 .image-container {
-    /* position: absolute; */
-    /* top:; */
     background: transparent;
     width: 100vw;
     height: fit-content;
@@ -183,12 +181,7 @@ i {
     box-shadow: 0 0 0.7rem 0px rgba(0, 0, 0, 0.226);
     transition: 0.5s;
 }
-/* .user-email p,
-.user-phone p,
-.user-address-section p{
-    border-radius: 0.5rem;
-    background: rgba(0, 0, 0, 0.192);
-} */
+
 .user-contact {
     border-radius: 0.5rem;
     margin-bottom: 1rem;
