@@ -57,7 +57,7 @@ A simple but useful e-commerce platform to buy and sell products.The different f
 
 
 ### 9. Items in the cart 
-**All items are now saved in the cart. User can also change the quantity one needs to buy.**
+**All the items are now saved in the cart. User can also change the quantity one needs to buy.**
 
 ![Cart items](/static/screenshots/cart.jpeg)
 
