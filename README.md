@@ -132,6 +132,12 @@ A simple but useful e-commerce platform to buy and sell products.The different f
 # 🌏Hosted URL
 > https://e-market-site.herokuapp.com/
 
+#### Credentials for testing purposes (both customer and seller)
+```
+Username: webkriti
+Password: 123
+```
+
 # ⚡Features Implemented
 ## 🎨Frontend
 - ### Both customers and sellers can register  
