@@ -16,3 +16,5 @@ A simple but useful e-commerce platform to buy and sell products.The different f
 - **[JSON Web Token](https://jwt.io/)** - To authenticate the client who has made any request
 - **[dotenv](https://www.npmjs.com/package/dotenv)** - For storing the environment varibles
 
+
+If you want to contribute into this project, go throught the [contributing guide](CONTRIBUTING.md)
