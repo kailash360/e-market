@@ -10,7 +10,7 @@ const seller_auth = require("./middleware").seller_auth;
 const customer_auth = require("./middleware").customer_auth;
 const { response } = require("express");
 const app = express()
-const port = 80;
+const port = 5000;
 
 //PostgreSQL
 const client = new Client({
@@ -536,4 +536,6 @@ app.get("/seller-about-us", (req, res) => {
 })
 
 
-app.listen(process.env.PORT || port)
+app.listen(process.env.PORT || port,()=>{
+    console.log(`Running on port ${process.env.PORT || port}`)
+})
