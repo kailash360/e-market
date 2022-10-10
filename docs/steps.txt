@@ -1,0 +1,20 @@
+1-First you have to made a (.env file) then you have to copy the variables from .env.example  and paste it in .env file.
+2-Write any number string in JWT_KEY (like JWT_KEY=123).
+3-For DATABASE_URL you have to first login for Heroku (link is -https://dashboard.heroku.com/apps).Then you have to sign up there if 
+  you don't have accout otherwise login.
+Then go to create new app you can see the screenshot 1.
+Then create the app (For reference checkout the screenshot 2).
+Then  click on resources (For reference checkout the screenshot 3).
+Then click on Find more add-ons(For reference checkout the screenshot 4).
+Then go on search element and search for 'Heroku Postgres'(For reference checkout the screenshot 5).
+Then install Heroku Postgres(For reference checkout the screenshot 6).
+Then search for your app in  'search for App to provision to' then click on submit order form (For reference checkout the screenshot 7)
+Then click on setting (For reference checkout the screenshot 8)
+Then click on Reveal Config vars(For reference checkout the screenshot 9).
+Then copy the DATABASE_URL and paste in on your .env file.
+
+4- Then run npm start .
+ 
+
+
+
