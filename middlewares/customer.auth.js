@@ -3,12 +3,7 @@ const { Client } = require('pg');
 require('dotenv').config()
 
 //PostgreSQL
-const client = new Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl: {
-        rejectUnauthorized: false
-    },
-});
+const client = require('./config/dbconfig');
 client.connect();
 
 module.exports = async(req, res, next) => {
