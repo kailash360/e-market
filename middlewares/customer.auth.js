@@ -3,7 +3,7 @@ const { Client } = require('pg');
 require('dotenv').config()
 
 //PostgreSQL
-const client = require('./config/dbconfig');
+const client = require('../config/dbconfig');
 client.connect();
 
 module.exports = async(req, res, next) => {

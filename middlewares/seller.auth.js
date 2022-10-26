@@ -3,7 +3,7 @@ const { Client } = require('pg');
 require('dotenv').config()
 
 //PostgreSQL
-const client = require('./config/dbconfig');
+const client = require('..dbconfig/config/dbconfig');
 client.connect();
 
 //Authenticating token from seller
