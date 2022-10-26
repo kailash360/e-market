@@ -13,12 +13,7 @@ const app = express()
 const port = 5000;
 
 //PostgreSQL
-const client = new Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl: {
-        rejectUnauthorized: false
-    },
-});
+const client = require('./config/dbconfig');
 client.connect();
 
 //Setting source of static,javascripts,
