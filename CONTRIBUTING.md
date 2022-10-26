@@ -25,11 +25,12 @@ If you find any bug or want to add/improve any feature in the application, creat
 - Mention the issue type in the issue title.Choose only from the following 3 types - `Bug`,`Feature`,`Improve` For example, if the issue is about fixing any bug then the title will be `[Bug]<one-line description of the issue>`.
 - Make sure you mention the following sections in the issue description
   - What is the issue?
+  - How to reproduce the issue?
   - What is the expected behaviour?
   - Describe a solution you would like
   - Additional Context (Optional)
 
-    Try to add screenshots or error messages for a better understanding of the issue.
+  Try to add screenshots or error messages for a better understanding of the issue.
 
 
 ## Making a pull request
