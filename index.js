@@ -1,6 +1,5 @@
 require('dotenv').config()
 const express = require("express")
-const { Client } = require('pg');
 const fs = require('fs')
 const path = require("path")
 const bodyParser = require("body-parser")
@@ -13,13 +12,7 @@ const app = express()
 const port = 5000;
 
 //PostgreSQL
-const client = new Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl: {
-        rejectUnauthorized: false
-    },
-});
-client.connect();
+const client = require('./config/db.config');
 
 //Setting source of static,javascripts,
 // app.use('/views', express.static('views'))

@@ -1,15 +1,8 @@
 const jwt = require('jsonwebtoken');
-const { Client } = require('pg');
 require('dotenv').config()
 
 //PostgreSQL
-const client = new Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl: {
-        rejectUnauthorized: false
-    },
-});
-client.connect();
+const client = require('../config/db.config');
 
 //Authenticating token from seller
 module.exports = async(req, res, next) => {
