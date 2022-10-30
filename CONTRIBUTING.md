@@ -7,6 +7,7 @@ If you want to contribute to this project, go through the following instructions
 > ``` npm install ```
 
 4. Create a `.env` file into your root folder and copy the environment variables from the `.env.example` into `.env`. Fill in the suitable values for each of the variables.
+If you don't understand here go to docs folder and checkout there.
 #### The project has been successfully installed in the device.
 5. Start the application by running the following command
 > ``` nodemon index.js ```
